@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang="en"
+      dir="ltr"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="en" dir="ltr"> <![endif]-->
+<!--[if IE 9]>
+<html class="no-js lt-ie10" lang="en" dir="ltr"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" dir="ltr"> <!--<![endif]-->
+
+<!-- Mirrored from wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/no-os-functions by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 31 Jul 2024 11:50:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>AD9361 No-OS Software [Analog Devices Wiki]</title>
+
+    <script>(function (H) {
+            H.className = H.className.replace(/\bno-js\b/, 'js')
+        })(document.documentElement)</script>
+
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:500,500i,600,600i,700,700i|Barlow:300,300i,400,400i,500,500i,600,600i&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://assets.analog.com/css/vendor.css" />
+
+    <meta name="generator" content="DokuWiki"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="resources,eval,user-guides,ad-fmcomms2-ebz,software,no-os-functions"/>
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.analog.com/lib/exe/opensearch.php" title="Analog Devices Wiki"/>
+<link rel="start" href="https://wiki.analog.com/"/>
+<link rel="contents" href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/no-os-functions?do=index" title="Sitemap"/>
+<link rel="manifest" href="https://wiki.analog.com/lib/exe/manifest.php"/>
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="https://wiki.analog.com/feed.php"/>
+<link rel="alternate" type="application/rss+xml" title="Current namespace" href="https://wiki.analog.com/feed.php?mode=list&amp;ns=resources:eval:user-guides:ad-fmcomms2-ebz:software"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="https://wiki.analog.com/_export/xhtml/resources/eval/user-guides/ad-fmcomms2-ebz/software/no-os-functions"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="https://wiki.analog.com/_export/raw/resources/eval/user-guides/ad-fmcomms2-ebz/software/no-os-functions"/>
+<link rel="canonical" href="no-os-functions.html"/>
+<link rel="stylesheet" href="https://wiki.analog.com/lib/exe/css.php?t=analog2014&amp;tseed=a8bf9c6481eafa8ec787aeacbc45453d"/>
+<!--[if gte IE 9]><!-->
+<script >/*<![CDATA[*/var NS='resources:eval:user-guides:ad-fmcomms2-ebz:software';var JSINFO = {"plugin_enforcesummary":{"enforce_summary":1,"default_minoredit":0,"enforce_preview":0},"plugin_folded":{"hide":"hide","reveal":"reveal"},"plugins":{"interwikipaste":{"patterns":"[{\"shortcut\":\"footprints\",\"pattern\":\"http\\\\:\\\\\\\/\\\\\\\/www\\\\.analog\\\\.com\\\\\\\/en\\\\\\\/design\\\\-center\\\\\\\/packaging\\\\-quality\\\\-symbols\\\\-footprints\\\\\\\/symbols\\\\-and\\\\-footprints\\\\\\\/([^ ]+)?\\\\.html\",\"encode\":false},{\"shortcut\":\"staging.kernel.org\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/git\\\\.kernel\\\\.org\\\\\\\/\\\\?p\\\\=linux\\\\\\\/kernel\\\\\\\/git\\\\\\\/gregkh\\\\\\\/staging\\\\.git;a\\\\=blob;hb\\\\=refs\\\\\\\/heads\\\\\\\/staging\\\\-next;f\\\\=([^ ]+)?\",\"encode\":false},{\"shortcut\":\"avnetexpress\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/avnetexpress\\\\.avnet\\\\.com\\\\\\\/store\\\\\\\/em\\\\\\\/EMController\\\\?storeId\\\\=500201&N\\\\=0&action\\\\=products&term\\\\=([^ ]+)?\",\"encode\":false},{\"shortcut\":\"downgit\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/analogdevicesinc\\\\.github\\\\.io\\\\\\\/DownGit\\\\\\\/\\\\#\\\\\\\/home\\\\?url\\\\=https\\\\:\\\\\\\/\\\\\\\/github\\\\.com\\\\\\\/analogdevicesinc\\\\\\\/([^ ]+)?\",\"encode\":false},{\"shortcut\":\"cart\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/shoppingcart\\\\.analog\\\\.com\\\\\\\/AddModel\\\\.aspx\\\\?locale\\\\=en&ACTION\\\\=BUY_BUNDLES&modelNbr\\\\=([^ ]+)?\",\"encode\":false},{\"shortcut\":\"digikey\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/www\\\\.digikey\\\\.com\\\\\\\/scripts\\\\\\\/DkSearch\\\\\\\/dksus\\\\.dll\\\\?KeywordSearch\\\\?Site\\\\=US&amp;Keywords\\\\=([^ ]+)?\",\"encode\":false},{\"shortcut\":\"git.linux.org\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/git\\\\.kernel\\\\.org\\\\\\\/\\\\?p\\\\=linux\\\\\\\/kernel\\\\\\\/git\\\\\\\/torvalds\\\\\\\/linux\\\\.git;a\\\\=blob;hb\\\\=HEAD;f\\\\=([^ ]+)?\",\"encode\":false},{\"shortcut\":\"export\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/www\\\\.analog\\\\.com\\\\\\\/exportclassification\\\\\\\/Search\\\\\\\/Result\\\\?strSearch\\\\=([^ ]+)?\",\"encode\":false},{\"shortcut\":\"ibis\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/www\\\\.analog\\\\.com\\\\\\\/media\\\\\\\/en\\\\\\\/simulation\\\\-models\\\\\\\/ibis\\\\-models\\\\\\\/([^ ]+)?\\\\.ibs\",\"encode\":false},{\"shortcut\":\"bfgit\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/blackfin\\\\.uclinux\\\\.org\\\\\\\/git\\\\\\\/\\\\?p\\\\=([^ ]+)?;a\\\\=blob;f\\\\=([^ ]+)?;hb\\\\=HEAD\",\"encode\":false},{\"shortcut\":\"bfsvn\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/blackfin\\\\.uclinux\\\\.org\\\\\\\/gf\\\\\\\/project\\\\\\\/([^ ]+)?\\\\\\\/scmsvn\\\\\\\/trunk\\\\\\\/([^ ]+)?\",\"encode\":false},{\"shortcut\":\"paypal\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/www\\\\.paypal\\\\.com\\\\\\\/cgi\\\\-bin\\\\\\\/webscr\\\\?cmd\\\\=_xclick&amp;business\\\\=([^ ]+)?\",\"encode\":false},{\"shortcut\":\"arrow\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/www\\\\.arrow\\\\.com\\\\\\\/en\\\\\\\/products\\\\\\\/search\\\\?cat\\\\=&q\\\\=([^ ]+)?&r\\\\=true\",\"encode\":false},{\"shortcut\":\"linux.github\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/github\\\\.com\\\\\\\/analogdevicesinc\\\\\\\/linux\\\\\\\/blob\\\\\\\/([^ ]+)?\\\\\\\/([^ ]+)?\",\"encode\":false},{\"shortcut\":\"bfgit_rev\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/blackfin\\\\.uclinux\\\\.org\\\\\\\/git\\\\\\\/\\\\?p\\\\=([^ ]+)?;a\\\\=blob;f\\\\=([^ ]+)?\",\"encode\":false},{\"shortcut\":\"digilent\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/www\\\\.digilentinc\\\\.com\\\\\\\/Products\\\\\\\/Detail\\\\.cfm\\\\?Prod\\\\=([^ ]+)?\",\"encode\":false},{\"shortcut\":\"reg\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/my\\\\.analog\\\\.com\\\\\\\/en\\\\\\\/app\\\\\\\/registration\\\\\\\/hardware\\\\\\\/([^ ]+)?\",\"encode\":false},{\"shortcut\":\"github\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/github\\\\.com\\\\\\\/analogdevicesinc\\\\\\\/([^ ]+)?\\\\\\\/blob\\\\\\\/([^ ]+)?\",\"encode\":false},{\"shortcut\":\"docs\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/docs\\\\.blackfin\\\\.uclinux\\\\.org\\\\\\\/doku\\\\.php\\\\?id\\\\=([^ ]+)?\",\"encode\":false},{\"shortcut\":\"go\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/www\\\\.google\\\\.com\\\\\\\/search\\\\?q\\\\=([^ ]+)?&amp;btnI\\\\=lucky\",\"encode\":true},{\"shortcut\":\"amazon\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/www\\\\.amazon\\\\.com\\\\\\\/dp\\\\\\\/([^ ]+)?\\\\?tag\\\\=splitbrain\\\\-20\",\"encode\":true},{\"shortcut\":\"amazon.de\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/www\\\\.amazon\\\\.de\\\\\\\/dp\\\\\\\/([^ ]+)?\\\\?tag\\\\=splitbrain\\\\-21\",\"encode\":true},{\"shortcut\":\"mouser\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/mouser\\\\.com\\\\\\\/Search\\\\\\\/Refine\\\\?Keyword\\\\=([^ ]+)?\",\"encode\":false},{\"shortcut\":\"tkt\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/blackfin\\\\.uclinux\\\\.org\\\\\\\/gf\\\\\\\/tracker\\\\\\\/([^ ]+)?\",\"encode\":false},{\"shortcut\":\"repo\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/github\\\\.com\\\\\\\/analogdevicesinc\\\\\\\/([^ ]+)?\",\"encode\":false},{\"shortcut\":\"maxim\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/www\\\\.maximintegrated\\\\.com\\\\\\\/([^ ]+)?\",\"encode\":false},{\"shortcut\":\"wpmeta\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/meta\\\\.wikipedia\\\\.org\\\\\\\/wiki\\\\\\\/([^ ]+)?\",\"encode\":false},{\"shortcut\":\"bf\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/blackfin\\\\.uclinux\\\\.org\\\\\\\/gf\\\\\\\/([^ ]+)?\",\"encode\":false},{\"shortcut\":\"wp\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/en\\\\.wikipedia\\\\.org\\\\\\\/wiki\\\\\\\/([^ ]+)?\",\"encode\":false},{\"shortcut\":\"wpfr\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/fr\\\\.wikipedia\\\\.org\\\\\\\/wiki\\\\\\\/([^ ]+)?\",\"encode\":false},{\"shortcut\":\"wpde\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/de\\\\.wikipedia\\\\.org\\\\\\\/wiki\\\\\\\/([^ ]+)?\",\"encode\":false},{\"shortcut\":\"wpes\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/es\\\\.wikipedia\\\\.org\\\\\\\/wiki\\\\\\\/([^ ]+)?\",\"encode\":false},{\"shortcut\":\"wppl\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/pl\\\\.wikipedia\\\\.org\\\\\\\/wiki\\\\\\\/([^ ]+)?\",\"encode\":false},{\"shortcut\":\"wpjp\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/ja\\\\.wikipedia\\\\.org\\\\\\\/wiki\\\\\\\/([^ ]+)?\",\"encode\":false},{\"shortcut\":\"wpru\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/ru\\\\.wikipedia\\\\.org\\\\\\\/wiki\\\\\\\/([^ ]+)?\",\"encode\":false},{\"shortcut\":\"bfin\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/blackfin\\\\.uclinux\\\\.org\\\\\\\/([^ ]+)?\",\"encode\":false},{\"shortcut\":\"amazon.uk\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/www\\\\.amazon\\\\.co\\\\.uk\\\\\\\/dp\\\\\\\/([^ ]+)?\",\"encode\":true},{\"shortcut\":\"mw\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/www\\\\.mathworks\\\\.com\\\\\\\/([^ ]+)?\",\"encode\":false},{\"shortcut\":\"oreilly\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/www\\\\.oreilly\\\\.com\\\\\\\/catalog\\\\\\\/([^ ]+)?\",\"encode\":false},{\"shortcut\":\"google\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/www\\\\.google\\\\.com\\\\\\\/search\\\\?q\\\\=([^ ]+)?\",\"encode\":false},{\"shortcut\":\"rfc\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/tools\\\\.ietf\\\\.org\\\\\\\/html\\\\\\\/rfc([^ ]+)?\",\"encode\":false},{\"shortcut\":\"google.de\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/www\\\\.google\\\\.de\\\\\\\/search\\\\?q\\\\=([^ ]+)?\",\"encode\":false},{\"shortcut\":\"user\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/ez\\\\.analog\\\\.com\\\\\\\/members\\\\\\\/([^ ]+)?\",\"encode\":false},{\"shortcut\":\"this\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/wiki\\\\.analog\\\\.com\\\\\\\/([^ ]+)?\",\"encode\":false},{\"shortcut\":\"phpfn\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/secure\\\\.php\\\\.net\\\\\\\/([^ ]+)?\",\"encode\":false},{\"shortcut\":\"xilinx\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/www\\\\.xilinx\\\\.com\\\\\\\/([^ ]+)?\",\"encode\":false},{\"shortcut\":\"adi\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/www\\\\.analog\\\\.com\\\\\\\/([^ ]+)?\",\"encode\":false},{\"shortcut\":\"ez\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/ez\\\\.analog\\\\.com\\\\\\\/([^ ]+)?\",\"encode\":false},{\"shortcut\":\"doku\",\"pattern\":\"https\\\\:\\\\\\\/\\\\\\\/www\\\\.dokuwiki\\\\.org\\\\\\\/([^ ]+)?\",\"encode\":false},{\"shortcut\":\"callto\",\"pattern\":\"callto\\\\:\\\\\\\/\\\\\\\/([^ ]+)?\",\"encode\":false},{\"shortcut\":\"man\",\"pattern\":\"http\\\\:\\\\\\\/\\\\\\\/man\\\\.cx\\\\\\\/([^ ]+)?\",\"encode\":false},{\"shortcut\":\"skype\",\"pattern\":\"skype\\\\:([^ ]+)?\",\"encode\":false},{\"shortcut\":\"tel\",\"pattern\":\"tel\\\\:([^ ]+)?\",\"encode\":false}]"},"vshare":{"youtube":"youtube\\.com\/.*[&?]v=([a-z0-9_\\-]+)","vimeo":"vimeo\\.com\\\/(\\d+)","slideshare":"slideshare.*id=(\\d+)","dailymotion":"dailymotion\\.com\/video\/([a-z0-9]+)","archiveorg":"archive\\.org\/(?:embed|details)\/([a-zA-Z0-9_\\-]+)","soundcloud":"soundcloud\\.com\/([\\w-]+\/[\\w-]+)","niconico":"nicovideo\\.jp\/watch\/(sm[0-9]+)","bitchute":"bitchute\\.com\\\/video\\\/([a-zA-Z0-9_\\-]+)","coub":"coub\\.com\\\/view\\\/([a-zA-Z0-9_\\-]+)","odysee":"odysee\\.com\/\\$\/(?:embed|download)\/([-%_?=\/a-zA-Z0-9]+)","youku":"v\\.youku\\.com\/v_show\/id_([0-9A-Za-z=]+)\\.html","bilibili":"bilibili\\.com\\\/video\\\/(BV[0-9A-Za-z]+)","msoffice":"(?:office\\.com.*[&?]videoid=([a-z0-9\\-]+))","msstream":"microsoftstream\\.com\\\/video\\\/([a-f0-9\\-]{36})"}},"id":"resources:eval:user-guides:ad-fmcomms2-ebz:software:no-os-functions","namespace":"resources:eval:user-guides:ad-fmcomms2-ebz:software","ACT":"show","useHeadingNavigation":1,"useHeadingContent":0};
+/*!]]>*/</script>
+<script src="https://wiki.analog.com/lib/exe/jquery.php?tseed=f0349b609f9b91a485af8fd8ecd4aea4" defer="defer">/*<![CDATA[*/
+/*!]]>*/</script>
+<script src="https://wiki.analog.com/lib/exe/js.php?t=analog2014&amp;tseed=a8bf9c6481eafa8ec787aeacbc45453d" defer="defer">/*<![CDATA[*/
+/*!]]>*/</script>
+<!--<![endif]-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://wiki.analog.com/lib/tpl/analog2014/images/favicon.ico" />
+
+    <script src="https://assets.analog.com/js/adi/modernizr.js" type="text/javascript" defer="true"></script>
+
+    <!--[if lt IE 9]>
+    <script src="https://assets.analog.com/js/adi/html5ie.js" type="text/javascript"></script>
+    <![endif]-->
+
+    <script src="https://assets2.analog.com/cms-assets/js/pages/scripts/header-footer.bundle.js" type="text/javascript" defer="true"></script>
+
+    <!-- LIVE tracking -->
+<script src="http://assets.adobedtm.com/bc68b7886092/2a726ea8b70d/launch-a4a6d55de309.min.js" async></script>
+<script src="https://wiki.analog.com/lib/tpl/analog2014/assets/js/adi/global.analytics.js" type="text/javascript"></script>
+</head>
+
+<!-- List of supported themes thm-education, thm-applications, thm-parametric, thm-product, thm-community, thm-design-center, thm-my-analog, thm-support -->
+<body class="home">
+
+
+<!-- wiki_header.html -->
+<header class="adi_header adi_header--wiki tools-header" id="dokuwiki__top" data-ot="true">
+
+    <div class="adi_topbar">
+        <div class="adi_container">
+            <section class="adi_row">
+                <!--  BEGIN:  Internal Links -->
+                <nav class="adi_column adi_pull-left">
+                    <a class="adi_topbar-link adi_topbar-link--analog-home" href="http://www.analog.com/">
+                        <strong>Analog.com</strong>
+                    </a>
+                    <a class="adi_topbar-link adi_topbar-link--engineer-zone" href="http://ez.analog.com/">
+                        <strong class="adi_link--hover-accent">Engineer</strong>
+                        <span>Zone</span>
+                    </a>
+                    <a class="adi_topbar-link adi_topbar-link--analog-dialogue" href="http://www.analog.com/en/analog-dialogue.html">
+                        <strong class="adi_link--hover-accent">Analog</strong>
+                        <span>Dialogue</span>
+                    </a>
+                </nav> <!-- /.adi_column.adi_pull-left -->
+                <!--  END:  Internal Links  -->
+                <!--  BEGIN:  Language Options  -->
+                <nav class="adi_column adi_pull-right">
+                    <a class="adi_topbar-link adi_topbar-link--light adi_topbar-link--myanalog-logo" href="http://my.analog.com/">
+                        <span><img src="http://assets.analog.com/images/myanalog_logo.png" alt="My Analog Login"></span>&nbsp;
+                    </a>
+
+                    <a href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/no-os-functions?do=login&amp;sectok="  class="adi_topbar-link adi_topbar-link--light adi_topbar-link--myanalog-login action login" rel="nofollow" title="Log In"><strong>Log In</strong></a>                </nav> <!-- /.adi_column.adi_pull-right -->
+                <!--  END:  Language Options  -->
+            </section> <!-- /.adi_row -->
+        </div> <!-- /.adi_container -->
+    </div>
+
+
+
+    <div class="adi_container">
+        <section class="adi_row">
+            <!--  BEGIN:  Logo  -->
+            <div class="adi_column adi_logo-container">
+                <a class="adi_logo" href="https://wiki.analog.com/start">
+                    <img src="https://wiki.analog.com/lib/tpl/analog2014//assets/images/adi-logo.svg" alt="Analog Devices Wiki" />
+                </a>
+            </div> <!-- /.adi_column.adi_logo -->
+            <!--  END:  Logo  -->
+            <div class="adi_column adi_page-title-container">
+                <h1 class="adi_page-title">Wiki</h1>
+            </div> <!-- /.adi_column.adi_logo -->
+            <!--  END:  Logo  -->
+        </section> <!-- /.adi_row -->
+    </div> <!-- /.adi_container -->
+
+    <div class="navigation-bar">
+        <div class="content-wrap clearfix">
+            <ul class="list-inline pull-left nav-links clearfix">
+<li class="dropdown"><div class="li"> <a href="https://wiki.analog.com/resources" class="wikilink1" title="resources" data-wiki-id="resources">Resources and Tools</a></div>
+<ul class="submenu">
+<li class="level3"><div class="li"> <a href="https://wiki.analog.com/resources/eval" class="wikilink1" title="resources:eval" data-wiki-id="resources:eval">Evaluation Boards &amp; Kits</a></div>
+</li>
+<li class="level3"><div class="li"> <a href="https://wiki.analog.com/resources/fpga" class="wikilink1" title="resources:fpga" data-wiki-id="resources:fpga">FPGA Reference Designs</a></div>
+</li>
+<li class="level3"><div class="li"> <a href="https://wiki.analog.com/resources/quick-start" class="wikilink1" title="resources:quick-start" data-wiki-id="resources:quick-start">Quick Start Guides</a></div>
+</li>
+<li class="level3"><div class="li"> <a href="https://wiki.analog.com/resources/tools-software/linux-drivers-all" class="wikilink1" title="resources:tools-software:linux-drivers-all" data-wiki-id="resources:tools-software:linux-drivers-all">Linux Software Drivers</a></div>
+</li>
+<li class="level3"><div class="li"> <a href="https://wiki.analog.com/resources/no-os/drivers" class="wikilink1" title="resources:no-os:drivers" data-wiki-id="resources:no-os:drivers">Microcontroller Software Drivers</a></div>
+</li>
+<li class="level3"><div class="li"> <a href="https://wiki.analog.com/resources/tools-software/ace" class="wikilink1" title="resources:tools-software:ace" data-wiki-id="resources:tools-software:ace">ACE Software</a></div>
+</li>
+<li class="level3"><div class="li"> <a href="https://wiki.analog.com/resources/technical-guides" class="wikilink1" title="resources:technical-guides" data-wiki-id="resources:technical-guides">Technical Guides</a></div>
+</li>
+</ul>
+</li>
+<li class="dropdown"><div class="li"> <a href="https://wiki.analog.com/university/courses/tutorials/index" class="wikilink1" title="university:courses:tutorials:index" data-wiki-id="university:courses:tutorials:index">Education Content</a></div>
+<ul class="submenu">
+<li class="level2"><div class="li"> <a href="https://wiki.analog.com/university" class="wikilink1" title="university" data-wiki-id="university">University Program Overview</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="https://wiki.analog.com/university/tools/m1k" class="wikilink1" title="university:tools:m1k" data-wiki-id="university:tools:m1k">ADALM1000 (M1k) Active Learning Module</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="https://wiki.analog.com/university/tools/m2k" class="wikilink1" title="university:tools:m2k" data-wiki-id="university:tools:m2k">ADALM2000 (M2k) Active Learning Module</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="https://wiki.analog.com/university/tools/adalp2000/parts-index" class="wikilink1" title="university:tools:adalp2000:parts-index" data-wiki-id="university:tools:adalp2000:parts-index">ADALP2000 Parts kit for Circuits</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="https://wiki.analog.com/university/tools/pluto" class="wikilink1" title="university:tools:pluto" data-wiki-id="university:tools:pluto">ADALM-PLUTO SDR Active Learning Module</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="https://wiki.analog.com/university#teaching_materials_lab_exercises" class="wikilink1" title="university" data-wiki-id="university">Teaching and Lab Materials</a></div>
+</li>
+</ul>
+</li>
+<li class="dropdown"><div class="li"> <a href="https://wiki.analog.com/wiki/help" class="wikilink1" title="wiki:help" data-wiki-id="wiki:help">Wiki Help</a></div>
+<ul class="submenu">
+<li class="level3"><div class="li"> <a href="https://wiki.analog.com/wiki/help" class="wikilink1" title="wiki:help" data-wiki-id="wiki:help">Help</a></div>
+</li>
+<li class="level3"><div class="li"> <a href="https://wiki.analog.com/wiki/introduction" class="wikilink1" title="wiki:introduction" data-wiki-id="wiki:introduction">About Wiki</a></div>
+</li>
+<li class="level3"><div class="li"> <a href="https://wiki.analog.com/playground/playground" class="wikilink1" title="playground:playground" data-wiki-id="playground:playground">Playground</a></div>
+</li>
+<li class="level3"><div class="li"> <a href="https://wiki.analog.com/start?do=index" class="wikilink1" title="start" data-wiki-id="start">Wiki Site Map</a></div>
+</li>
+</ul>
+</li>
+<li class="dropdown"><div class="li"><a href="#">Wiki Tools</a></div><ul class="submenu"><li class="level2"><a href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/no-os-functions?do=admin"  class="action admin" rel="nofollow" title="Admin">Admin</a></li><li class="level2"><a href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/no-os-functions?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Recent Changes [R]">Recent Changes</a></li><li class="level2"><a href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/no-os-functions?do=media&amp;ns=resources%3Aeval%3Auser-guides%3Aad-fmcomms2-ebz%3Asoftware"  class="action media" rel="nofollow" title="Media Manager">Media Manager</a></li><li class="level2"><a href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/no-os-functions?do=index"  class="action index" accesskey="x" rel="nofollow" title="Sitemap [X]">Sitemap</a></li></ul></li></ul>
+            <ul class="list-inline pull-right searchmenu clearfix">
+                <li class="search-box">
+                    <form action="#" accept-charset="utf-8" class="search clearfix" id="dw__search" method="get" role="search">
+                        <div class="no">
+                            <input type="hidden" name="do" value="search">
+                            <input type="text" autocomplete="off" id="qsearch__in" accesskey="f" name="id" class="edit" placeholder="search wiki">
+                            <button type="submit" value="Search" class="button search-icon" title="Search"></button>
+
+                            <div id="qsearch__out" class="ajax_qsearch JSpopup" style="display: none; white-space: nowrap;">
+                            </div>
+                        </div>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+</header> <!-- /.adi_header -->
+
+
+
+
+
+<!-- Mobile view navigation drawer-->
+<div class="wiki-mob-body">
+    <div class="content" role="main">
+        <div class="col-md-12 wiki-head-row">
+            <div class="row ">
+                <div class="title-nophoto">
+                    <div class="container page-title ">
+                        <h1 data-page-title="true">Analog Devices Wiki</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 floater-menu-container">
+                <div class="row product-row">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-2 wiki-right-panel">
+                                <div class="row">
+                                    <div class=" product-bookmarks" id="affix-nav" name="adi_products_left_navigation">
+                                        <ul class="nav" id="affix-ul">
+                                            <li class="">
+
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#"
+                                                   name='SDR-home_2e322e80-5ec4-4b20-b8b8-71702b590a25'>Analog Devices
+                                                    Wiki
+                                                </a>
+
+                                            </li>
+                                            <!--Wiki-->
+                                            <ul class="list-inline pull-left nav-links clearfix">
+<li class="dropdown"><div class="li Res_tools_parent"> <a href="https://wiki.analog.com/resources" class="wikilink1" title="resources" data-wiki-id="resources">Resources and Tools</a></div>
+<ul class="submenu Res_tools_child">
+<li class="level3"><div class="li"> <a href="https://wiki.analog.com/resources/eval" class="wikilink1" title="resources:eval" data-wiki-id="resources:eval">Evaluation Boards &amp; Kits</a></div>
+</li>
+<li class="level3"><div class="li"> <a href="https://wiki.analog.com/resources/fpga" class="wikilink1" title="resources:fpga" data-wiki-id="resources:fpga">FPGA Reference Designs</a></div>
+</li>
+<li class="level3"><div class="li"> <a href="https://wiki.analog.com/resources/quick-start" class="wikilink1" title="resources:quick-start" data-wiki-id="resources:quick-start">Quick Start Guides</a></div>
+</li>
+<li class="level3"><div class="li"> <a href="https://wiki.analog.com/resources/tools-software/linux-drivers-all" class="wikilink1" title="resources:tools-software:linux-drivers-all" data-wiki-id="resources:tools-software:linux-drivers-all">Linux Software Drivers</a></div>
+</li>
+<li class="level3"><div class="li"> <a href="https://wiki.analog.com/resources/no-os/drivers" class="wikilink1" title="resources:no-os:drivers" data-wiki-id="resources:no-os:drivers">Microcontroller Software Drivers</a></div>
+</li>
+<li class="level3"><div class="li"> <a href="https://wiki.analog.com/resources/tools-software/ace" class="wikilink1" title="resources:tools-software:ace" data-wiki-id="resources:tools-software:ace">ACE Software</a></div>
+</li>
+<li class="level3"><div class="li"> <a href="https://wiki.analog.com/resources/technical-guides" class="wikilink1" title="resources:technical-guides" data-wiki-id="resources:technical-guides">Technical Guides</a></div>
+</li>
+</ul>
+</li>
+<li class="dropdown"><div class="li Res_tools_parent"> <a href="https://wiki.analog.com/university/courses/tutorials/index" class="wikilink1" title="university:courses:tutorials:index" data-wiki-id="university:courses:tutorials:index">Education Content</a></div>
+<ul class="submenu Res_tools_child">
+<li class="level2"><div class="li"> <a href="https://wiki.analog.com/university" class="wikilink1" title="university" data-wiki-id="university">University Program Overview</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="https://wiki.analog.com/university/tools/m1k" class="wikilink1" title="university:tools:m1k" data-wiki-id="university:tools:m1k">ADALM1000 (M1k) Active Learning Module</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="https://wiki.analog.com/university/tools/m2k" class="wikilink1" title="university:tools:m2k" data-wiki-id="university:tools:m2k">ADALM2000 (M2k) Active Learning Module</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="https://wiki.analog.com/university/tools/adalp2000/parts-index" class="wikilink1" title="university:tools:adalp2000:parts-index" data-wiki-id="university:tools:adalp2000:parts-index">ADALP2000 Parts kit for Circuits</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="https://wiki.analog.com/university/tools/pluto" class="wikilink1" title="university:tools:pluto" data-wiki-id="university:tools:pluto">ADALM-PLUTO SDR Active Learning Module</a></div>
+</li>
+<li class="level2"><div class="li"> <a href="https://wiki.analog.com/university#teaching_materials_lab_exercises" class="wikilink1" title="university" data-wiki-id="university">Teaching and Lab Materials</a></div>
+</li>
+</ul>
+</li>
+<li class="dropdown"><div class="li Res_tools_parent"> <a href="https://wiki.analog.com/wiki/help" class="wikilink1" title="wiki:help" data-wiki-id="wiki:help">Wiki Help</a></div>
+<ul class="submenu Res_tools_child">
+<li class="level3"><div class="li"> <a href="https://wiki.analog.com/wiki/help" class="wikilink1" title="wiki:help" data-wiki-id="wiki:help">Help</a></div>
+</li>
+<li class="level3"><div class="li"> <a href="https://wiki.analog.com/wiki/introduction" class="wikilink1" title="wiki:introduction" data-wiki-id="wiki:introduction">About Wiki</a></div>
+</li>
+<li class="level3"><div class="li"> <a href="https://wiki.analog.com/playground/playground" class="wikilink1" title="playground:playground" data-wiki-id="playground:playground">Playground</a></div>
+</li>
+<li class="level3"><div class="li"> <a href="https://wiki.analog.com/start?do=index" class="wikilink1" title="start" data-wiki-id="start">Wiki Site Map</a></div>
+</li>
+</ul>
+</li>
+<li class="dropdown"><div class="li Res_tools_parent"><a href="#">Wiki Tools</a></div><ul class="submenu Res_tools_child"><li class="level2"><a href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/no-os-functions?do=admin"  class="action admin" rel="nofollow" title="Admin">Admin</a></li><li class="level2"><a href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/no-os-functions?do=recent"  class="action recent" accesskey="r" rel="nofollow" title="Recent Changes [R]">Recent Changes</a></li><li class="level2"><a href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/no-os-functions?do=media&amp;ns=resources%3Aeval%3Auser-guides%3Aad-fmcomms2-ebz%3Asoftware"  class="action media" rel="nofollow" title="Media Manager">Media Manager</a></li><li class="level2"><a href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/no-os-functions?do=index"  class="action index" accesskey="x" rel="nofollow" title="Sitemap [X]">Sitemap</a></li></ul></li></ul>                                            <!--Wiki-->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="special-content">
+            <div class="accordion-group language-footer-block">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#English">English<span
+                            class="glyphicon  pull-right glyphicon-chevron-down visible-phone"></span>
+                    </a>
+                </div>
+                <div id="English" class="accordion-body collapse">
+                    <div class="accordion-inner language-footer">
+                        <a href="http://www.analog.com/en/landing-pages/001/sdr/sdr-get-started.html">
+                            <img data-image-source="//assets.analog.com/images/language_en.jpg" class="mobile-images"
+                                 width="100%" alt="English"/></a>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-group language-footer-block">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#简体中文">简体中文<span
+                            class="glyphicon  pull-right glyphicon-chevron-down visible-phone"></span>
+                    </a>
+                </div>
+                <div id="简体中文" class="accordion-body collapse">
+                    <div class="accordion-inner language-footer">
+                        <a href="http://www.analog.com/cn/landing-pages/001/sdr/sdr-get-started.html">
+                            <img data-image-source="//assets.analog.com/images/language_cn.jpg" class="mobile-images"
+                                 width="100%" alt="简体中文"/></a>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-group language-footer-block">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#日本語">日本語<span
+                            class="glyphicon  pull-right glyphicon-chevron-down visible-phone"></span>
+                    </a>
+                </div>
+                <div id="日本語" class="accordion-body collapse">
+                    <div class="accordion-inner language-footer">
+                        <a href="http://www.analog.com/jp/landing-pages/001/sdr/sdr-get-started.html">
+                            <img data-image-source="//assets.analog.com/images/language_jp.jpg" class="mobile-images"
+                                 width="100%" alt="日本語"/></a>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-group language-footer-block">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#Руccкий">Руccкий<span
+                            class="glyphicon  pull-right glyphicon-chevron-down visible-phone"></span>
+                    </a>
+                </div>
+                <div id="Руccкий" class="accordion-body collapse">
+                    <div class="accordion-inner language-footer">
+                        <a href="http://www.analog.com/ru/landing-pages/001/sdr/sdr-get-started.html">
+                            <img data-image-source="//assets.analog.com/images/language_ru.jpg" class="mobile-images"
+                                 width="100%" alt="Руccкий"/></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Mobile view navigation drawer-->
+
+<!-- /tpl_header.php -->
+
+
+
+<div id="dokuwiki__site" role="main" class="main-body content">
+    <div class="site dokuwiki mode_show tpl_analog2014   ">
+        <div class="container">
+
+            <!-- ********** CONTENT ********** -->
+            <div id="dokuwiki__content">
+                <div class="pad group">
+
+                    <div class="page group">
+                        
+                                                <!-- wikipage start -->
+                        <div class="approval approved_yes"><span class="approval_approved">This version (<span class="approval_date">13 Jul 2018 17:31</span>) was <em>approved</em> by <a href="https://ez.analog.com/members/DragosB" class=" interwiki iw_user">Dragos Bogdan</a>.</span><span class="approval_previous">The <a href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/no-os-functions?rev=1531490025">Previously approved version</a> (13 Jul 2018 15:53) is available.<a href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/no-os-functions?do=diff&amp;rev2[0]=1531490025&amp;rev2[1]=1531495897&amp;difftype=sidebyside" class="approved_diff_link"><img src="https://wiki.analog.com/lib/images/diff.png" class="approved_diff_link" alt="Diff" /></a></span></div><!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">Table of Contents</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#ad9361_no-os_software">AD9361 No-OS Software</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#introduction">Introduction</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#ad9361_no-os_api">AD9361 No-OS API</a></div></li>
+<li class="level3"><div class="li"><a href="#ad9361_doxygen_documentation">AD9361 Doxygen Documentation</a></div></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+
+<h1 class="sectionedit1" id="ad9361_no-os_software">AD9361 No-OS Software</h1>
+<div class="level1">
+
+</div>
+
+<h2 class="sectionedit2" id="introduction">Introduction</h2>
+<div class="level2">
+
+<p>
+This document describes the No-<abbr title="Operating System">OS</abbr> software used to control the AD9361 part.
+</p>
+
+</div>
+
+<h3 class="sectionedit3" id="ad9361_no-os_api">AD9361 No-OS API</h3>
+<div class="level3">
+
+<p>
+An <abbr title="Application Programming Interface">API</abbr> is available to be used on systems without <abbr title="Operating System">OS</abbr> to interact with the AD9361 and provides all the necessary functions to control it.
+</p>
+
+<p>
+Below is presented a short description of all the functions provided in the <abbr title="Application Programming Interface">API</abbr>:
+</p>
+<div class="table sectionedit4"><table class="inline" style="min-width: 0px; width: 100%;">
+<col style="width: 40%" /><col style="width: 60%" />
+	<thead>
+	<tr class="row0">
+		<th class="col0 centeralign" colspan="2">  Device Global Settings  </th>
+	</tr>
+	</thead>
+	<tr class="row1">
+		<td class="col0"><pre class="code c"><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>ad9361_init
+<span class="br0">&#40;</span>AD9361_InitParam <span class="sy0">*</span>init_param<span class="br0">&#41;</span></pre>
+</td><td class="col1">Initializes the FMCOMMS2 board. Receives as parameter a structure that contains the AD9361 initial parameters. Returns a structure that contains the AD9361 current state in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_set_en_state_machine_mode
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint32_t</span> mode<span class="br0">&#41;</span></pre>
+</td><td class="col1">Sets the Enable State Machine (ENSM) mode. Receives as parameters a structure that contains the AD9361 current state and the ENSM mode (SLEEP, ALERT, FDD, PINCTRL). Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_get_en_state_machine_mode
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint32_t</span> <span class="sy0">*</span>mode<span class="br0">&#41;</span></pre>
+</td><td class="col1">Gets the Enable State Machine (ENSM) mode. Receives as parameters a structure that contains the AD9361 current state and a variable to store the selected ENSM mode. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row4">
+		<th class="col0 centeralign" colspan="2">  Receive Chain Settings  </th>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_set_rx_rf_gain
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint8_t</span> ch<span class="sy0">,</span> <span class="kw4">int32_t</span> gain_db<span class="br0">&#41;</span></pre>
+</td><td class="col1">Sets the receive RF gain for the selected channel. Receives as parameters a structure that contains the AD9361 current state, the desired channel number (0, 1) and the RF gain. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_get_rx_rf_gain
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint8_t</span> ch<span class="sy0">,</span> <span class="kw4">int32_t</span> <span class="sy0">*</span>gain_db<span class="br0">&#41;</span></pre>
+</td><td class="col1">Gets current receive RF gain for the selected channel. Receives as parameters a structure that contains the AD9361 current state, the desired channel (0, 1) and a variable to store the RF gain. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_set_rx_rf_bandwidth
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint32_t</span> bandwidth_hz<span class="br0">&#41;</span></pre>
+</td><td class="col1">Sets the RF bandwidth. Receives as parameters a structure that contains the AD9361 current state and the desired bandwidth in Hz. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_get_rx_rf_bandwidth
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint32_t</span> <span class="sy0">*</span>bandwidth_hz<span class="br0">&#41;</span></pre>
+</td><td class="col1">Gets current RF bandwidth. Receives as parameters a structure that contains the AD9361 current state and a variable to store the bandwidth value in Hz. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_set_rx_sampling_freq
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint32_t</span> sampling_freq_hz<span class="br0">&#41;</span></pre>
+</td><td class="col1">Sets the sampling frequency. Receives as parameters a structure that contains the AD9361 current state and the desired sampling frequency in Hz. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_get_rx_sampling_freq
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint32_t</span> <span class="sy0">*</span>sampling_freq_hz<span class="br0">&#41;</span></pre>
+</td><td class="col1">Gets current sampling frequency. Receives as parameters a structure that contains the AD9361 current state and a variable to store the sampling frequency value in Hz. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_set_rx_lo_freq
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint64_t</span> lo_freq_hz<span class="br0">&#41;</span></pre>
+</td><td class="col1">Sets the LO frequency. Receives as parameters a structure that contains the AD9361 current state and the desired LO frequency in Hz. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_get_rx_lo_freq
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint64_t</span> <span class="sy0">*</span>lo_freq_hz<span class="br0">&#41;</span></pre>
+</td><td class="col1">Gets current LO frequency. Receives as parameters a structure that contains the AD9361 current state and a variable to store the LO frequency value in Hz. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_set_rx_lo_int_ext
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint8_t</span> int_ext<span class="br0">&#41;</span></pre>
+</td><td class="col1"> * Switches between internal and external LO. Receives as parameters a structure that contains the AD9361 current state and the desired LO source (INT_LO or EXT_LO). Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row14">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_get_rx_rssi
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint8_t</span> ch<span class="sy0">,</span> <span class="kw4">struct</span> rf_rssi <span class="sy0">*</span>rssi<span class="br0">&#41;</span></pre>
+</td><td class="col1">Gets the RSSI for the selected channel. Receives as parameters a structure that contains the AD9361 current state, the desired channel (0, 1) and a variable to store the RSSI. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row15">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_set_rx_gain_control_mode
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint8_t</span> ch<span class="sy0">,</span> <span class="kw4">uint8_t</span> gc_mode<span class="br0">&#41;</span></pre>
+</td><td class="col1">Sets the gain control mode for the selected channel. Receives as parameters a structure that contains the AD9361 current state, the desired channel (0, 1) and the gain control mode (GAIN_MGC, GAIN_FASTATTACK_AGC, GAIN_SLOWATTACK_AGC, GAIN_HYBRID_AGC). Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row16">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_get_rx_gain_control_mode
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint8_t</span> ch<span class="sy0">,</span> <span class="kw4">uint8_t</span> <span class="sy0">*</span>gc_mode<span class="br0">&#41;</span></pre>
+</td><td class="col1">Gets the gain control mode for the selected channel. Receives as parameters a structure that contains the AD9361 current state, the desired channel (0, 1) and a variable to store the gain control mode. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row17">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_set_rx_fir_config
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> AD9361_RXFIRConfig fir_cfg<span class="br0">&#41;</span></pre>
+</td><td class="col1">Sets the FIR filter configuration. Receives as parameters a structure that contains the AD9361 current state and the FIR filter configuration. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row18">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_get_rx_fir_config
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint8_t</span> rx_ch<span class="sy0">,</span> AD9361_RXFIRConfig <span class="sy0">*</span>fir_cfg<span class="br0">&#41;</span></pre>
+</td><td class="col1">Gets the FIR filter configuration. Receives as parameters a structure that contains the AD9361 current state and a variable to store the FIR filter configuration. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row19">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_set_rx_fir_en_dis
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint8_t</span> en_dis<span class="br0">&#41;</span></pre>
+</td><td class="col1">Enables/disables the FIR filter. Receives as parameters a structure that contains the AD9361 current state and the option (ENABLE, DISABLE). Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row20">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_get_rx_fir_en_dis
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint8_t</span> <span class="sy0">*</span>en_dis<span class="br0">&#41;</span></pre>
+</td><td class="col1">Gets the status of the FIR filter. Receives as parameters a structure that contains the AD9361 current state and the enable/disable status buffer. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row21">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_set_rx_rfdc_track_en_dis
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint8_t</span> en_dis<span class="br0">&#41;</span></pre>
+</td><td class="col1">Enables/disables the RX RFDC Tracking. Receives as parameters a structure that contains the AD9361 current state and the option (ENABLE, DISABLE). Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row22">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_get_rx_rfdc_track_en_dis
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint8_t</span> <span class="sy0">*</span>en_dis<span class="br0">&#41;</span></pre>
+</td><td class="col1">Gets the status of the RX RFDC Tracking. Receives as parameters a structure that contains the AD9361 current state and the enable/disable status buffer. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row23">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_set_rx_bbdc_track_en_dis
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint8_t</span> en_dis<span class="br0">&#41;</span></pre>
+</td><td class="col1">Enables/disables the RX BasebandDC Tracking. Receives as parameters a structure that contains the AD9361 current state and the option (ENABLE, DISABLE). Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row24">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_get_rx_bbdc_track_en_dis
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint8_t</span> <span class="sy0">*</span>en_dis<span class="br0">&#41;</span></pre>
+</td><td class="col1">Gets the status of the RX BasebandDC Tracking. Receives as parameters a structure that contains the AD9361 current state and the enable/disable status buffer. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row25">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_set_rx_quad_track_en_dis
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint8_t</span> en_dis<span class="br0">&#41;</span></pre>
+</td><td class="col1">Enables/disables the RX Quadrature Tracking. Receives as parameters a structure that contains the AD9361 current state and the option (ENABLE, DISABLE). Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row26">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_get_rx_quad_track_en_dis
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint8_t</span> <span class="sy0">*</span>en_dis<span class="br0">&#41;</span></pre>
+</td><td class="col1">Gets the status of the RX Quadrature Tracking. Receives as parameters a structure that contains the AD9361 current state and the enable/disable status buffer. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row27">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_set_rx_rf_port_input
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint32_t</span> mode<span class="br0">&#41;</span></pre>
+</td><td class="col1">Sets the RX RF input port. Receives as parameters a structure that contains the AD9361 current state and the desired RF input port (A_BALANCED, B_BALANCED, C_BALANCED, A_N, A_P, B_N, B_P, C_N, C_P, TX_MON1, TX_MON2 or TX_MON1_2). Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row28">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_get_rx_rf_port_input
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint32_t</span> <span class="sy0">*</span>mode<span class="br0">&#41;</span></pre>
+</td><td class="col1">Gets the RX RF input port. Receives as parameters a structure that contains the AD9361 current state and a variable to store the RF input port. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row29">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_rx_fastlock_store
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint32_t</span> profile<span class="br0">&#41;</span></pre>
+</td><td class="col1">Stores RX fastlock profile. To create a profile tune the synthesizer (ad9361_set_rx_lo_freq()) and then call this function specifying the target profile number. Receives as parameters a structure that contains the AD9361 current state and the profile number (0 - 7). Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row30">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_rx_fastlock_recall
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint32_t</span> profile<span class="br0">&#41;</span></pre>
+</td><td class="col1">Recalls specified RX fastlock profile. When in fastlock pin select mode (init_param→rx_fastlock_pincontrol_enable), the function needs to be called before then the pin-control can be used. Receives as parameters a structure that contains the AD9361 current state and the profile number (0 - 7). Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row31">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_rx_fastlock_load
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint32_t</span> profile<span class="sy0">,</span> <span class="kw4">uint8_t</span> <span class="sy0">*</span>values<span class="br0">&#41;</span></pre>
+</td><td class="col1">Loads RX fastlock profile. A previously saved profile can be loaded in any of the 8 available slots. Receives as parameters a structure that contains the AD9361 current state, the profile number (0 - 7) and the fastlock profile program data. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row32">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_rx_fastlock_save
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint32_t</span> profile<span class="sy0">,</span> <span class="kw4">uint8_t</span> <span class="sy0">*</span>values<span class="br0">&#41;</span></pre>
+</td><td class="col1"> Saves RX fastlock profile. In order to use more than 8 Profiles, an existing profile can be read back and stored by the user application. Receives as parameters a structure that contains the AD9361 current state, the profile number (0 - 7) and the fastlock profile program data. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row33">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_rx_lo_powerdown
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint8_t</span> option<span class="br0">&#41;</span></pre>
+</td><td class="col1">Powers down the RX Local Oscillator. Receives as parameters a structure that contains the AD9361 current state and the power down option (ON, OFF). Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row34">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_get_rx_lo_power
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint8_t</span> <span class="sy0">*</span>option<span class="br0">&#41;</span></pre>
+</td><td class="col1">Gets the RX Local Oscillator power status. Receives as parameters a structure that contains the AD9361 current state and a variable to store the power status. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row35">
+		<th class="col0 centeralign" colspan="2">  Transmit Chain Settings  </th>
+	</tr>
+	<tr class="row36">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_set_tx_attenuation
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span>
+ <span class="kw4">uint8_t</span> ch<span class="sy0">,</span>
+ <span class="kw4">uint32_t</span> attenuation_mdb<span class="br0">&#41;</span></pre>
+</td><td class="col1">Sets the transmit attenuation for the selected channel. Receives as parameters a structure that contains the AD9361 current state, the desired channel number (0, 1) and the attenuation in <abbr title="decibel">dB</abbr>. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row37">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_get_tx_attenuation
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span>
+ <span class="kw4">uint8_t</span> ch<span class="sy0">,</span>
+ <span class="kw4">uint32_t</span> <span class="sy0">*</span>attenuation_mdb<span class="br0">&#41;</span></pre>
+</td><td class="col1">Gets current transmit attenuation for the selected channel. Receives as parameters a structure that contains the AD9361 current state, the desired channel (0, 1) and a variable to store the attenuation value in <abbr title="decibel">dB</abbr>. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row38">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_set_tx_rf_bandwidth
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint32_t</span>  bandwidth_hz<span class="br0">&#41;</span></pre>
+</td><td class="col1">Sets the RF bandwidth. Receives as parameters a structure that contains the AD9361 current state and the desired bandwidth in Hz. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row39">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_get_tx_rf_bandwidth
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint32_t</span> <span class="sy0">*</span>bandwidth_hz<span class="br0">&#41;</span></pre>
+</td><td class="col1">Gets current RF bandwidth. Receives as parameters a structure that contains the AD9361 current state and a variable to store the bandwidth value in Hz. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row40">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_set_tx_sampling_freq
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint32_t</span> sampling_freq_hz<span class="br0">&#41;</span></pre>
+</td><td class="col1">Sets the sampling frequency. Receives as parameters a structure that contains the AD9361 current state and the desired sampling frequency in Hz. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row41">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_get_tx_sampling_freq
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint32_t</span> <span class="sy0">*</span>sampling_freq_hz<span class="br0">&#41;</span></pre>
+</td><td class="col1">Gets current sampling frequency. Receives as parameters a structure that contains the AD9361 current state and a variable to store the sampling frequency value in Hz. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row42">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_set_tx_lo_freq
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint64_t</span> lo_freq_hz<span class="br0">&#41;</span></pre>
+</td><td class="col1">Sets the LO frequency. Receives as parameters a structure that contains the AD9361 current state and the desired LO frequency in Hz. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row43">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_get_tx_lo_freq
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint64_t</span> <span class="sy0">*</span>lo_freq_hz<span class="br0">&#41;</span></pre>
+</td><td class="col1">Gets current LO frequency. Receives as parameters a structure that contains the AD9361 current state and a variable to store the LO frequency value in Hz. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row44">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_set_tx_lo_int_ext
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint8_t</span> int_ext<span class="br0">&#41;</span></pre>
+</td><td class="col1">Switches between internal and external LO. Receives as parameters a structure that contains the AD9361 current state and the desired LO source (INT_LO or EXT_LO). Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row45">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_set_tx_fir_config
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> AD9361_TXFIRConfig fir_cfg<span class="br0">&#41;</span></pre>
+</td><td class="col1">Sets the FIR filter configuration. Receives as parameters a structure that contains the AD9361 current state and the FIR filter configuration. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row46">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_get_tx_fir_config<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint8_t</span> tx_ch<span class="sy0">,</span> AD9361_TXFIRConfig <span class="sy0">*</span>fir_cfg<span class="br0">&#41;</span></pre>
+</td><td class="col1">Gets the FIR filter configuration. Receives as parameters a structure that contains the AD9361 current state and a variable to store the FIR filter configuration. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row47">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_set_tx_fir_en_dis
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint8_t</span> en_dis<span class="br0">&#41;</span></pre>
+</td><td class="col1">Enables/disables the FIR filter. Receives as parameters a structure that contains the AD9361 current state and the option (ENABLE, DISABLE). Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row48">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_get_tx_fir_en_dis
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint8_t</span> <span class="sy0">*</span>en_dis<span class="br0">&#41;</span></pre>
+</td><td class="col1">Gets the status of the FIR filter. Receives as parameters a structure that contains the AD9361 current state and the enable/disable status buffer. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row49">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_get_tx_rssi
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint8_t</span> ch<span class="sy0">,</span> <span class="kw4">uint32_t</span> <span class="sy0">*</span>rssi_db_x_1000<span class="br0">&#41;</span></pre>
+</td><td class="col1">Gets the TX RSSI for the selected channel. Receives as parameters a structure that contains the AD9361 current state, the desired channel (0, 1) and a variable to store the RSSI. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row50">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_set_tx_rf_port_output
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint32_t</span> mode<span class="br0">&#41;</span></pre>
+</td><td class="col1">Sets the TX RF output port. Receives as parameters a structure that contains the AD9361 current state and the desired RF output port (TXA or TXB). Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row51">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_get_tx_rf_port_output
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint32_t</span> <span class="sy0">*</span>mode<span class="br0">&#41;</span></pre>
+</td><td class="col1">Gets the TX RF output port. Receives as parameters a structure that contains the AD9361 current state and a variable to store the RF output port. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row52">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_set_tx_auto_cal_en_dis
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint8_t</span> en_dis<span class="br0">&#41;</span></pre>
+</td><td class="col1">Enables/disables the auto calibration. Receives as parameters a structure that contains the AD9361 current state and the option (ENABLE, DISABLE). Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row53">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_get_tx_auto_cal_en_dis
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint8_t</span> <span class="sy0">*</span>en_dis<span class="br0">&#41;</span></pre>
+</td><td class="col1">Gets the status of the auto calibration flag. Receives as parameters a structure that contains the AD9361 current state and a variable to store the option. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row54">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_tx_fastlock_store
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint32_t</span> profile<span class="br0">&#41;</span></pre>
+</td><td class="col1">Stores TX fastlock profile. To create a profile tune the synthesizer (ad9361_set_tx_lo_freq()) and then call this function specifying the target profile number. Receives as parameters a structure that contains the AD9361 current state and the profile number (0 - 7). Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row55">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_tx_fastlock_recall
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint32_t</span> profile<span class="br0">&#41;</span></pre>
+</td><td class="col1">Recalls specified TX fastlock profile. When in fastlock pin select mode (init_param→tx_fastlock_pincontrol_enable), the function needs to be called before then the pin-control can be used. Receives as parameters a structure that contains the AD9361 current state and the profile number (0 - 7). Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row56">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_tx_fastlock_load
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint32_t</span> profile<span class="sy0">,</span> <span class="kw4">uint8_t</span> <span class="sy0">*</span>values<span class="br0">&#41;</span></pre>
+</td><td class="col1">Loads TX fastlock profile. A previously saved profile can be loaded in any of the 8 available slots. Receives as parameters a structure that contains the AD9361 current state, the profile number (0 - 7) and the fastlock profile program data. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row57">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_tx_fastlock_save
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint32_t</span> profile<span class="sy0">,</span> <span class="kw4">uint8_t</span> <span class="sy0">*</span>values<span class="br0">&#41;</span></pre>
+</td><td class="col1"> Saves TX fastlock profile. In order to use more than 8 Profiles, an existing profile can be read back and stored by the user application. Receives as parameters a structure that contains the AD9361 current state, the profile number (0 - 7) and the fastlock profile program data. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row58">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_tx_lo_powerdown
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint8_t</span> option<span class="br0">&#41;</span></pre>
+</td><td class="col1">Powers down the TX Local Oscillator. Receives as parameters a structure that contains the AD9361 current state and the power down option (ON, OFF). Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row59">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_get_tx_lo_power
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint8_t</span> <span class="sy0">*</span>option<span class="br0">&#41;</span></pre>
+</td><td class="col1">Gets the TX Local Oscillator power status. Receives as parameters a structure that contains the AD9361 current state and a variable to store the power status. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row60">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_set_trx_path_clks
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span>
+ <span class="kw4">uint32_t</span> <span class="sy0">*</span>rx_path_clks<span class="sy0">,</span>
+ <span class="kw4">uint32_t</span> <span class="sy0">*</span>tx_path_clks<span class="br0">&#41;</span></pre>
+</td><td class="col1">Sets the RX and TX path rates. Receives as parameters a structure that contains the AD9361 current state, the RX and the TX clocks. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row61">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_get_trx_path_clks
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span>
+ <span class="kw4">uint32_t</span> <span class="sy0">*</span>rx_path_clks<span class="sy0">,</span>
+ <span class="kw4">uint32_t</span> <span class="sy0">*</span>tx_path_clks<span class="br0">&#41;</span></pre>
+</td><td class="col1">Gets the RX and TX path rates. Receives as parameters a structure that contains the AD9361 current state, the RX and the TX buffers to store the clock frequencies. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row62">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_set_no_ch_mode
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint8_t</span> no_ch_mode<span class="br0">&#41;</span></pre>
+</td><td class="col1">Set the number of channels mode. Receives as parameters a structure that contains the AD9361 current state and the number of channels mode (1 - 1&times;1; 2 - 2&times;2). Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row63">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_do_mcs
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy_master<span class="sy0">,</span> <span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy_slave<span class="br0">&#41;</span></pre>
+</td><td class="col1">Does multi chip synchronization. Receives as parameters a structure that contains the Master AD9361 current state and a structure that contains the Slave AD9361 current state. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row64">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_set_trx_fir_en_dis
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint8_t</span> en_dis<span class="br0">&#41;</span></pre>
+</td><td class="col1">Enables/disables the TRX FIR filters. Receives as parameters a structure that contains the AD9361 current state and the option (ENABLE or DISABLE). Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row65">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_set_trx_rate_gov
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint32_t</span> rate_gov<span class="br0">&#41;</span></pre>
+</td><td class="col1">Sets the OSR rate governor. Receives as parameters a structure that contains the AD9361 current state and the OSR rate governor (HIGHEST_OSR or NOMINAL_OSR). Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row66">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_get_trx_rate_gov
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint32_t</span> <span class="sy0">*</span>rate_gov<span class="br0">&#41;</span></pre>
+</td><td class="col1">Gets the OSR rate governor. Receives as parameters a structure that contains the AD9361 current state and a variable to store the OSR rate governor. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row67">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_do_calib
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint32_t</span> cal<span class="sy0">,</span> <span class="kw4">int32_t</span> arg<span class="br0">&#41;</span></pre>
+</td><td class="col1">Performs the selected calibration. Receives as parameters a structure that contains the AD9361 current state, the desired calibration (TX_QUAD_CAL, RFDC_CAL) and for TX_QUAD_CAL - the optional RX phase value overwrite (set to zero). Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row68">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_trx_load_enable_fir
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> AD9361_RXFIRConfig rx_fir_cfg<span class="sy0">,</span> AD9361_TXFIRConfig tx_fir_cfg<span class="br0">&#41;</span></pre>
+</td><td class="col1">Loads and enables TRX FIR filters configurations. Receives as parameters a structure that contains the AD9361 current state, the RX FIR filter configuration and the TX FIR filter configuration. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row69">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_do_dcxo_tune_coarse
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint32_t</span> coarse<span class="br0">&#41;</span></pre>
+</td><td class="col1">Does DCXO coarse tuning. Receives as parameters a structure that contains the AD9361 current state and the DCXO coarse tuning value. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row70">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_do_dcxo_tune_fine
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">uint32_t</span> fine<span class="br0">&#41;</span></pre>
+</td><td class="col1">Does DCXO fine tuning. Receives as parameters a structure that contains the AD9361 current state and the DCXO fine tuning value. Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+	<tr class="row71">
+		<td class="col0"><pre class="code c"><span class="kw4">int32_t</span> ad9361_get_temperature
+<span class="br0">&#40;</span><span class="kw4">struct</span> ad9361_rf_phy <span class="sy0">*</span>phy<span class="sy0">,</span> <span class="kw4">int32_t</span> <span class="sy0">*</span>temp<span class="br0">&#41;</span></pre>
+</td><td class="col1">Gets the temperature. Receives as parameters a structure that contains the AD9361 current state and a variable to store the temperature (degrees C * 1000). Returns 0 in case of success, negative error code otherwise.</td>
+	</tr>
+</table></div>
+
+<p>
+<strong>Notes:</strong>
+1. Below is defined the AD9361_ParamInit structure used by the ad9361_init() function:
+</p>
+
+<p>
+For more details on each of the struct members please see here: <a href="https://wiki.analog.com/resources/tools-software/linux-drivers/iio-transceiver/ad9361-customization" class="wikilink1" title="resources:tools-software:linux-drivers:iio-transceiver:ad9361-customization" data-wiki-id="resources:tools-software:linux-drivers:iio-transceiver:ad9361-customization">AD9361 Device Driver Customization</a>
+</p>
+<pre class="code C">	<span class="kw4">typedef</span> <span class="kw4">struct</span>
+	<span class="br0">&#123;</span>
+		<span class="coMULTI">/* Identification number */</span>
+		<span class="kw4">uint8_t</span>		id_no<span class="sy0">;</span>
+		<span class="coMULTI">/* Reference Clock */</span>
+		<span class="kw4">uint32_t</span>	reference_clk_rate<span class="sy0">;</span>
+		<span class="coMULTI">/* Base Configuration */</span>
+		<span class="kw4">uint8_t</span>		two_rx_two_tx_mode_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,2rx-2tx-mode-enable */</span>
+		<span class="kw4">uint8_t</span>		frequency_division_duplex_mode_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,frequency-division-duplex-mode-enable */</span>
+		<span class="kw4">uint8_t</span>		tdd_use_dual_synth_mode_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,tdd-use-dual-synth-mode-enable */</span>
+		<span class="kw4">uint8_t</span>		tdd_skip_vco_cal_enable<span class="sy0">;</span>		<span class="coMULTI">/* adi,tdd-skip-vco-cal-enable */</span>
+		<span class="kw4">uint32_t</span>	tx_fastlock_delay_ns<span class="sy0">;</span>	<span class="coMULTI">/* adi,tx-fastlock-delay-ns */</span>
+		<span class="kw4">uint32_t</span>	rx_fastlock_delay_ns<span class="sy0">;</span>	<span class="coMULTI">/* adi,rx-fastlock-delay-ns */</span>
+		<span class="kw4">uint8_t</span>		rx_fastlock_pincontrol_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,rx-fastlock-pincontrol-enable */</span>
+		<span class="kw4">uint8_t</span>		tx_fastlock_pincontrol_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,tx-fastlock-pincontrol-enable */</span>
+		<span class="kw4">uint8_t</span>		external_rx_lo_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,external-rx-lo-enable */</span>
+		<span class="kw4">uint8_t</span>		external_tx_lo_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,external-tx-lo-enable */</span>
+		<span class="kw4">uint8_t</span>		dc_offset_tracking_update_event_mask<span class="sy0">;</span>	<span class="coMULTI">/* adi,dc-offset-tracking-update-event-mask */</span>
+		<span class="kw4">uint8_t</span>		dc_offset_attenuation_high_range<span class="sy0">;</span>	<span class="coMULTI">/* adi,dc-offset-attenuation-high-range */</span>
+		<span class="kw4">uint8_t</span>		dc_offset_attenuation_low_range<span class="sy0">;</span>	<span class="coMULTI">/* adi,dc-offset-attenuation-low-range */</span>
+		<span class="kw4">uint8_t</span>		dc_offset_count_high_range<span class="sy0">;</span>			<span class="coMULTI">/* adi,dc-offset-count-high-range */</span>
+		<span class="kw4">uint8_t</span>		dc_offset_count_low_range<span class="sy0">;</span>			<span class="coMULTI">/* adi,dc-offset-count-low-range */</span>
+		<span class="kw4">uint8_t</span>		tdd_use_fdd_vco_tables_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,tdd-use-fdd-vco-tables-enable */</span>
+		<span class="kw4">uint8_t</span>		split_gain_table_mode_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,split-gain-table-mode-enable */</span>
+		<span class="kw4">uint32_t</span>	trx_synthesizer_target_fref_overwrite_hz<span class="sy0">;</span>	<span class="coMULTI">/* adi,trx-synthesizer-target-fref-overwrite-hz */</span>
+		<span class="kw4">uint8_t</span>		qec_tracking_slow_mode_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,qec-tracking-slow-mode-enable */</span>
+		<span class="coMULTI">/* ENSM Control */</span>
+		<span class="kw4">uint8_t</span>		ensm_enable_pin_pulse_mode_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,ensm-enable-pin-pulse-mode-enable */</span>
+		<span class="kw4">uint8_t</span>		ensm_enable_txnrx_control_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,ensm-enable-txnrx-control-enable */</span>
+		<span class="coMULTI">/* LO Control */</span>
+		<span class="kw4">uint64_t</span>	rx_synthesizer_frequency_hz<span class="sy0">;</span>	<span class="coMULTI">/* adi,rx-synthesizer-frequency-hz */</span>
+		<span class="kw4">uint64_t</span>	tx_synthesizer_frequency_hz<span class="sy0">;</span>	<span class="coMULTI">/* adi,tx-synthesizer-frequency-hz */</span>
+		<span class="coMULTI">/* Rate &amp; BW Control */</span>
+		<span class="kw4">uint32_t</span>	rx_path_clock_frequencies<span class="br0">&#91;</span><span class="nu0">6</span><span class="br0">&#93;</span><span class="sy0">;</span>	<span class="coMULTI">/* adi,rx-path-clock-frequencies */</span>
+		<span class="kw4">uint32_t</span>	tx_path_clock_frequencies<span class="br0">&#91;</span><span class="nu0">6</span><span class="br0">&#93;</span><span class="sy0">;</span>	<span class="coMULTI">/* adi,tx-path-clock-frequencies */</span>
+		<span class="kw4">uint32_t</span>	rf_rx_bandwidth_hz<span class="sy0">;</span>	<span class="coMULTI">/* adi,rf-rx-bandwidth-hz */</span>
+		<span class="kw4">uint32_t</span>	rf_tx_bandwidth_hz<span class="sy0">;</span>	<span class="coMULTI">/* adi,rf-tx-bandwidth-hz */</span>
+		<span class="coMULTI">/* RF Port Control */</span>
+		<span class="kw4">uint32_t</span>	rx_rf_port_input_select<span class="sy0">;</span>	<span class="coMULTI">/* adi,rx-rf-port-input-select */</span>
+		<span class="kw4">uint32_t</span>	tx_rf_port_input_select<span class="sy0">;</span>	<span class="coMULTI">/* adi,tx-rf-port-input-select */</span>
+		<span class="coMULTI">/* TX Attenuation Control */</span>
+		<span class="kw4">int32_t</span>		tx_attenuation_mdB<span class="sy0">;</span>	<span class="coMULTI">/* adi,tx-attenuation-mdB */</span>
+		<span class="kw4">uint8_t</span>		update_tx_gain_in_alert_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,update-tx-gain-in-alert-enable */</span>
+		<span class="coMULTI">/* Reference Clock Control */</span>
+		<span class="kw4">uint8_t</span>		xo_disable_use_ext_refclk_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,xo-disable-use-ext-refclk-enable */</span>
+		<span class="kw4">uint32_t</span>	dcxo_coarse_and_fine_tune<span class="br0">&#91;</span><span class="nu0">2</span><span class="br0">&#93;</span><span class="sy0">;</span>	<span class="coMULTI">/* adi,dcxo-coarse-and-fine-tune */</span>
+		<span class="kw4">uint32_t</span>	clk_output_mode_select<span class="sy0">;</span>		<span class="coMULTI">/* adi,clk-output-mode-select */</span>
+		<span class="coMULTI">/* Gain Control */</span>
+		<span class="kw4">uint8_t</span>		gc_rx1_mode<span class="sy0">;</span>	<span class="coMULTI">/* adi,gc-rx1-mode */</span>
+		<span class="kw4">uint8_t</span>		gc_rx2_mode<span class="sy0">;</span>	<span class="coMULTI">/* adi,gc-rx2-mode */</span>
+		<span class="kw4">uint8_t</span>		gc_adc_large_overload_thresh<span class="sy0">;</span>	<span class="coMULTI">/* adi,gc-adc-large-overload-thresh */</span>
+		<span class="kw4">uint8_t</span>		gc_adc_ovr_sample_size<span class="sy0">;</span>	<span class="coMULTI">/* adi,gc-adc-ovr-sample-size */</span>
+		<span class="kw4">uint8_t</span>		gc_adc_small_overload_thresh<span class="sy0">;</span>	<span class="coMULTI">/* adi,gc-adc-small-overload-thresh */</span>
+		<span class="kw4">uint16_t</span>	gc_dec_pow_measurement_duration<span class="sy0">;</span>	<span class="coMULTI">/* adi,gc-dec-pow-measurement-duration */</span>
+		<span class="kw4">uint8_t</span>		gc_dig_gain_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,gc-dig-gain-enable */</span>
+		<span class="kw4">uint16_t</span>	gc_lmt_overload_high_thresh<span class="sy0">;</span>	<span class="coMULTI">/* adi,gc-lmt-overload-high-thresh */</span>
+		<span class="kw4">uint16_t</span>	gc_lmt_overload_low_thresh<span class="sy0">;</span>	<span class="coMULTI">/* adi,gc-lmt-overload-low-thresh */</span>
+		<span class="kw4">uint8_t</span>		gc_low_power_thresh<span class="sy0">;</span>	<span class="coMULTI">/* adi,gc-low-power-thresh */</span>
+		<span class="kw4">uint8_t</span>		gc_max_dig_gain<span class="sy0">;</span>	<span class="coMULTI">/* adi,gc-max-dig-gain */</span>
+		<span class="coMULTI">/* Gain MGC Control */</span>
+		<span class="kw4">uint8_t</span>		mgc_dec_gain_step<span class="sy0">;</span>	<span class="coMULTI">/* adi,mgc-dec-gain-step */</span>
+		<span class="kw4">uint8_t</span>		mgc_inc_gain_step<span class="sy0">;</span>	<span class="coMULTI">/* adi,mgc-inc-gain-step */</span>
+		<span class="kw4">uint8_t</span>		mgc_rx1_ctrl_inp_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,mgc-rx1-ctrl-inp-enable */</span>
+		<span class="kw4">uint8_t</span>		mgc_rx2_ctrl_inp_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,mgc-rx2-ctrl-inp-enable */</span>
+		<span class="kw4">uint8_t</span>		mgc_split_table_ctrl_inp_gain_mode<span class="sy0">;</span>	<span class="coMULTI">/* adi,mgc-split-table-ctrl-inp-gain-mode */</span>
+		<span class="coMULTI">/* Gain AGC Control */</span>
+		<span class="kw4">uint8_t</span>		agc_adc_large_overload_exceed_counter<span class="sy0">;</span>	<span class="coMULTI">/* adi,agc-adc-large-overload-exceed-counter */</span>
+		<span class="kw4">uint8_t</span>		agc_adc_large_overload_inc_steps<span class="sy0">;</span>	<span class="coMULTI">/* adi,agc-adc-large-overload-inc-steps */</span>
+		<span class="kw4">uint8_t</span>		agc_adc_lmt_small_overload_prevent_gain_inc_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,agc-adc-lmt-small-overload-prevent-gain-inc-enable */</span>
+		<span class="kw4">uint8_t</span>		agc_adc_small_overload_exceed_counter<span class="sy0">;</span>	<span class="coMULTI">/* adi,agc-adc-small-overload-exceed-counter */</span>
+		<span class="kw4">uint8_t</span>		agc_dig_gain_step_size<span class="sy0">;</span>	<span class="coMULTI">/* adi,agc-dig-gain-step-size */</span>
+		<span class="kw4">uint8_t</span>		agc_dig_saturation_exceed_counter<span class="sy0">;</span>	<span class="coMULTI">/* adi,agc-dig-saturation-exceed-counter */</span>
+		<span class="kw4">uint32_t</span>	agc_gain_update_interval_us<span class="sy0">;</span> <span class="coMULTI">/* adi,agc-gain-update-interval-us */</span>
+		<span class="kw4">uint8_t</span>		agc_immed_gain_change_if_large_adc_overload_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,agc-immed-gain-change-if-large-adc-overload-enable */</span>
+		<span class="kw4">uint8_t</span>		agc_immed_gain_change_if_large_lmt_overload_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,agc-immed-gain-change-if-large-lmt-overload-enable */</span>
+		<span class="kw4">uint8_t</span>		agc_inner_thresh_high<span class="sy0">;</span>	<span class="coMULTI">/* adi,agc-inner-thresh-high */</span>
+		<span class="kw4">uint8_t</span>		agc_inner_thresh_high_dec_steps<span class="sy0">;</span>	<span class="coMULTI">/* adi,agc-inner-thresh-high-dec-steps */</span>
+		<span class="kw4">uint8_t</span>		agc_inner_thresh_low<span class="sy0">;</span>	<span class="coMULTI">/* adi,agc-inner-thresh-low */</span>
+		<span class="kw4">uint8_t</span>		agc_inner_thresh_low_inc_steps<span class="sy0">;</span>	<span class="coMULTI">/* adi,agc-inner-thresh-low-inc-steps */</span>
+		<span class="kw4">uint8_t</span>		agc_lmt_overload_large_exceed_counter<span class="sy0">;</span>	<span class="coMULTI">/* adi,agc-lmt-overload-large-exceed-counter */</span>
+		<span class="kw4">uint8_t</span>		agc_lmt_overload_large_inc_steps<span class="sy0">;</span>	<span class="coMULTI">/* adi,agc-lmt-overload-large-inc-steps */</span>
+		<span class="kw4">uint8_t</span>		agc_lmt_overload_small_exceed_counter<span class="sy0">;</span>	<span class="coMULTI">/* adi,agc-lmt-overload-small-exceed-counter */</span>
+		<span class="kw4">uint8_t</span>		agc_outer_thresh_high<span class="sy0">;</span>	<span class="coMULTI">/* adi,agc-outer-thresh-high */</span>
+		<span class="kw4">uint8_t</span>		agc_outer_thresh_high_dec_steps<span class="sy0">;</span>	<span class="coMULTI">/* adi,agc-outer-thresh-high-dec-steps */</span>
+		<span class="kw4">uint8_t</span>		agc_outer_thresh_low<span class="sy0">;</span>	<span class="coMULTI">/* adi,agc-outer-thresh-low */</span>
+		<span class="kw4">uint8_t</span>		agc_outer_thresh_low_inc_steps<span class="sy0">;</span>	<span class="coMULTI">/* adi,agc-outer-thresh-low-inc-steps */</span>
+		<span class="kw4">uint32_t</span>	agc_attack_delay_extra_margin_us<span class="sy0">;</span>	<span class="coMULTI">/* adi,agc-attack-delay-extra-margin-us */</span>
+		<span class="kw4">uint8_t</span>		agc_sync_for_gain_counter_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,agc-sync-for-gain-counter-enable */</span>
+		<span class="coMULTI">/* Fast AGC */</span>
+		<span class="kw4">uint32_t</span>	fagc_dec_pow_measuremnt_duration<span class="sy0">;</span>	<span class="coMULTI">/* adi,fagc-dec-pow-measurement-duration */</span>
+		<span class="kw4">uint32_t</span>	fagc_state_wait_time_ns<span class="sy0">;</span>	<span class="coMULTI">/* adi,fagc-state-wait-time-ns */</span>
+			<span class="coMULTI">/* Fast AGC - Low Power */</span>
+		<span class="kw4">uint8_t</span>		fagc_allow_agc_gain_increase<span class="sy0">;</span>	<span class="coMULTI">/* adi,fagc-allow-agc-gain-increase-enable */</span>
+		<span class="kw4">uint32_t</span>	fagc_lp_thresh_increment_time<span class="sy0">;</span>	<span class="coMULTI">/* adi,fagc-lp-thresh-increment-time */</span>
+		<span class="kw4">uint32_t</span>	fagc_lp_thresh_increment_steps<span class="sy0">;</span>	<span class="coMULTI">/* adi,fagc-lp-thresh-increment-steps */</span>
+			<span class="coMULTI">/* Fast AGC - Lock Level */</span>
+		<span class="kw4">uint32_t</span>	fagc_lock_level<span class="sy0">;</span>	<span class="coMULTI">/* adi,fagc-lock-level */</span>
+		<span class="kw4">uint8_t</span>		fagc_lock_level_lmt_gain_increase_en<span class="sy0">;</span>	<span class="coMULTI">/* adi,fagc-lock-level-lmt-gain-increase-enable */</span>
+		<span class="kw4">uint32_t</span>	fagc_lock_level_gain_increase_upper_limit<span class="sy0">;</span>	<span class="coMULTI">/* adi,fagc-lock-level-gain-increase-upper-limit */</span>
+			<span class="coMULTI">/* Fast AGC - Peak Detectors and Final Settling */</span>
+		<span class="kw4">uint32_t</span>	fagc_lpf_final_settling_steps<span class="sy0">;</span>	<span class="coMULTI">/* adi,fagc-lpf-final-settling-steps */</span>
+		<span class="kw4">uint32_t</span>	fagc_lmt_final_settling_steps<span class="sy0">;</span>	<span class="coMULTI">/* adi,fagc-lmt-final-settling-steps */</span>
+		<span class="kw4">uint32_t</span>	fagc_final_overrange_count<span class="sy0">;</span>	<span class="coMULTI">/* adi,fagc-final-overrange-count */</span>
+			<span class="coMULTI">/* Fast AGC - Final Power Test */</span>
+		<span class="kw4">uint8_t</span>		fagc_gain_increase_after_gain_lock_en<span class="sy0">;</span>	<span class="coMULTI">/* adi,fagc-gain-increase-after-gain-lock-enable */</span>
+			<span class="coMULTI">/* Fast AGC - Unlocking the Gain */</span>
+		<span class="kw4">uint32_t</span>	fagc_gain_index_type_after_exit_rx_mode<span class="sy0">;</span>	<span class="coMULTI">/* adi,fagc-gain-index-type-after-exit-rx-mode */</span>
+		<span class="kw4">uint8_t</span>		fagc_use_last_lock_level_for_set_gain_en<span class="sy0">;</span>	<span class="coMULTI">/* adi,fagc-use-last-lock-level-for-set-gain-enable */</span>
+		<span class="kw4">uint8_t</span>		fagc_rst_gla_stronger_sig_thresh_exceeded_en<span class="sy0">;</span>	<span class="coMULTI">/* adi,fagc-rst-gla-stronger-sig-thresh-exceeded-enable */</span>
+		<span class="kw4">uint32_t</span>	fagc_optimized_gain_offset<span class="sy0">;</span>	<span class="coMULTI">/* adi,fagc-optimized-gain-offset */</span>
+		<span class="kw4">uint32_t</span>	fagc_rst_gla_stronger_sig_thresh_above_ll<span class="sy0">;</span>	<span class="coMULTI">/* adi,fagc-rst-gla-stronger-sig-thresh-above-ll */</span>
+		<span class="kw4">uint8_t</span>		fagc_rst_gla_engergy_lost_sig_thresh_exceeded_en<span class="sy0">;</span>	<span class="coMULTI">/* adi,fagc-rst-gla-engergy-lost-sig-thresh-exceeded-enable */</span>
+		<span class="kw4">uint8_t</span>		fagc_rst_gla_engergy_lost_goto_optim_gain_en<span class="sy0">;</span>	<span class="coMULTI">/* adi,fagc-rst-gla-engergy-lost-goto-optim-gain-enable */</span>
+		<span class="kw4">uint32_t</span>	fagc_rst_gla_engergy_lost_sig_thresh_below_ll<span class="sy0">;</span>	<span class="coMULTI">/* adi,fagc-rst-gla-engergy-lost-sig-thresh-below-ll */</span>
+		<span class="kw4">uint32_t</span>	fagc_energy_lost_stronger_sig_gain_lock_exit_cnt<span class="sy0">;</span>	<span class="coMULTI">/* adi,fagc-energy-lost-stronger-sig-gain-lock-exit-cnt */</span>
+		<span class="kw4">uint8_t</span>		fagc_rst_gla_large_adc_overload_en<span class="sy0">;</span>	<span class="coMULTI">/* adi,fagc-rst-gla-large-adc-overload-enable */</span>
+		<span class="kw4">uint8_t</span>		fagc_rst_gla_large_lmt_overload_en<span class="sy0">;</span>	<span class="coMULTI">/* adi,fagc-rst-gla-large-lmt-overload-enable */</span>
+		<span class="kw4">uint8_t</span>		fagc_rst_gla_en_agc_pulled_high_en<span class="sy0">;</span>	<span class="coMULTI">/* adi,fagc-rst-gla-en-agc-pulled-high-enable */</span>
+		<span class="kw4">uint32_t</span>	fagc_rst_gla_if_en_agc_pulled_high_mode<span class="sy0">;</span>	<span class="coMULTI">/* adi,fagc-rst-gla-if-en-agc-pulled-high-mode */</span>
+		<span class="kw4">uint32_t</span>	fagc_power_measurement_duration_in_state5<span class="sy0">;</span>	<span class="coMULTI">/* adi,fagc-power-measurement-duration-in-state5 */</span>
+		<span class="coMULTI">/* RSSI Control */</span>
+		<span class="kw4">uint32_t</span>	rssi_delay<span class="sy0">;</span>	<span class="coMULTI">/* adi,rssi-delay */</span>
+		<span class="kw4">uint32_t</span>	rssi_duration<span class="sy0">;</span>	<span class="coMULTI">/* adi,rssi-duration */</span>
+		<span class="kw4">uint8_t</span>		rssi_restart_mode<span class="sy0">;</span>	<span class="coMULTI">/* adi,rssi-restart-mode */</span>
+		<span class="kw4">uint8_t</span>		rssi_unit_is_rx_samples_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,rssi-unit-is-rx-samples-enable */</span>
+		<span class="kw4">uint32_t</span>	rssi_wait<span class="sy0">;</span>	<span class="coMULTI">/* adi,rssi-wait */</span>
+		<span class="coMULTI">/* Aux ADC Control */</span>
+		<span class="kw4">uint32_t</span>	aux_adc_decimation<span class="sy0">;</span>	<span class="coMULTI">/* adi,aux-adc-decimation */</span>
+		<span class="kw4">uint32_t</span>	aux_adc_rate<span class="sy0">;</span>	<span class="coMULTI">/* adi,aux-adc-rate */</span>
+		<span class="coMULTI">/* AuxDAC Control */</span>
+		<span class="kw4">uint8_t</span>		aux_dac_manual_mode_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,aux-dac-manual-mode-enable */</span>
+		<span class="kw4">uint32_t</span>	aux_dac1_default_value_mV<span class="sy0">;</span>	<span class="coMULTI">/* adi,aux-dac1-default-value-mV */</span>
+		<span class="kw4">uint8_t</span>		aux_dac1_active_in_rx_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,aux-dac1-active-in-rx-enable */</span>
+		<span class="kw4">uint8_t</span>		aux_dac1_active_in_tx_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,aux-dac1-active-in-tx-enable */</span>
+		<span class="kw4">uint8_t</span>		aux_dac1_active_in_alert_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,aux-dac1-active-in-alert-enable */</span>
+		<span class="kw4">uint32_t</span>	aux_dac1_rx_delay_us<span class="sy0">;</span>	<span class="coMULTI">/* adi,aux-dac1-rx-delay-us */</span>
+		<span class="kw4">uint32_t</span>	aux_dac1_tx_delay_us<span class="sy0">;</span>	<span class="coMULTI">/* adi,aux-dac1-tx-delay-us */</span>
+		<span class="kw4">uint32_t</span>	aux_dac2_default_value_mV<span class="sy0">;</span>	<span class="coMULTI">/* adi,aux-dac2-default-value-mV */</span>
+		<span class="kw4">uint8_t</span>		aux_dac2_active_in_rx_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,aux-dac2-active-in-rx-enable */</span>
+		<span class="kw4">uint8_t</span>		aux_dac2_active_in_tx_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,aux-dac2-active-in-tx-enable */</span>
+		<span class="kw4">uint8_t</span>		aux_dac2_active_in_alert_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,aux-dac2-active-in-alert-enable */</span>
+		<span class="kw4">uint32_t</span>	aux_dac2_rx_delay_us<span class="sy0">;</span>	<span class="coMULTI">/* adi,aux-dac2-rx-delay-us */</span>
+		<span class="kw4">uint32_t</span>	aux_dac2_tx_delay_us<span class="sy0">;</span>	<span class="coMULTI">/* adi,aux-dac2-tx-delay-us */</span>
+		<span class="coMULTI">/* Temperature Sensor Control */</span>
+		<span class="kw4">uint32_t</span>	temp_sense_decimation<span class="sy0">;</span>	<span class="coMULTI">/* adi,temp-sense-decimation */</span>
+		<span class="kw4">uint16_t</span>	temp_sense_measurement_interval_ms<span class="sy0">;</span>	<span class="coMULTI">/* adi,temp-sense-measurement-interval-ms */</span>
+		<span class="kw4">int8_t</span>		temp_sense_offset_signed<span class="sy0">;</span>	<span class="coMULTI">/* adi,temp-sense-offset-signed */</span>
+		<span class="kw4">uint8_t</span>		temp_sense_periodic_measurement_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,temp-sense-periodic-measurement-enable */</span>
+		<span class="coMULTI">/* Control Out Setup */</span>
+		<span class="kw4">uint8_t</span>		ctrl_outs_enable_mask<span class="sy0">;</span>	<span class="coMULTI">/* adi,ctrl-outs-enable-mask */</span>
+		<span class="kw4">uint8_t</span>		ctrl_outs_index<span class="sy0">;</span>	<span class="coMULTI">/* adi,ctrl-outs-index */</span>
+		<span class="coMULTI">/* External LNA Control */</span>
+		<span class="kw4">uint32_t</span>	elna_settling_delay_ns<span class="sy0">;</span>	<span class="coMULTI">/* adi,elna-settling-delay-ns */</span>
+		<span class="kw4">uint32_t</span>	elna_gain_mdB<span class="sy0">;</span>	<span class="coMULTI">/* adi,elna-gain-mdB */</span>
+		<span class="kw4">uint32_t</span>	elna_bypass_loss_mdB<span class="sy0">;</span>	<span class="coMULTI">/* adi,elna-bypass-loss-mdB */</span>
+		<span class="kw4">uint8_t</span>		elna_rx1_gpo0_control_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,elna-rx1-gpo0-control-enable */</span>
+		<span class="kw4">uint8_t</span>		elna_rx2_gpo1_control_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,elna-rx2-gpo1-control-enable */</span>
+		<span class="coMULTI">/* Digital Interface Control */</span>
+		<span class="kw4">uint8_t</span>		pp_tx_swap_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,pp-tx-swap-enable */</span>
+		<span class="kw4">uint8_t</span>		pp_rx_swap_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,pp-rx-swap-enable */</span>
+		<span class="kw4">uint8_t</span>		tx_channel_swap_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,tx-channel-swap-enable */</span>
+		<span class="kw4">uint8_t</span>		rx_channel_swap_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,rx-channel-swap-enable */</span>
+		<span class="kw4">uint8_t</span>		rx_frame_pulse_mode_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,rx-frame-pulse-mode-enable */</span>
+		<span class="kw4">uint8_t</span>		two_t_two_r_timing_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,2t2r-timing-enable */</span>
+		<span class="kw4">uint8_t</span>		invert_data_bus_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,invert-data-bus-enable */</span>
+		<span class="kw4">uint8_t</span>		invert_data_clk_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,invert-data-clk-enable */</span>
+		<span class="kw4">uint8_t</span>		fdd_alt_word_order_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,fdd-alt-word-order-enable */</span>
+		<span class="kw4">uint8_t</span>		invert_rx_frame_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,invert-rx-frame-enable */</span>
+		<span class="kw4">uint8_t</span>		fdd_rx_rate_2tx_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,fdd-rx-rate-2tx-enable */</span>
+		<span class="kw4">uint8_t</span>		swap_ports_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,swap-ports-enable */</span>
+		<span class="kw4">uint8_t</span>		single_data_rate_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,single-data-rate-enable */</span>
+		<span class="kw4">uint8_t</span>		lvds_mode_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,lvds-mode-enable */</span>
+		<span class="kw4">uint8_t</span>		half_duplex_mode_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,half-duplex-mode-enable */</span>
+		<span class="kw4">uint8_t</span>		single_port_mode_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,single-port-mode-enable */</span>
+		<span class="kw4">uint8_t</span>		full_port_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,full-port-enable */</span>
+		<span class="kw4">uint8_t</span>		full_duplex_swap_bits_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,full-duplex-swap-bits-enable */</span>
+		<span class="kw4">uint32_t</span>	delay_rx_data<span class="sy0">;</span>	<span class="coMULTI">/* adi,delay-rx-data */</span>
+		<span class="kw4">uint32_t</span>	rx_data_clock_delay<span class="sy0">;</span>	<span class="coMULTI">/* adi,rx-data-clock-delay */</span>
+		<span class="kw4">uint32_t</span>	rx_data_delay<span class="sy0">;</span>	<span class="coMULTI">/* adi,rx-data-delay */</span>
+		<span class="kw4">uint32_t</span>	tx_fb_clock_delay<span class="sy0">;</span>	<span class="coMULTI">/* adi,tx-fb-clock-delay */</span>
+		<span class="kw4">uint32_t</span>	tx_data_delay<span class="sy0">;</span>	<span class="coMULTI">/* adi,tx-data-delay */</span>
+		<span class="kw4">uint32_t</span>	lvds_bias_mV<span class="sy0">;</span>	<span class="coMULTI">/* adi,lvds-bias-mV */</span>
+		<span class="kw4">uint8_t</span>		lvds_rx_onchip_termination_enable<span class="sy0">;</span>	<span class="coMULTI">/* adi,lvds-rx-onchip-termination-enable */</span>
+		<span class="kw4">uint8_t</span>		rx1rx2_phase_inversion_en<span class="sy0">;</span>	<span class="coMULTI">/* adi,rx1-rx2-phase-inversion-enable */</span>
+		<span class="coMULTI">/* Tx Monitor Control */</span>
+		<span class="kw4">uint32_t</span>	low_high_gain_threshold_mdB<span class="sy0">;</span>	<span class="coMULTI">/* adi,txmon-low-high-thresh */</span>
+		<span class="kw4">uint32_t</span>	low_gain_dB<span class="sy0">;</span>	<span class="coMULTI">/* adi,txmon-low-gain */</span>
+		<span class="kw4">uint32_t</span>	high_gain_dB<span class="sy0">;</span>	<span class="coMULTI">/* adi,txmon-high-gain */</span>
+		<span class="kw4">uint8_t</span>		tx_mon_track_en<span class="sy0">;</span>	<span class="coMULTI">/* adi,txmon-dc-tracking-enable */</span>
+		<span class="kw4">uint8_t</span>		one_shot_mode_en<span class="sy0">;</span>	<span class="coMULTI">/* adi,txmon-one-shot-mode-enable */</span>
+		<span class="kw4">uint32_t</span>	tx_mon_delay<span class="sy0">;</span>	<span class="coMULTI">/* adi,txmon-delay */</span>
+		<span class="kw4">uint32_t</span>	tx_mon_duration<span class="sy0">;</span>	<span class="coMULTI">/* adi,txmon-duration */</span>
+		<span class="kw4">uint32_t</span>	tx1_mon_front_end_gain<span class="sy0">;</span>	<span class="coMULTI">/* adi,txmon-1-front-end-gain */</span>
+		<span class="kw4">uint32_t</span>	tx2_mon_front_end_gain<span class="sy0">;</span>	<span class="coMULTI">/* adi,txmon-2-front-end-gain */</span>
+		<span class="kw4">uint32_t</span>	tx1_mon_lo_cm<span class="sy0">;</span>	<span class="coMULTI">/* adi,txmon-1-lo-cm */</span>
+		<span class="kw4">uint32_t</span>	tx2_mon_lo_cm<span class="sy0">;</span>	<span class="coMULTI">/* adi,txmon-2-lo-cm */</span>
+		<span class="coMULTI">/* GPIO definitions */</span>
+		<span class="kw4">int32_t</span>		gpio_resetb<span class="sy0">;</span>	<span class="coMULTI">/* reset-gpios */</span>
+		<span class="coMULTI">/* MCS Sync */</span>
+		<span class="kw4">int32_t</span>		gpio_sync<span class="sy0">;</span>		<span class="coMULTI">/* sync-gpios */</span>
+		<span class="kw4">int32_t</span>		gpio_cal_sw1<span class="sy0">;</span>	<span class="coMULTI">/* cal-sw1-gpios */</span>
+		<span class="kw4">int32_t</span>		gpio_cal_sw2<span class="sy0">;</span>	<span class="coMULTI">/* cal-sw2-gpios */</span>
+	<span class="br0">&#125;</span>AD9361_InitParam<span class="sy0">;</span></pre>
+
+<p>
+2. Below is defined the rf_rssi structure used by the ad9361_get_rx_rssi() function:
+</p>
+<pre class="code C">	<span class="kw4">struct</span> rf_rssi <span class="br0">&#123;</span>
+		u32 ant<span class="sy0">;</span>	<span class="co1">// Antenna number for which RSSI is reported</span>
+		u32 symbol<span class="sy0">;</span>	<span class="co1">// Runtime RSSI</span>
+		u32 preamble<span class="sy0">;</span>	<span class="co1">// Initial RSSI</span>
+		s32 multiplier<span class="sy0">;</span>	<span class="co1">// Multiplier to convert reported RSSI</span>
+		u8 duration<span class="sy0">;</span>	<span class="co1">// Duration to be considered for measuring</span>
+	<span class="br0">&#125;</span><span class="sy0">;</span></pre>
+
+<p>
+3. Below is defined the AD9361_RXFIRConfig structure used by the ad9361_set_rx_fir_config() function:
+</p>
+<pre class="code C">	<span class="kw4">typedef</span> <span class="kw4">struct</span>
+	<span class="br0">&#123;</span>
+		<span class="kw4">uint32_t</span> rx<span class="sy0">;</span>		<span class="co1">// 1, 2, 3(both)</span>
+		<span class="kw4">int32_t</span> rx_gain<span class="sy0">;</span>	<span class="co1">// -12, -6, 0, 6</span>
+		<span class="kw4">uint32_t</span> rx_dec<span class="sy0">;</span>	<span class="co1">// 1, 2, 4</span>
+		<span class="kw4">int16_t</span> rx_coef<span class="br0">&#91;</span><span class="nu0">64</span><span class="br0">&#93;</span><span class="sy0">;</span>
+	<span class="br0">&#125;</span>AD9361_RXFIRConfig<span class="sy0">;</span></pre>
+
+<p>
+4. Below is defined the AD9361_TXFIRConfig structure used by the ad9361_set_tx_fir_config() function:
+</p>
+<pre class="code C">	<span class="kw4">typedef</span> <span class="kw4">struct</span>
+	<span class="br0">&#123;</span>
+		<span class="kw4">uint32_t</span> tx<span class="sy0">;</span>		<span class="co1">// 1, 2, 3(both)</span>
+		<span class="kw4">int32_t</span> tx_gain<span class="sy0">;</span>	<span class="co1">// -6, 0</span>
+		<span class="kw4">uint32_t</span> tx_int<span class="sy0">;</span>	<span class="co1">// 1, 2, 4</span>
+		<span class="kw4">int16_t</span> tx_coef<span class="br0">&#91;</span><span class="nu0">64</span><span class="br0">&#93;</span><span class="sy0">;</span>
+	<span class="br0">&#125;</span>AD9361_TXFIRConfig<span class="sy0">;</span></pre>
+
+</div>
+
+<h3 class="sectionedit5" id="ad9361_doxygen_documentation">AD9361 Doxygen Documentation</h3>
+<div class="level3">
+
+<p>
+<a href="http://analogdevicesinc.github.io/no-OS/" class="urlextern" target="_blank" title="http://analogdevicesinc.github.io/no-OS/" rel="ugc nofollow noopener">http://analogdevicesinc.github.io/no-OS/</a>
+</p>
+
+</div>
+
+                        <!-- wikipage stop -->
+                    </div>
+
+                    <div class="docInfo"><bdi>resources/eval/user-guides/ad-fmcomms2-ebz/software/no-os-functions.txt</bdi> · Last modified: 13 Jul 2018 17:31 by <bdi><a href="https://ez.analog.com/members/DragosB" class=" interwiki iw_user">Dragos Bogdan</a></bdi></div>
+
+                                    </div>
+            </div>
+            <!-- /content -->
+
+            <hr class="a11y"/>
+
+            <!-- PAGE ACTIONS -->
+            <div id="dokuwiki__pagetools">
+                <h3 class="a11y">Page Tools</h3>
+                <div class="tools">
+                    <ul>
+                        <li class="source"><a href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/no-os-functions?do=edit" title="View Source [v]" rel="nofollow" accesskey="v"><span>View Source</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 9h5.5L13 3.5V9M6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5l3.74 3.74 1.42-1.41-2.33-2.33 2.33-2.33-1.42-1.41-3.74 3.74m11.16 0l-3.74-3.74-1.42 1.41 2.33 2.33-2.33 2.33 1.42 1.41 3.74-3.74z"/></svg></a></li><li class="revs"><a href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/no-os-functions?do=revisions" title="History [o]" rel="nofollow" accesskey="o"><span>History</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></a></li><li class="backlink"><a href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/no-os-functions?do=backlink" title="Backlinks" rel="nofollow"><span>Backlinks</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></a></li><li class="menuitemfolded"><a href="javascript:void(0);" title="Fold/unfold all" rel="nofollow" class="fold_unfold_all_new" onclick="fold_unfold_all();"><span>Fold/unfold all</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M 2,0 L 6.5,3 L 2,6 z M 8,6.6 L 12.5,9.6 L 8,12.6 z M 14,13.2 L 20,13.2 L 17,17.7 z"/></svg></a></li><li class="top"><a href="#dokuwiki__top" title="[ Back to top ] [t]" rel="nofollow" accesskey="t"><span>[ Back to top ]</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg></a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /wrapper -->
+
+    </div>
+    <!-- /container -->
+</div>
+<!-- /site -->
+
+﻿<a class="backtotop" href="#header">&nbsp;</a>
+<footer class="footer" id="footer">
+    <div class="component GlobalShortFooter">
+        <div class="component-content">
+            <footer class='footer app-js__footer'>
+                <div class='footer__desktop-footer'>
+                    <div class='footer__legal-bumper'>
+                        <div>
+                            <ul>
+                                <li role="listitem" class="body-small"><a
+                                    href="https://www.analog.com/en/who-we-are/legal-and-risk-oversight.html"
+                                    class="custom-click-track footer__link"
+                                    custom-click-track-values="Footer|Legal and Risk|/en/who-we-are/legal-and-risk-oversight.html">Legal
+                                    and Risk</a></li>
+                                <li role="listitem" class="body-small"><a
+                                    href="https://www.analog.com/en/who-we-are/legal-and-risk-oversight/accessibility-statement.html"
+                                    class="custom-click-track footer__link"
+                                    custom-click-track-values="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/Footer|Accessibility|/en/who-we-are/legal-and-risk-oversight/accessibility-statement.html">Accessibility</a>
+                                </li>
+                                <li role="listitem" class="body-small"><a
+                                    href="https://www.analog.com/en/who-we-are/legal-and-risk-oversight/data-privacy/privacy-policy.html"
+                                    class="custom-click-track footer__link"
+                                    custom-click-track-values="Footer|Privacy Policy|/en/who-we-are/legal-and-risk-oversight/data-privacy/privacy-policy.html">Privacy
+                                    Policy</a></li>
+                                <li role="listitem" class="body-small"><a
+                                    href="https://www.analog.com/en/lp/001/privacy-settings.html"
+                                    class="custom-click-track footer__link"
+                                    custom-click-track-values="Footer|Privacy Settings|/en/lp/001/privacy-settings.html">Privacy
+                                    Settings</a></li>
+                                <li role="listitem" class="body-small"><a href="https://www.analog.com/en/cookie-notice.html"
+                                                                          class="custom-click-track footer__link footer__modal-btn ot-sdk-show-settings"
+                                                                          id="ot-sdk-link"
+                                                                          custom-click-track-values="Footer|Cookie Settings|/en/cookie-notice.html">Cookie
+                                    Settings</a></li>
+                            </ul>
+                        </div>
+                        <a href="https://beian.miit.gov.cn/"
+                           class="body-small footer__ipc-link-others">沪ICP备09046653号-1</a>
+                        <div><p class='footer__copyright body-small-alt-inverse'>©2024 Analog Devices, Inc. All Rights
+                            Reserved</p></div>
+                    </div>
+                </div>
+                <div class='footer__mobile-footer'>
+                    <div class='footer__mobile-legal-bumper'>
+                        <div>
+                            <ul>
+                                <li class="body-small"><a href="https://www.analog.com/en/who-we-are/legal-and-risk-oversight.html" class="">Legal
+                                    and Risk</a></li>
+                                <li class="body-small"><a
+                                    href="https://www.analog.com/en/who-we-are/legal-and-risk-oversight/accessibility-statement.html"
+                                    class="">Accessibility</a></li>
+                                <li class="body-small"><a
+                                    href="https://www.analog.com/en/who-we-are/legal-and-risk-oversight/data-privacy/privacy-policy.html"
+                                    class="">Privacy Policy</a></li>
+                                <li class="body-small"><a
+                                    href="https://www.analog.com/en/who-we-are/legal-and-risk-oversight/data-privacy.html" class="">Privacy
+                                    Settings</a></li>
+                                <li class="body-small"><a href="https://www.analog.com/en/cookie-notice.html" class="">Cookie Settings</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="https://beian.miit.gov.cn/" class="body-small footer__mobile-ipc-link-others">沪ICP备09046653号-1</a>
+                        <div><p class='footer__mobile-copyright body-small-alt-inverse'>©2024 Analog Devices, Inc. All
+                            Rights Reserved</p></div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+    
+    <script type="text/javascript">
+        var analytics = 'http://assets.adobedtm.com/bc68b7886092/2a726ea8b70d/launch-a4a6d55de309.min.js';
+        var cookiesToDelete = [{ "Domain": ".analog.com", "Cookie": ["__qca", "adiHintCookie", "bCrumbs", "cookieAccepted", "dmdbase_cdc", "ELOQUA", "FedAuthentication", "gpv_p14", "gpv_v100", "myAnalog_id", "Mysite_info", "s_cc", "s_dfa", "s_fid", "s_gad", "s_gpv", "s_invisit", "s_lv", "s_nr", "s_ptc", "s_sq", "s_vi", "s_vnum", "es_visited", "AdiSessionAuthCookie", "AdiSecureDlCookie"] }, { "Domain": ".investor.analog.com", "Cookie": ["ADI_BRIEFCASE", "ADI_SESSION"] }, { "Domain": "careers.analog.com", "Cookie": ["in_ref", "Per_UniqueID", "PLAY_SESSION", "VISITED_COUNTRY", "VISITED_LANG", "ext_trk", "_gat_UA-84784380-31"] }, { "Domain": "distiadmin-dev.corpnt.analog.com", "Cookie": ["ASP.NET_SessionId"] }, { "Domain": "distributor-dev.corpnt.analog.com", "Cookie": ["FedAuth1", "FedAuth", "ipe_30155_fov", "ipe.30155.pageViewedCount", "ipe_s", "_sdsat_Email Address", "dmdbase", "_sdsat_DevQaOrProd"] }, { "Domain": "ez.analog.com", "Cookie": ["containerSecurityToken", "jive.security.context", "X-JCAPI-Token ", "BIGipServerpool_vanity_analog.jiveon.com", "JSESSIONID", "jive.login.ts"] }, { "Domain": "form.analog.com", "Cookie": ["AdiSessionAuthCookie", "FedAuth1", "FedAuth", "ASP.NET_SessionId", "AlteonP", "ipe_30155_fov", "ipe.30155.pageViewedCount", "ipe_s", "_sdsat_DevQaOrProd", "adicftlassetdata", "AdiSessionAuthCookie", "_sdsat_Membership Status", "_sdsat_Email Address"] }, { "Domain": "registration.analog.com", "Cookie": ["ipe_30155_fov", "ipe.30155.pageViewedCount", "ipe_s", "registration-dev.corpnt.analog.com", "_sdsat_Email Address", "FedAuth1", "FedAuth", "_sdsat_Membership Status", "AlteonP", "ASP.NET_SessionId"] }, { "Domain": "sdk.analog.com", "Cookie": ["dmdbase", "_sdsat_DevQaOrProd", "ipe_30155_fov", "ipe.30155.pageViewedCount", "_sdsat_Membership Status", "_sdsat_Email Address", "ipe_s", "AdiSessionAuthCookie", "FedAuth1"] }, { "Domain": "shoppingcart.analog.com", "Cookie": ["ipe_30155_fov", "ipe.30155.pageViewedCount", "ipe_s", "dmdbase", "_sdsat_DevQaOrProd", "_sdsat_Membership Status", "_sdsat_Email Address", "ASP.NET_SessionId", "adiSessionAuth", "FedAuth", "FedAuth1", "analogp", "USERID", "SHOPPINGCARTID", "DISTI_COUNTRY_CODE", "AlteonP"] }, { "Domain": "webuseradmin.analog.com", "Cookie": ["ASP.NET_SessionId"] }, { "Domain": "wiki.analog.com", "Cookie": ["DokuWiki", "DW<hash>", "DOKU_PREFS"] }, { "Domain": "www.analog.com", "Cookie": ["__atuvc", "__atuvs", "_sdsat_Email Address", "_sdsat_Membership Status", "DisclaimerConfirmation", "dmdbase", "downloadGoals", "sc.ASP.NET_SESSIONID", "sc.Status", "SC_ANALYTICS_GLOBAL_COOKIE", "website#lang", "ipe.30155.pageViewedCount", "ipe_30155_fov", "ipe_s", "_sdsat_DevQaOrProd", "ASP.NET_SessionId"] }];
+    </script>
+    <script type="text/javascript">
+        var ADIAssetsPath = "//assets.analog.com";
+        var cookiesToDelete = [{ "Domain": ".analog.com", "Cookie": ["__qca", "adiHintCookie", "bCrumbs", "cookieAccepted", "dmdbase_cdc", "ELOQUA", "FedAuthentication", "gpv_p14", "gpv_v100", "myAnalog_id", "Mysite_info", "s_cc", "s_dfa", "s_fid", "s_gad", "s_gpv", "s_invisit", "s_lv", "s_nr", "s_ptc", "s_sq", "s_vi", "s_vnum", "es_visited", "AdiSessionAuthCookie", "AdiSecureDlCookie"] }, { "Domain": ".investor.analog.com", "Cookie": ["ADI_BRIEFCASE", "ADI_SESSION"] }, { "Domain": "careers.analog.com", "Cookie": ["in_ref", "Per_UniqueID", "PLAY_SESSION", "VISITED_COUNTRY", "VISITED_LANG", "ext_trk", "_gat_UA-84784380-31"] }, { "Domain": "distiadmin-dev.corpnt.analog.com", "Cookie": ["ASP.NET_SessionId"] }, { "Domain": "distributor-dev.corpnt.analog.com", "Cookie": ["FedAuth1", "FedAuth", "ipe_30155_fov", "ipe.30155.pageViewedCount", "ipe_s", "_sdsat_Email Address", "dmdbase", "_sdsat_DevQaOrProd"] }, { "Domain": "ez.analog.com", "Cookie": ["containerSecurityToken", "jive.security.context", "X-JCAPI-Token ", "BIGipServerpool_vanity_analog.jiveon.com", "JSESSIONID", "jive.login.ts"] }, { "Domain": "form.analog.com", "Cookie": ["AdiSessionAuthCookie", "FedAuth1", "FedAuth", "ASP.NET_SessionId", "AlteonP", "ipe_30155_fov", "ipe.30155.pageViewedCount", "ipe_s", "_sdsat_DevQaOrProd", "adicftlassetdata", "AdiSessionAuthCookie", "_sdsat_Membership Status", "_sdsat_Email Address"] }, { "Domain": "registration.analog.com", "Cookie": ["ipe_30155_fov", "ipe.30155.pageViewedCount", "ipe_s", "registration-dev.corpnt.analog.com", "_sdsat_Email Address", "FedAuth1", "FedAuth", "_sdsat_Membership Status", "AlteonP", "ASP.NET_SessionId"] }, { "Domain": "sdk.analog.com", "Cookie": ["dmdbase", "_sdsat_DevQaOrProd", "ipe_30155_fov", "ipe.30155.pageViewedCount", "_sdsat_Membership Status", "_sdsat_Email Address", "ipe_s", "AdiSessionAuthCookie", "FedAuth1"] }, { "Domain": "shoppingcart.analog.com", "Cookie": ["ipe_30155_fov", "ipe.30155.pageViewedCount", "ipe_s", "dmdbase", "_sdsat_DevQaOrProd", "_sdsat_Membership Status", "_sdsat_Email Address", "ASP.NET_SessionId", "adiSessionAuth", "FedAuth", "FedAuth1", "analogp", "USERID", "SHOPPINGCARTID", "DISTI_COUNTRY_CODE", "AlteonP"] }, { "Domain": "webuseradmin.analog.com", "Cookie": ["ASP.NET_SessionId"] }, { "Domain": "wiki.analog.com", "Cookie": ["DokuWiki", "DW<hash>", "DOKU_PREFS"] }, { "Domain": "www.analog.com", "Cookie": ["__atuvc", "__atuvs", "_sdsat_Email Address", "_sdsat_Membership Status", "DisclaimerConfirmation", "dmdbase", "downloadGoals", "sc.ASP.NET_SESSIONID", "sc.Status", "SC_ANALYTICS_GLOBAL_COOKIE", "website#lang", "ipe.30155.pageViewedCount", "ipe_30155_fov", "ipe_s", "_sdsat_DevQaOrProd", "ASP.NET_SessionId"] }];
+    </script>
+    <script>
+        /* Copyright 2011-2015 iPerceptions, Inc. All rights reserved. Do not distribute. iPerceptions provides this code 'as is' without warranty of any kind, either express or implied. */
+        window.iperceptionskey = 'acafac0d-3b8a-4d30-8a98-6cbcd5256d93';
+        (function() { var a = document.createElement('script'),
+            b = document.getElementsByTagName('body')[0];
+            a.type = 'text/javascript';
+            a.defer = true;
+            a.src = 'http://universal.iperceptions.com/wrapper.js';
+            b.appendChild(a); })();
+    </script>
+</footer>
+<script type="text/javascript">
+            if(typeof(_satellite) != 'undefined') {
+            _satellite.pageBottom();
+            }
+        </script>
+<div class="a11y"
+     style="float: left"><img src="https://wiki.analog.com/lib/exe/taskrunner.php?id=resources%3Aeval%3Auser-guides%3Aad-fmcomms2-ebz%3Asoftware%3Ano-os-functions&amp;1722426614" width="2" height="1" alt="" /></div>
+</body>
+
+<!-- Mirrored from wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/no-os-functions by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 31 Jul 2024 11:50:15 GMT -->
+</html>

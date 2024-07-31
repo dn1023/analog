@@ -1,0 +1,3 @@
+date	size'/'remotesize	flags(request:Update,Range state:File response:Modified,Chunked,gZipped)	statuscode	status ('servermsg')	MIME	Etag|Date	URL	localfile	(from URL)
+11:50:15	125360/125360	---MCZ	200	added ('OK')	text/html	date:Wed,%2031%20Jul%202024%2011:50:13%20GMT	https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/no-os-functions	C:/My%20Web%20Sites/first/wiki.analog.com/resources/eval/user-guides/ad-fmcomms2-ebz/software/no-os-functions.html	(from )
+11:50:15	842/842	---M--	200	added ('OK')	text/plain	etag:%22665d8ceb-34a%22	https://wiki.analog.com/robots.txt		(from )
