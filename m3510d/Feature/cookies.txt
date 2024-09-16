@@ -1,0 +1,9 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+made-in-china.com	TRUE	/	FALSE	1999999999	pid	Tg4LjQzLjMzLjI1MXwyMDI0MDkxNjE5NTE0NTEwM3wxMzQxMjMM
+made-in-china.com	TRUE	/	FALSE	1999999999	pid2	t
+made-in-china.com	TRUE	/	FALSE	1999999999	_pd	DM4NDA0MDg1O
+made-in-china.com	TRUE	/	FALSE	1999999999	_uat	AM.FAxWEM4Mzg0MDQwODUR.1.20240916195145
+.made-in-china.com	TRUE	/	FALSE	1999999999	__cf_bm	BBb2bVVmn0IoHMh4tkaxnlicC2fSggSehMBPzEwc1dk-1726487505-1.0.1.1-qKXoS5Xy2HguEbQVC.j6chc0IU7Cfjg6TFv3JiJPiYfNagoBE1piS.0Mt8g73hOiRVBUYwKitmyyg_WtBaTOiw
+www.made-in-china.com	TRUE	/	FALSE	1999999999	SameSite	None
+

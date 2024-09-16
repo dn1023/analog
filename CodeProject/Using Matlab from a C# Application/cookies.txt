@@ -1,0 +1,5 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+www.codeproject.com	TRUE	/	FALSE	1999999999	SessionGUID	cf05d022-6eae-481e-8a43-b9f3e01ea4de
+.codeproject.com	TRUE	/	FALSE	1999999999	vk	aeced47f-9b3d-421e-ab00-fcca179f7f5e
+

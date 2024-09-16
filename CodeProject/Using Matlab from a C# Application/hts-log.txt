@@ -1,0 +1,11 @@
+HTTrack3.49-2+htsswf+htsjava launched on Sun, 08 Sep 2024 23:48:03 at https://www.codeproject.com/Articles/594636/Using-Matlab-from-a-Csharp-Application +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwr1C2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://www.codeproject.com/Articles/594636/Using-Matlab-from-a-Csharp-Application -O1 "C:\My Web Sites\Using Matlab from a C# Application" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+
+HTTrack Website Copier/3.49-2 mirror complete in 3 seconds : 2 links scanned, 1 files written (163312 bytes overall) [49341 bytes received at 16447 bytes/sec], 163966 bytes transferred using HTTP compression in 2 files, ratio 29%
+(No errors, 0 warnings, 0 messages)

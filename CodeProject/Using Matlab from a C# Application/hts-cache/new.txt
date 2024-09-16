@@ -1,0 +1,3 @@
+date	size'/'remotesize	flags(request:Update,Range state:File response:Modified,Chunked,gZipped)	statuscode	status ('servermsg')	MIME	Etag|Date	URL	localfile	(from URL)
+23:48:05	163312/163312	---M-Z	200	added ('OK')	text/html	date:Sun,%2008%20Sep%202024%2021:48:03%20GMT	https://www.codeproject.com/Articles/594636/Using-Matlab-from-a-Csharp-Application	C:/My%20Web%20Sites/Using%20Matlab%20from%20a%20C#%20Application/www.codeproject.com/Articles/594636/Using-Matlab-from-a-Csharp-Application.html	(from )
+23:48:06	654/654	---M-Z	200	added ('OK')	text/plain	etag:%22f2531ef82c1cd71:0%22	https://www.codeproject.com/robots.txt		(from )

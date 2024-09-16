@@ -1,0 +1,3493 @@
+<!DOCTYPE HTML>
+
+
+<html lang="en">
+
+<!-- Mirrored from www.codeproject.com/Articles/594636/Using-Matlab-from-a-Csharp-Application by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 08 Sep 2024 21:48:06 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+	
+
+	
+	<link rel="preconnect" href="https://apps.developermedia.com/">
+	<link rel="preconnect" href="https://cdn1.developermedia.com/">
+	<link rel="preconnect" href="https://cdn.ampproject.org/">
+	<link rel="preconnect" href="https://fonts.googleapis.com/">
+	<link rel="preconnect" href="https://ajax.googleapis.com/">
+	<link rel="preconnect" href="https://adservice.google.com/">
+	<link rel="preconnect" href="https://www.googletagservices.com/">
+	<link rel="preconnect" href="https://www.googletagmanager.com/">
+	<link rel="preconnect" href="https://www.google.com/">
+	<link rel="preconnect" href="https://www.google-analytics.com/">
+	<link rel="preconnect" href="https://pagead2.googlesyndication.com/">
+
+	<link rel="preconnect" href="https://www.codeproject.com/">
+
+
+	<link rel="preload" href="https://www.codeproject.com/App_Themes/CodeProject/Img/logo250x135.gif" as="image">
+
+
+	<link rel="preload" href="https://www.codeproject.com/App_Themes/CodeProject/Img/logo135-bg.gif" as="image">
+	<link rel="preload" href="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js" as="script" type="text/javascript" >
+
+
+	<title>Using Matlab from a C# Application - CodeProject</title> 
+    
+	<!-- inlined file /App_Themes/CodeProject/Css/article.critical.min.css. -->
+<style type='text/css'>
+.blank-background {
+  background-color: white;
+}
+html,
+div,
+span,
+applet,
+object,
+iframe,
+a,
+abbr,
+acronym,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+fieldset,
+form,
+label,
+table,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+li,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  font-smooth: always;
+}
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+tr,
+td,
+th,
+dd,
+dt {
+  font-family: "Segoe UI", Arial, Sans-Serif;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #111111;
+}
+body {
+  margin: 0;
+}
+h1,
+h3,
+h4,
+h5,
+th {
+  font-weight: bold;
+}
+h1 {
+  color: #333333;
+  padding: 0px;
+  margin: 0 0 7px;
+  text-align: left;
+}
+h2 {
+  margin: 20px 0 11px;
+  padding: 0;
+  padding-bottom: 10px;
+  color: #333333;
+}
+h3 {
+  color: #ff9900;
+}
+h1 {
+  font-size: 38px;
+  font-weight: 400;
+}
+h2 {
+  font-size: 29px;
+  font-weight: 400;
+}
+h3 {
+  font-size: 19px;
+  font-weight: normal;
+}
+h4 {
+  font-size: 17px;
+}
+pre {
+  color: black;
+  background-color: #FBEDBB;
+  padding: 6px;
+  font: 14px Consolas, monospace, mono;
+  white-space: pre;
+  overflow: auto;
+  border: solid 1px #FBEDBB;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  -webkit-tab-size: 4;
+  tab-size: 4;
+}
+code {
+  color: #990000;
+  font: 15px Consolas, monospace, mono;
+}
+table {
+  background-color: Transparent;
+}
+img {
+  -ms-interpolation-mode: bicubic;
+}
+a {
+  text-decoration: none;
+  color: #005782;
+}
+a:visited {
+  color: #800080;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+input[type="text"],
+input[type="url"],
+input[type="search"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+select,
+textarea {
+  border: 1px solid #D7D7D7;
+  font-size: 16px;
+  padding: 5px;
+}
+a.button,
+a.button-large,
+.button,
+.button-large {
+  color: white;
+  background-color: #E08900;
+  border: 1px solid #cccccc;
+  text-decoration: none;
+  white-space: nowrap;
+  font-size: 100%;
+  padding: 4px;
+  cursor: pointer;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+}
+table.small-text td,
+ul.small-text li,
+ol.small-text li,
+.small-text {
+  font-size: 14px;
+}
+.invisible {
+  display: none;
+}
+.subdue,
+.subdue li,
+tr.subdue td {
+  color: #808080;
+}
+.bold {
+  font-weight: bold;
+}
+.align-left {
+  text-align: left;
+}
+.align-right {
+  text-align: right;
+}
+.align-center {
+  text-align: center;
+}
+.float-right {
+  float: right;
+}
+.float-left {
+  float: left;
+}
+.sticky {
+  position: sticky;
+  top: 0;
+}
+.extended {
+  width: 100%;
+  box-sizing: border-box;
+}
+.padded-top {
+  padding-top: 20px;
+}
+.tight {
+  margin: 0px;
+  padding: 0px;
+}
+.nowrap {
+  white-space: nowrap;
+}
+.fixed-layout {
+  table-layout: fixed;
+}
+.clip-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.raised {
+  background-color: #FFF8DF;
+  border: 1px solid #cccccc;
+  -moz-box-shadow: 4px 4px 16px 1px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 4px 4px 16px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 4px 4px 16px 1px rgba(0, 0, 0, 0.25);
+}
+ol,
+ul {
+  padding-left: 40px;
+  margin: 10px 0;
+}
+ol.compact li,
+ul.compact li,
+ol li.compact,
+ul li.compact {
+  font-size: 14px;
+}
+ul.download {
+  margin-top: 25px;
+}
+ul.download li,
+ul li.download,
+ul.Download li,
+ul li.Download {
+  background: url("https://www.codeproject.com/images/download24.png") no-repeat scroll left center transparent;
+  font-weight: bold;
+  list-style-type: none;
+  margin: 0px 0 6px -40px;
+  padding: 0 0 1px 30px;
+  vertical-align: middle;
+}
+.callout {
+  margin: 20px 0;
+  background-color: #FFFFe1;
+  color: #333333;
+  border: 1px solid #cccccc;
+  padding: 15px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+}
+.trace {
+  padding: 20px;
+  background-color: #eeeeee;
+  color: #333333;
+  border: 1px solid red;
+  font-size: 13px;
+}
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="submit"] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+.container-content {
+  background-color: white;
+  position: relative;
+  zoom: 1;
+  padding: 0 9px;
+  cursor: default;
+}
+.container-content-wrap {
+  margin: auto;
+  max-width: 1270px;
+}
+.container-content pre,
+.container-code pre,
+.answer pre {
+  white-space: pre-wrap;
+  /* css-3 */
+  white-space: -moz-pre-wrap;
+  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;
+  /* Opera 4-6 */
+  white-space: -o-pre-wrap;
+  /* Opera 7 */
+  word-wrap: break-word;
+  /* Internet Explorer 5.5+ */
+  _white-space: pre;
+  /* IE only hack to re-specify in addition to word-wrap  */
+  word-break: break-word;
+  -ms-word-break: break-word;
+}
+.flex-container {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+.flex-extend {
+  justify-content: space-between;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-item {
+  -webkit-box-flex: 1;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: 1;
+  /* OLD - Firefox 19- */
+  -webkit-flex: 1;
+  /* Chrome */
+  -ms-flex: 1;
+  /* IE 10 */
+  flex: 1;
+}
+
+.justify-content-start		{ justify-content: start; }
+.justify-content-end		{ justify-content: end; }
+.justify-content-center		{ justify-content: center; }
+.justify-content-between	{ justify-content: space-between; }
+.justify-content-around     { justify-content: space-around}
+.flex-wrap          { flex-wrap: wrap; }
+.flex-nowrap		{ flex-wrap: nowrap; }
+
+.flex-item-tight {
+  flex: 0 1 auto;
+}
+.hover-container {
+  display: block;
+  position: relative;
+}
+.clearfix:after,
+.container:after {
+  display: block;
+  content: '.';
+  visibility: hidden;
+  height: 0px;
+  clear: both;
+}
+.clearfix,
+.container {
+  display: inline-block;
+  /* Mac IE5 sees this */
+  /* Mac IE5 comment hack \*/
+  display: block;
+  /* Mac IE5 doesn't see this, but everyone else does */
+}
+.access-link,
+.access-link img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 1px;
+  height: 1px;
+  z-index: 101;
+  border-style: none;
+  margin-top: -1px;
+  overflow: hidden;
+}
+.site-top-menu {
+  white-space: nowrap;
+  position: absolute;
+  z-index: 101;
+  width: 100%;
+}
+.site-top-menu .main-content {
+  width: 100%;
+}
+.site-top-menu .main-content .memberbar {
+  margin-left: 90px;
+  margin-right: 10px;
+}
+.site-top-menu.fixed .main-content {
+  margin: auto;
+  max-width: 1270px;
+}
+.site-header {
+  background-image: url('https://www.codeproject.com/App_Themes/CodeProject/Img/logo135-bg.gif');
+  white-space: nowrap;
+  overflow: hidden;
+}
+.site-header .main-content {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.site-header .logo {
+  display: inline-block;
+}
+.site-header .promo {
+  display: inline-block;
+  position: absolute;
+  top: 33px;
+  right: 0;
+}
+.site-header.fixed .main-content {
+  margin: auto;
+  max-width: 1270px;
+}
+.sub-headerbar {
+  padding-right: 9px;
+  position: relative;
+  margin: auto;
+  max-width: 1270px;
+}
+.sub-headerbar-divider {
+  margin-left: 10px;
+  height: 1px;
+  border-bottom: 1px solid #cccccc;
+  position: absolute;
+  bottom: 2px;
+  left: 0px;
+  right: 9px;
+}
+.memberbar {
+  height: 25px;
+  padding-top: 5px;
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+}
+.memberbar a {
+  color: #808080;
+  font-size: 14px;
+}
+div.navbar {
+  white-space: nowrap;
+}
+.navmenu {
+  background: white;
+  color: #4d4d4d;
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  height: 25px;
+}
+.navmenu ul,
+.navmenu li {
+  margin: 0;
+  padding: 0;
+}
+.navmenu .has-submenu {
+  position: absolute;
+  right: 5px;
+  padding-left: 10px;
+}
+.navmenu > li:hover > a,
+.navmenu > li > a:active {
+  border: 1px solid #cccccc;
+}
+.navmenu ul,
+.navmenu > li.open:hover > a,
+.navmenu > li.open > a:active {
+  border: 1px solid #cccccc;
+  border-bottom-color: white;
+}
+.navmenu > li {
+  margin: 0 11px 2px 2px;
+}
+.navmenu > li:active,
+.navmenu > li:active > a,
+.navmenu > li:hover,
+.navmenu > li > a:active {
+  background: white;
+  color: #4d4d4d;
+}
+.navmenu > li.openable > a:active,
+.navmenu > li.openable:hover > a {
+  /*border-bottom: 1px solid @ColourBack-Menu; */
+}
+.navmenu > li > a {
+  padding: 2px 7px 6px 7px;
+  border: 1px solid transparent;
+  font-weight: bold;
+}
+.navmenu a {
+  display: block;
+  float: left;
+  color: #666666;
+  background: white;
+  font-size: 17px;
+  padding: 0px 9px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.navmenu a.fly {
+  white-space: nowrap;
+}
+.navmenu ul {
+  background: white;
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  list-style: none;
+}
+.navmenu li {
+  float: left;
+  color: #4d4d4d;
+}
+.navmenu li.last {
+  height: 9px;
+}
+.navmenu li a:active,
+.navmenu li a:hover {
+  color: white;
+  background-color: #ff9900;
+}
+.navmenu li > a:active,
+.navmenu li:hover,
+.navmenu li:hover > a,
+.navmenu li:hover.heading,
+.navmenu li a.selected {
+  position: relative;
+  color: white;
+  background-color: #ff9900;
+}
+.navmenu li.openable:hover ul {
+  left: 0px;
+  top: 30px;
+  z-index: 500;
+}
+.navmenu li.openable:hover > ul ul {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  width: auto;
+}
+.navmenu li ul {
+  border-bottom: 5px solid #ff9900;
+}
+.navmenu li li {
+  float: none;
+}
+.navmenu li li a {
+  float: none;
+  font-size: 16px;
+  font-weight: normal;
+}
+.navmenu li li a.fly {
+  color: #4d4d4d;
+  background-color: white;
+  padding: 2px 20px;
+}
+.navmenu li li a.break {
+  margin-bottom: 15px;
+}
+.navmenu li li a.highlight1,
+.navmenu li li a.highlight1:active,
+.navmenu li li a.highlight1:hover {
+  background-color: #009900;
+}
+.navmenu li li a.highlight2,
+.navmenu li li a.highlight2:active,
+.navmenu li li a.highlight2:hover {
+  background-color: #ff9900;
+}
+.navmenu li li a.highlight3,
+.navmenu li li a.highlight3:active,
+.navmenu li li a.highlight3:hover {
+  background-color: #000000;
+}
+.navmenu li li a.highlight1,
+.navmenu li li a.highlight2,
+.navmenu li li a.highlight3 {
+  color: white;
+  font-size: 16px;
+  margin: 5px 0;
+  padding: 9px 20px;
+}
+.site-footer {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  padding-top: 5px;
+  width: 100%;
+  font-size: 13px;
+  color: #999999;
+}
+.site-footer .align-left,
+.site-footer .align-center,
+.site-footer .align-right {
+  -webkit-box-flex: 1;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: 1;
+  /* OLD - Firefox 19- */
+  -webkit-flex: 1;
+  /* Chrome */
+  -ms-flex: 1;
+  /* IE 10 */
+  flex: 1;
+}
+.site-footer .align-left {
+  flex: 1 0 100px;
+}
+.site-footer .align-center {
+  flex: 0 1 0%;
+  white-space: nowrap;
+}
+.site-footer .align-right {
+  flex: 1 0 100px;
+}
+.site-footer .page-width .active {
+  border-bottom: 2px solid #ff9900;
+}
+.searchbar {
+  padding: 0;
+}
+.searchbar .search {
+  margin-bottom: 4px;
+  padding: 2px 5px 0px;
+  border: 1px solid #cccccc;
+}
+.searchbar .search.subdue {
+  color: #cccccc;
+}
+.searchbar input.search {
+  width: 190px;
+  border: none;
+  font-size: 13px;
+  padding: 4px 2px;
+}
+.searchbar .search-advanced {
+  padding: 8px;
+  width: 203px;
+  z-index: 1000;
+  background-color: white;
+  border: solid 1px #cccccc;
+  position: absolute;
+  top: -4px;
+  right: 0px;
+}
+.searchbar .popup {
+  display: none;
+}
+.sub-headerbar .searchbar {
+  /*
+	.search-advanced
+	{
+        .transition(width, .1s, linear);
+
+        &.open
+        {
+    		width: 320px;
+        }
+    }
+    */
+}
+.sub-headerbar .searchbar input.search {
+  /*
+        &:focus,&:active
+        {
+            position     : absolute;
+            top          : 3px;
+            right        : 36px;
+            height       : 19px;
+            border       : 1px solid #ccc;
+            border-right : none;
+            width:         300px;
+
+            .transition(width, .1s, linear);
+        }
+        */
+}
+.search td {
+  background-color: white;
+}
+.article-container-parts {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+.article-container {
+  -webkit-box-flex: 1;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: 1;
+  /* OLD - Firefox 19- */
+  -webkit-flex: 1;
+  /* Chrome */
+  -ms-flex: 1;
+  /* IE 10 */
+  flex: 1;
+  background-color: white;
+  color: #111111;
+  zoom: 1;
+  position: relative;
+  max-width: 100%;
+  min-height: 675px;
+}
+.article-container .article {
+  margin: 0 20px 0 10px;
+  line-height: 143%;
+}
+.article-container span.stats {
+  margin-left: 30px;
+}
+.article-left-sidebar {
+  width: 120px;
+  min-width: 120px;
+  min-height: 400px;
+  font-size: 14px;
+  border-right: 1px solid #f2f2f2;
+  padding: 0;
+  /* Old school style */
+  /*
+    .license {
+        font-weight: bold;
+        display: inline-block;
+        margin-top: 10px;
+    }
+    */
+}
+.article-left-sidebar .article-left-sidebar-inner {
+  width: 120px;
+  min-width: 120px;
+}
+.article-left-sidebar .tabs > div {
+  padding: 5px 0 5px 10px;
+}
+.article-left-sidebar .selected {
+  font-weight: bold;
+  background: transparent url("https://www.codeproject.com/images/right-selected.gif") no-repeat scroll right 9px;
+}
+.article-left-sidebar h4 {
+  color: #ff9900;
+  font-size: 14px;
+  font-weight: bold;
+}
+.article-left-sidebar .stats div div div {
+  padding: 0px 0 10px 10px;
+  color: #666666;
+}
+.article-right-sidebar {
+  width: 300px;
+  margin-left: 10px;
+  font-size: 14px;
+}
+.article-right-sidebar .header {
+  font-size: 22px;
+  color: white;
+  background-color: #ff9900;
+  padding: 8px;
+  font-weight: 400;
+  margin: 0;
+}
+.article-right-sidebar .reading-list-toc {
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 6px;
+  margin-top: 5px;
+}
+.article-right-sidebar .reading-list-toc .count {
+  font-weight: normal;
+  font-size: 13px;
+}
+.article-right-sidebar .reading-list-toc .title {
+  font-size: 16px;
+}
+.article-right-sidebar .content-list-item {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  justify-content: space-between;
+  font-size: 14px;
+  margin: 4px 0;
+}
+.article-right-sidebar .content-list-item .count {
+  width: 15%;
+  padding: 0px;
+}
+.article-right-sidebar .content-list-item .title {
+  width: 85%;
+  font-weight: normal;
+}
+.article-right-sidebar .gototop {
+  text-align: center;
+  padding: 10px 0;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s linear 0ms;
+  -moz-transition: opacity 0.3s linear 0ms;
+  -o-transition: opacity 0.3s linear 0ms;
+  transition: opacity 0.3s linear 0ms;
+}
+.container-content .edit-links {
+  margin: 21px 0 0 10px;
+}
+.article-summary {
+  padding: 0px 10px 0px 10px;
+  overflow: hidden;
+}
+.article h1 {
+  margin: 0 0 15px 0;
+}
+.article h2 {
+  color: #ff9900;
+}
+.article pre {
+  overflow: auto;
+}
+.article .header .title {
+  color: #808080;
+}
+.article .header .author {
+  font-weight: bold;
+  min-width: 100px;
+}
+.article .header .author a {
+  color: #808080;
+}
+.article .header .avatar {
+  max-width: 48px;
+  max-height: 48px;
+  overflow: unset;
+}
+.article .header .avatar-wrap {
+  width: 48px;
+  height: 48px;
+  margin-right: 10px;
+  text-align: center;
+}
+.article .header .date {
+  white-space: nowrap;
+}
+.article .header .license {
+  margin-left: 15px;
+}
+.article .header .stats {
+  margin-left: 30px;
+}
+.article img.lazyload,
+.article img.lazyloading {
+  opacity: 0;
+}
+.article img.lazyloaded {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+.article .summary {
+  color: #808080;
+  padding: 40px 0 15px 0;
+}
+.article .text {
+  padding-top: 10px;
+}
+.article .reading-list-nav {
+  border-top: 1px #dedede solid;
+  border-bottom: 1px #dedede solid;
+  padding: 10px 0;
+}
+.article .reading-list-nav .prev {
+  padding-left: 20px;
+}
+.article .reading-list-nav .next {
+  margin-left: 5px;
+  padding-right: 20px;
+  text-align: right;
+}
+.article-nav {
+  text-align: right;
+  margin-top: 21px;
+  vertical-align: middle;
+  line-height: 15px;
+}
+.msg-728x90 {
+  width: 728px;
+  height: 90px;
+  overflow: hidden;
+}
+.msg-300x250 {
+  width: 300px;
+  height: 250px;
+  overflow: hidden;
+}
+.content-list {
+  margin-bottom: 17px;
+}
+.content-list .count {
+  font-weight: bold;
+  font-size: 16px;
+  color: #ff9900;
+  padding: 3px;
+  text-align: center;
+}
+.content-list-item {
+  margin: 10px 0;
+}
+.content-list-item .title {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0px 0;
+}
+.content-list-item .title a {
+  color: #005782;
+}
+.tags {
+  line-height: 190%;
+}
+.tags .t {
+  background: none repeat scroll 0 0 transparent;
+  border: 1px solid #FBEDBB;
+  border-radius: 12px 0 0 12px;
+  line-height: 1.4;
+  padding: 0 2px 2px 3px;
+  position: relative;
+  text-decoration: none;
+  margin: 2px 5px 4px 0;
+  white-space: nowrap;
+}
+.tags .t a {
+  color: #666666;
+  display: inline-block;
+  margin-right: 3px;
+  padding-left: 5px;
+  text-overflow: ellipsis;
+}
+.container-breadcrumb {
+  font-size: 14px;
+  margin-top: 7px;
+  color: #808080;
+  margin: 12px 0 35px;
+}
+.container-breadcrumb a {
+  color: #808080;
+}
+.pre-lang {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  background-color: #FBEDBB;
+  justify-content: space-between;
+  padding: 4px 8px;
+  margin-top: 5px;
+  color: #999999;
+  border-bottom: solid 1px #ffd044;
+}
+.code-comment {
+  color: #008000;
+  font-style: italic;
+}
+.code-keyword {
+  color: Blue;
+}
+.code-sdkkeyword {
+  color: #339999;
+}
+.code-string {
+  color: Purple;
+}
+.code-attribute {
+  color: red;
+}
+.code-leadattribute {
+  color: #800000;
+}
+.pre-action-link {
+  font-size: 13px;
+  color: #999999;
+}
+.pre-action-link span {
+  cursor: pointer;
+  margin: 0;
+  -webkit-transition: color 0.1s linear;
+  -moz-transition: color 0.1s linear;
+  -o-transition: color 0.1s linear;
+  transition: color 0.1s linear;
+}
+.speech-bubble-container-down,
+.speech-bubble-container-up,
+.speech-bubble-container-up-right,
+.speech-bubble-container-left,
+.speech-bubble-container-right {
+  position: relative;
+}
+.speech-bubble-up,
+.speech-bubble-down,
+.speech-bubble-left,
+.speech-bubble-right,
+.speech-bubble-up-right {
+  padding: 0.6em;
+  border: 1px solid #cccccc;
+  background-color: white;
+  margin: 15px;
+  text-decoration: none;
+  font-weight: normal;
+  text-align: left;
+  white-space: normal;
+  color: #333333;
+  font-size: 14px;
+  line-height: 1.3;
+}
+.speech-bubble-down {
+  margin-bottom: 0px;
+}
+.tooltip .speech-bubble-up,
+.tooltip .speech-bubble-up-right,
+.tooltip .speech-bubble-down,
+.tooltip .speech-bubble-left,
+.tooltip .speech-bubble-right {
+  -moz-box-shadow: 4px 4px 16px 1px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 4px 4px 16px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 4px 4px 16px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  min-width: 75px;
+}
+.speech-bubble-pointer-down,
+.speech-bubble-pointer-down-inner {
+  width: 0;
+  height: 0;
+  border-bottom-width: 0;
+  background: none;
+}
+.speech-bubble-pointer-down {
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 1px solid #cccccc;
+  border-top-width: 14px;
+  margin-left: 35px;
+  margin-bottom: 15px;
+  _display: none;
+}
+.speech-bubble-pointer-up,
+.speech-bubble-pointer-up-right,
+.speech-bubble-pointer-up-inner,
+.speech-bubble-pointer-up-right-inner {
+  width: 0;
+  height: 0;
+  border-top-width: 0;
+  background: none;
+}
+.speech-bubble-pointer-up,
+.speech-bubble-pointer-up-right {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 1px solid #cccccc;
+  border-bottom-width: 14px;
+  margin-left: 35px;
+  position: absolute;
+  top: -12px;
+  _display: none;
+}
+.speech-bubble-container-up-right .speech-bubble-pointer-up-right {
+  margin-left: 0;
+  margin-right: 0px;
+  right: 35px;
+}
+.tooltip {
+  position: relative;
+  text-decoration: none;
+}
+.tooltip .speech-bubble-container-up,
+.tooltip .speech-bubble-container-down,
+.tooltip .speech-bubble-container-left,
+.tooltip .speech-bubble-container-right,
+.tooltip .speech-bubble-container-up-right,
+.tooltip .tooltip-flyout {
+  display: none;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s linear 0ms;
+  -moz-transition: opacity 0.5s linear 0ms;
+  -o-transition: opacity 0.5s linear 0ms;
+  transition: opacity 0.5s linear 0ms;
+}
+.micromodal {
+  display: none;
+}
+.micromodal .modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 1000;
+}
+.micromodal .modal__container {
+  box-sizing: border-box;
+  overflow-y: auto;
+  max-width: 500px;
+  max-height: 100vh;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+.micromodal .modal__container,
+.micromodal .modal__overlay {
+  will-change: transform;
+}
+.micromodal .modal_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.micromodal .modal_title {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #ff9900;
+  box-sizing: border-box;
+}
+.bottom-promo {
+  height: 90px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.bottom-promo .msg-728x90 {
+  width: 728px;
+  margin: 0 auto;
+}
+.msg-728x90 {
+  overflow: hidden;
+  position: relative;
+  height: 90px;
+  min-width: 728px;
+}
+body .msg-728x90 {
+  *float: right;
+}
+body .bottom-promo .msg-728x90 {
+  *float: none;
+}
+table.forum {
+  table-layout: fixed;
+  margin: 0 0 20px 0;
+  padding: 0px;
+  width: 100%;
+}
+.forum {
+  /*
+    .indent
+    {
+        padding-left:5px; padding-right: 5px;
+    }
+    */
+}
+.forum table {
+  border-collapse: separate;
+}
+.forum .header1,
+.forum .header1 TD {
+  color: #333333;
+  font-size: 14px;
+  vertical-align: middle;
+}
+.forum .header2,
+.forum .header2 TD {
+  color: white;
+  background-color: #ff9900;
+  font-size: 14px;
+  vertical-align: middle;
+}
+.forum .header2 input,
+.forum .header2 TD input,
+.forum .header2 select,
+.forum .header2 TD select {
+  padding: 2px;
+}
+.forum .button {
+  border: 1px solid #FFCC66;
+  margin: 1px;
+}
+.forum .searchbar {
+  border: 1px solid #cccccc;
+  padding: 4px 0 0 0;
+  margin: 3px 0;
+}
+.forum .searchbar .search {
+  width: 200px;
+}
+.forum .searchbar input[type=image] {
+  vertical-align: middle;
+}
+.forum .dropdown {
+  background-color: #fffdfa;
+  font-size: 95%;
+  margin-left: 5px;
+}
+.forum .footer,
+.forum .footer td,
+.forum .navbar,
+.forum .navbar td {
+  font-size: 14px;
+  padding: 8px 0;
+  border: 0;
+  border-top: 1px solid #808080;
+}
+.author-wrapper {
+  position: relative;
+}
+.author-wrapper .profile-pic {
+  border: 1px solid #333;
+  margin: 0 13px 0 0;
+  padding: 10px;
+  -moz-box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 3px 5px 1px rgba(0, 0, 0, 0.2);
+  max-height: 100px;
+}
+.author-wrapper .container-member .author {
+  font-size: 29px;
+  color: #333333;
+  font-weight: 600;
+}
+.member-signin .forgot {
+  padding: 0;
+}
+.member-signin a.forgot {
+  color: #808080;
+}
+.rating-container {
+  /*
+	.rating-close
+	{
+		font-size       : @FontSize-MediumSmall;
+		font-weight     : bold;
+		// display         : inline-block;
+		// height          : 19px;
+		padding         : 0px 7px 3px 5px;
+		text-decoration : none;
+		border          : 1px solid transparent;
+		position        : absolute;
+		right           : 1px;
+		top             : -1px;
+		
+		&:hover { border : 1px solid @Colour-Theme1; }
+	}*/
+}
+.rating-container .rating-prompt {
+  padding-right: 5px;
+  white-space: nowrap;
+  line-height: 25px;
+  margin-right: 2px;
+  font-weight: bold;
+  color: #808080;
+}
+.rating-container .rating-votes {
+  margin-left: 5px;
+}
+.rating-container.large-stars,
+.rating-container.medium-stars,
+.rating-container.small-stars {
+  margin-left: 7px;
+}
+.rating-container.large-stars .rating-votes,
+.rating-container.large-stars .rating-prompt,
+.rating-container.large-stars .rating-poor,
+.rating-container.large-stars .rating-good {
+  line-height: 25px;
+}
+.tags.horizontal .t {
+    display: inline-block;
+}
+@media (min-width: 1024px) {
+    .desktop-only {
+        display: inherit;
+    }
+
+    .tablet-only,
+    .tablet-block-only {
+        display: none;
+    }
+
+    .mobile-only,
+    .mobile-block-only {
+        display: none;
+    }
+
+    .desktop-only.tablet-only {
+        display: inherit;
+    }
+
+    @media (min-width: 821px) {
+        .tablet-only,
+        .mobile-only {
+            display: none;
+        }
+
+            .tablet-only.desktop-only {
+                display: inherit;
+            }
+
+        .rrssb-buttons,
+        .rrssb-buttons li,
+        .rrssb-buttons li a {
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .clearfix {
+            *zoom: 1;
+        }
+
+            .clearfix:after {
+                clear: both;
+            }
+
+            .clearfix:before,
+            .clearfix:after {
+                content: " ";
+                display: table;
+            }
+
+        .rrssb-buttons {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            height: 40px;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+            .rrssb-buttons li {
+                float: left;
+                height: 100%;
+                list-style: none;
+                margin: 0;
+                padding: 0 2.5px;
+                line-height: 13px;
+            }
+
+                .rrssb-buttons li.email a {
+                    background-color: #0a88ff;
+                }
+
+                .rrssb-buttons li.facebook a {
+                    background-color: #306199;
+                }
+
+                .rrssb-buttons li.linkedin a {
+                    background-color: #007bb6;
+                }
+
+                .rrssb-buttons li.twitter a {
+                    background-color: #26c4f1;
+                }
+
+                .rrssb-buttons li.reddit a {
+                    background-color: #8bbbe3;
+                }
+
+                .rrssb-buttons li.pinterest a {
+                    background-color: #b81621;
+                }
+
+                .rrssb-buttons li.compact {
+                    padding: 0 4.5px;
+                }
+
+                    .rrssb-buttons li.compact a {
+                        border-radius: 50%;
+                        padding: 0px 7px 0 32px;
+                    }
+
+                        .rrssb-buttons li.compact a .icon {
+                            left: 7px;
+                            top: -3px;
+                            width: 5%;
+                            transform: scale(0.85);
+                        }
+
+                            .rrssb-buttons li.compact a .icon svg {
+                                height: auto;
+                                width: auto;
+                            }
+
+                .rrssb-buttons li a {
+                    background-color: #ccc;
+                    border-radius: 3px;
+                    display: block;
+                    font-size: 11px;
+                    font-weight: bold;
+                    height: 100%;
+                    padding: 11px 7px 12px 27px;
+                    position: relative;
+                    text-align: center;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    width: 100%;
+                    -webkit-transition: background-color 0.2s ease-in-out;
+                    -moz-transition: background-color 0.2s ease-in-out;
+                    -o-transition: background-color 0.2s ease-in-out;
+                    transition: background-color 0.2s ease-in-out;
+                }
+
+                    .rrssb-buttons li a .icon {
+                        display: block;
+                        height: 100%;
+                        left: 10px;
+                        padding-top: 9px;
+                        position: absolute;
+                        top: 0;
+                        width: 10%;
+                    }
+
+                        .rrssb-buttons li a .icon svg {
+                            height: 17px;
+                            width: 17px;
+                        }
+
+                            .rrssb-buttons li a .icon svg path,
+                            .rrssb-buttons li a .icon svg polygon {
+                                fill: #fff;
+                            }
+
+        .cc-window {
+            opacity: 1;
+            background-color: #ff9900;
+            /*
+  -webkit-transition: opacity .25s ease;
+  -moz-transition: opacity .25s ease;
+  -ms-transition: opacity .25s ease;
+  -o-transition: opacity .25s ease;
+  transition: opacity .25s ease;
+  */
+        }
+
+            .cc-window.cc-invisible {
+                opacity: 0;
+            }
+
+        .cc-animate.cc-revoke {
+            /*
+  -webkit-transition: transform .25s ease;
+  -moz-transition: transform .25s ease;
+  -ms-transition: transform .25s ease;
+  -o-transition: transform .25s ease;
+  transition: transform .25s ease;
+  */
+        }
+
+            .cc-animate.cc-revoke.cc-bottom {
+                transform: translateY(2em);
+            }
+
+        .cc-window,
+        .cc-revoke {
+            position: fixed;
+            overflow: hidden;
+            box-sizing: border-box;
+            /* exclude padding when dealing with width */
+            font-family: "Segoe UI", Arial, Sans-Serif;
+            font-size: 13px;
+            /* by setting the base font here, we can size the rest of the popup using CSS `em` */
+            line-height: 1.5em;
+            display: flex;
+            flex-wrap: nowrap;
+            /* the following are random unjustified styles - just because - should probably be removed */
+            z-index: 9999;
+        }
+
+            .cc-window.cc-banner {
+                padding: 0.7em 1.8em;
+                width: 100%;
+                flex-direction: row;
+            }
+
+        .cc-revoke {
+            padding: 0.5em;
+        }
+
+        .cc-btn,
+        .cc-link,
+        .cc-close,
+        .cc-revoke {
+            cursor: pointer;
+        }
+
+        .cc-link {
+            opacity: 0.8;
+            display: inline-block;
+            padding: 0.2em;
+            text-decoration: underline;
+        }
+
+            .cc-link:active,
+            .cc-link:visited {
+                color: initial;
+            }
+
+        .cc-btn {
+            display: block;
+            padding: 0.4em 0.8em;
+            font-size: 0.9em;
+            font-weight: bold;
+            border-width: 2px;
+            border-style: solid;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .cc-banner .cc-btn:last-child {
+            min-width: 110px;
+            margin-left: 10px;
+        }
+
+        .cc-highlight .cc-btn:first-child {
+            background-color: transparent;
+            border-color: transparent;
+        }
+
+        .cc-revoke.cc-bottom {
+            bottom: 0;
+            left: 3em;
+            border-top-left-radius: 0.5em;
+            border-top-right-radius: 0.5em;
+        }
+
+        .cc-bottom {
+            bottom: 1em;
+        }
+
+        .cc-window.cc-banner {
+            align-items: center;
+        }
+
+        .cc-banner.cc-bottom {
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .cc-banner .cc-message {
+            flex: 1;
+        }
+
+        .cc-compliance {
+            display: flex;
+            align-items: center;
+            align-content: space-between;
+        }
+
+            .cc-compliance > .cc-btn {
+                flex: 1;
+            }
+
+        .cc-btn + .cc-btn {
+            margin-left: 0.5em;
+        }
+
+</style>
+<link rel='stylesheet' type='text/css' href='https://www.codeproject.com/App_Themes/CodeProject/Css/Article.min.css?dt=2.8:2024-07-22:1' media='none' onload='if(media!="all")media="all"'>
+<noscript><link rel='stylesheet' type='text/css' href='https://www.codeproject.com/App_Themes/CodeProject/Css/Article.min.css?dt=2.8:2024-07-22:1'></noscript>
+
+
+
+    <script type="text/javascript" src="https://www.codeproject.com/script/JS/jquery-2.2.4.min.js" defer ></script>
+<script type="text/javascript" src="https://www.codeproject.com/script/Articles/JS/article.min.js?dt=2.8:2024-07-22:1" defer ></script>
+<script type="text/javascript" src="https://accounts.google.com/gsi/client" defer  async ></script>
+<script type="text/javascript" src="https://www.codeproject.com/script/Membership/JS/MemberProfilePopup.min.js?v=1.4" defer ></script>
+<script type="text/javascript" src="https://www.codeproject.com/a.min.js?v=1.3" defer ></script>
+
+	
+<meta http-equiv="content-language" content="en-US">
+<meta charset="UTF-8">
+<meta name="Description" content="Using Matlab from a C# application">
+<meta name="Keywords" content="C#, MatLab">
+<meta name="Author" content="n.podbielski">
+<meta name="Rating" content="General">
+<meta name="Revisit-After" content="1 days">
+<meta name="application-name" content="CodeProject">
+<meta name="google-translate-customization" content="d908bb7ce7aff658-4c2f3a504525c916-g629383f736781a8a-13">
+
+<link rel="dns-prefetch" href="http://ajax.googleapis.com/"> 
+<link rel="canonical" href="Using-Matlab-from-a-Csharp-Application.html" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@CodeProject" />
+<meta name="og:site_name" content="CodeProject" />
+<meta name="twitter:creator" content="@CodeProject" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="5/17/2013 4:16:00 PM" />
+<meta property="article:modified_time" content="4/5/2017 3:56:00 AM" />
+<meta name="twitter:label1" content="Written by">
+<meta name="twitter:data1" content="n.podbielski">
+<meta name="twitter:label2" content="Reading time">
+<meta name="twitter:data2" content="7 min read">
+<meta property="og:url" content="https://www.codeproject.com/Articles/594636/Using-Matlab-from-a-Csharp-Application" />
+<meta property="og:title" content="Using Matlab from a C# Application" />
+<meta property="og:description" content="Using Matlab from a C# application" />
+<meta property="og:image" content="https://www.codeproject.com/KB/cs/594636/Thumbnail.png" />
+<meta name="twitter:image" content="https://www.codeproject.com/KB/cs/594636/Thumbnail.png" />
+
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - All Topics" href="https://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=1" />
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - Python" href="https://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=34" />
+<link rel="alternate" type="application/rss+xml" title="CodeProject Lounge Postings" href="https://www.codeproject.com/webservices/LoungeRSS.aspx" />
+<meta name="robots" content="index, follow" />
+
+<link rel="search" type="application/opensearchdescription+xml" title="CodeProject" href="https://www.codeproject.com/info/OpenSearch.xml">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="apple-touch-icon" sizes="144x144" href="https://www.codeproject.com/favicon/apple-touch-icon.png"> 
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.codeproject.com/favicon/favicon-32x32.png"> 
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.codeproject.com/favicon/favicon-16x16.png"> 
+<link rel="manifest" href="https://www.codeproject.com/favicon/manifest.json"> 
+<link rel="mask-icon" href="https://www.codeproject.com/favicon/safari-pinned-tab.svg" color="#ff9900">
+	<script type='application/ld+json'>{
+  "@context": "http://schema.org",
+  "@type": "TechArticle",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.codeproject.com/Articles/594636/Using-Matlab-from-a-Csharp-Application"
+   },
+  "name": "Using Matlab from a C# Application",
+  "headline": "Using Matlab from a C# Application",
+  "url": "https://www.codeproject.com/Articles/594636/Using-Matlab-from-a-Csharp-Application",
+  "discussionUrl": "https://www.codeproject.com/Articles/594636/Using-Matlab-from-a-Csharp-Application#_comments",
+  "isFamilyFriendly": "true",
+  "image": "https://www.codeproject.com/KB/cs/594636/Thumbnail.png",
+  "keywords": "C#,MatLab",
+  "commentCount": "11",
+  "editor" : {
+    "@type" : "Person",
+    "name" : "Deeksha Shenoy",
+    "url" : "https://www.codeproject.com/script/Membership/View.aspx?mid=3866010"
+  },
+  "license": "http://www.codeproject.com/info/cpol10.aspx",
+  "publisher" : {
+    "@type" : "Organization",
+    "name" : "CodeProject"
+  },
+  "description": "Using Matlab from a C# application",
+  "articleSection": "C#",
+  "author" : [{
+      "@type" : "Person",
+      "name" : "n.podbielski",
+      "url" : "https://www.codeproject.com/script/Membership/View.aspx?mid=7394731"
+    }],
+  "datePublished": "2013-05-17",
+  "dateCreated": "2013-05-17",
+  "dateModified": "2017-04-05"
+,
+  "contentRating" : {
+    "@type" : "Rating",
+    "ratingValue" : 5.00,
+    "bestRating" : 5,
+    "worstRating" : 1
+  }
+}</script>
+
+<script type='application/ld+json'>{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "item" : {
+      "@id" : "/script/Content/Tag.aspx?tags=Languages",
+      "name" : "Programming Languages"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "item" : {
+      "@id" : "/script/Content/Tag.aspx?tags=Csharp",
+      "name" : "C#"
+    }
+  }]
+}</script>
+
+
+	<base target="_top" />
+	
+    
+
+
+<script type='text/javascript'>
+function defrm () { /* thanks twitter */
+    document.write = '';
+    window.top.location = window.self.location;
+    setTimeout(function() { document.body.innerHTML = ''; }, 0);
+    window.self.onload = function(evt) { document.body.innerHTML = ''; };
+}
+
+if (window.top !== window.self) {
+    try {
+        if (window.top.location.host) { /* will throw for all except chrome */ }
+        else { defrm(); /* chrome */ }
+    } catch (ex) { defrm(); /* everyone else */ }
+}
+
+// Specific case where a site is screwing with us.
+if (typeof(DemoUrl) !== 'undefined') {
+    document.write(unescape('%3Cme') + 'ta http' + '-equiv="re' + 'fresh con' +
+                           'tent="1;url=' + DemoUrl + unescape('"%3CE'));
+}
+</script>
+	
+
+
+
+
+
+    <script async type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-YZNPNQ0F2S"></script>
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-YZNPNQ0F2S' );
+    </script>
+
+</head>	
+
+<body class="httrack httrack3">
+
+	<div id="ctl00_OneTap_OneTap">
+    <div id="g_id_onload" 
+         data-client_id="857795997829.apps.googleusercontent.com"
+         data-login_uri="/script/Membership/OAuthLogOn.aspx?auth=Google">
+    </div>
+</div>
+
+
+
+	<a class="access-link" href="#Main"><img alt="Click here to Skip to main content" src="https://www.codeproject.com/images/t.gif" /></a>
+
+
+
+
+<div class="page-background">
+
+	
+	
+
+	
+
+	
+    <div id="ctl00_STM" class="site-top-menu fixed">
+        <div class="main-content">
+            
+
+<div class="container memberbar clearfix flex-container flex-extend">
+
+	<div id="ctl00_MemberBar_GenInfo" class="flex-item align-left">15,991,353 members</div>
+
+	<div class="flex-item">
+		
+	</div>
+
+	<div class="flex-item align-right">
+
+		
+
+		
+
+		
+
+			<script type="text/javascript">//<!--
+			function doSubmit(secure)
+			{
+				if (secure)
+					document.signinForm.action = "https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f594636%2fUsing-Matlab-from-a-Csharp-Application"
+				else
+					document.signinForm.action = "https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f594636%2fUsing-Matlab-from-a-Csharp-Application"
+				document.signinForm.submit();
+				return true;
+			}//-->
+			</script>
+
+			<a name="SignUp"></a>
+			<span class="member-signin">
+				<a data-micromodal-trigger="modal-1" href='javascript:;'>Sign in</a>
+				<!--<a href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f594636%2fUsing-Matlab-from-a-Csharp-Application">Sign in</a>-->
+
+				<div class="micromodal" id="modal-1" aria-hidden="true">
+
+					<div class="modal__overlay" tabindex="-1" data-micromodal-close>
+					  <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+
+						<header class="modal_header">
+							<h4 class="modal_title" id="modal-1-title">
+								Sign in
+							</h4>
+							<button class="modal_close" aria-label="Close modal" data-micromodal-close></button>
+						</header>
+
+						<form name="signinForm" id="signinForm" action="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f594636%2fUsing-Matlab-from-a-Csharp-Application" method="post"
+							class="tight align-left">
+
+							
+							<input id="FormName" name="FormName" value="MenuBarForm" type="hidden" />
+
+							<div>Email</div>
+							<div><input type="email" name="Email" id="Email" autocomplete="email" /></div>
+							<div>Password</div>
+							<div><input type="password" name="Password" id="Password" 
+								autocomplete="current-password" /></div>
+							<div class="action">
+								<input type='hidden' name='fld_quicksign' value='true' />
+								<input type="submit" value="Sign in" class="signin" onclick="return doSubmit(false);" />
+								<input id='joinBtn' type='button' class='create hidden' onclick='return Join();' value='Join' />
+							</div>
+
+							<div class="container">						
+								<a id="ctl00_MemberBar_SendPassword" class="forgot" href="https://www.codeproject.com/script/Membership/SendPassword.aspx?rp=/Articles/594636/Using-Matlab-from-a-Csharp-Application">Forgot your password?</a>
+							</div>
+						</form>
+
+						<hr class="divider-dark" />
+
+						Sign in with &nbsp;<a class="oauth" alt="Sign in using Github" title="Sign in using Github" href="https://www.codeproject.com/script/Membership/OAuthLogOn.aspx?auth=GitHub"><img src="https://www.codeproject.com/script/Membership/Images/octicons_github-lg.png" style="vertical-align:middle;padding-right:3px;border:0;" /></a>
+<a class="oauth" alt="Sign in using Facebook" title="Sign in using Facebook" href="https://www.codeproject.com/script/Membership/OAuthLogOn.aspx?auth=Facebook"><img src="https://www.codeproject.com/script/Membership/Images/facebook-lg.png" style="vertical-align:middle;padding-right:3px;border:0;" /></a>
+<a class="oauth" alt="Sign in using Google" title="Sign in using Google" href="https://www.codeproject.com/script/Membership/OAuthLogOn.aspx?auth=Google"><img src="https://www.codeproject.com/script/Membership/Images/google-plus-lg.png" style="vertical-align:middle;padding-right:3px;border:0;" /></a>
+<a class="oauth" alt="Sign in using Microsoft" title="Sign in using Microsoft" href="https://www.codeproject.com/script/Membership/OAuthLogOn.aspx?auth=Microsoft"><img src="https://www.codeproject.com/script/Membership/Images/microsoft-lg.png" style="vertical-align:middle;padding-right:3px;border:0;" /></a>
+
+
+
+					  </div>
+					</div>
+				  </div>
+
+            </span>
+		
+	</div>
+</div>
+        </div>
+    </div>
+
+	
+    <div id="ctl00_SH" class="site-header fixed">
+        <div class="main-content">
+            <div class="logo"><a href="https://www.codeproject.com/"><img id="ctl00_Logo" tabindex="1" title="CodeProject" src="https://www.codeproject.com/App_Themes/CodeProject/Img/logo250x135.gif" alt="Home" style="height:135px;width:250px;border-width:0px;" /></a></div>
+            <div class="promo"><div class="msg-728x90" data-format="728x90" data-type="ad" data-publisher="lqm.codeproject.site" data-zone="Programming-LanguagesCsharp"  data-country='US' data-tags='C#, MatLab,rating4.5,article-594636'><noscript><a href="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/Programming-LanguagesCsharp&amp;sz=728x90&amp;c=598452"><img src="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/Programming-LanguagesCsharp&amp;sz=728x90&amp;c=598452"  width="728px" height="90px" target="_blank"/></a></noscript></div></div>
+        </div>
+    </div>
+
+	
+	<div id="ctl00_TPR" class="sub-headerbar flex-container flex-extend flex-wrap fixed">
+		<div class="flex-item" style="min-width:20rem">
+			
+
+<div class="navbar clearfix">
+<ul class="navmenu openable">
+
+<li class="desktop-only"><a id="ctl00_TopNavBar_Home" href="https://www.codeproject.com/">home</a>
+
+
+<li class="openable"><a id="ctl00_TopNavBar_Art" class="down selected" href="https://www.codeproject.com/script/Articles/Latest.aspx">articles</a>
+
+	<ul>
+		<li class="openable"><a id="ctl00_TopNavBar_ArtTopicList" class="fly" onmouseover="navBarMenu.ShowMap(this, &#39;ctl00_TopNavBar_MapFlyout&#39;);" href="https://www.codeproject.com/script/Content/SiteMap.aspx">Browse Topics<span class="has-submenu">&gt;</span></a><ul id="ctl00_TopNavBar_MapFlyout" class="taxonomy">
+			<li>
+				<div id="siteMap"></div>
+			</li>
+			</ul>
+		</li>
+		<li><a id="ctl00_TopNavBar_ArtLatestArts" class="fly" href="https://www.codeproject.com/script/Articles/Latest.aspx">Latest Articles</a></li>
+		<li><a id="ctl00_TopNavBar_ArtTop" class="fly" href="https://www.codeproject.com/script/Articles/TopArticles.aspx?ta_so=5">Top Articles</a></li>
+		<li><a id="ctl00_TopNavBar_ArtGuide" class="fly" href="https://www.codeproject.com/info/Submit.aspx">Posting/Update Guidelines</a></li>
+		<li><a id="ctl00_TopNavBar_ArtHelpForum" class="fly" href="https://www.codeproject.com/Forums/1641/Article-Writing">Article Help Forum</a></li>
+		<li><a id="ctl00_TopNavBar_ArtPostArticle" class="fly highlight1" href="https://www.codeproject.com/script/Articles/Submit.aspx">
+			<img src="https://www.codeproject.com/images/write13.png" width="13" height="13" /> Submit an article or tip
+			</a></li>
+        
+		<li><a id="ctl00_TopNavBar_ArtImportGitHub" class="fly highlight3" href="https://www.codeproject.com/script/Articles/ImportArticle.aspx">
+			<img src="https://www.codeproject.com/images/write13.png" width="13" height="13" /> Import GitHub Project
+			</a></li>
+        
+		<li><a id="ctl00_TopNavBar_ArtPostBlog" class="fly highlight2" href="https://www.codeproject.com/script/Articles/BlogFeed.aspx">
+			<img src="https://www.codeproject.com/images/write13.png" width="13" height="13" /> Import your Blog
+			</a></li>		
+        
+        <li class="last"></li>
+	</ul>
+
+</li>
+
+
+
+<li class="openable">
+<a id="ctl00_TopNavBar_Answers" href="https://www.codeproject.com/script/Answers/List.aspx?tab=active">
+    <span class="desktop-only tablet-only">quick answers</span><span class="mobile-only">Q&amp;A</span>
+</a>
+	<ul>
+		<li id="ctl00_TopNavBar_AQL"><a id="ctl00_TopNavBar_ArticleQuestion" class="fly highlight1" href="#_comments">
+			<img src="https://www.codeproject.com/images/write13.png" width="13" height="13" /> Ask a Question about this 
+			article</a>
+		</li>
+
+		<li><a id="ctl00_TopNavBar_QAAsk" class="fly highlight2" href="https://www.codeproject.com/Questions/ask.aspx"><img 
+			src="https://www.codeproject.com/images/write13.png" width="13" height="13" /> Ask a Question</a></li>
+
+		<li><a id="ctl00_TopNavBar_QAUnanswered" class="fly" href="https://www.codeproject.com/script/Answers/List.aspx?tab=unanswered">View Unanswered Questions</a></li>
+		<li><a id="ctl00_TopNavBar_QALatest" class="fly" href="https://www.codeproject.com/script/Answers/List.aspx?tab=active">View All Questions</a></li>
+        
+				<li><a id="ctl00_TopNavBar_QATR_ctl00_Tag" class="fly" href="https://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;amp;alltags=true&amp;amp;tags=81" style="padding-left:30px">View C# questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl01_Tag" class="fly" href="https://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;amp;alltags=true&amp;amp;tags=78" style="padding-left:30px">View C++ questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl02_Tag" class="fly" href="https://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;amp;alltags=true&amp;amp;tags=87" style="padding-left:30px">View Javascript questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl03_Tag" class="fly" href="https://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;amp;alltags=true&amp;amp;tags=83" style="padding-left:30px">View Visual&nbsp;Basic questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl04_Tag" class="fly" href="https://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;amp;alltags=true&amp;amp;tags=98" style="padding-left:30px">View .NET questions</a></li>
+			
+    
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+
+
+<li class="openable"><a id="ctl00_TopNavBar_Forums" href="https://www.codeproject.com/script/Forums/List.aspx">
+        <span class="desktop-only tablet-only">discussions</span><span class="mobile-only">forums</span>
+</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_CodeProjectAI" class="fly" href="https://www.codeproject.com/Feature/CodeProjectAI-Discussions.aspx">CodeProject.AI Server</a></li>
+		<li><a id="ctl00_TopNavBar_MessageBoardsAll" class="fly" href="https://www.codeproject.com/script/Forums/List.aspx">All Message Boards...</a></li>
+		<li class="openable"><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1580997/Application-Lifecycle">Application Lifecycle<span class="has-submenu">&gt;</span></a>
+<ul class="openable"><li><a class="fly" href="https://www.codeproject.com/Forums/1533717/Running-a-Business">Running a Business</a></li>
+<li><a class="fly" href="https://www.codeproject.com/Forums/1533716/Sales-Marketing">Sales / Marketing</a></li>
+<li><a class="fly" href="https://www.codeproject.com/Forums/1651/Collaboration-Beta-Testing">Collaboration / Beta Testing</a></li>
+<li><a class="fly" href="https://www.codeproject.com/Forums/3304/Work-Issues">Work  Issues</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/369270/Design-and-Architecture">Design and Architecture</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1969389/Artificial-Intelligence">Artificial Intelligence</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/12076/ASP-NET">ASP.NET</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1580226/JavaScript">JavaScript</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1969388/Internet-of-Things">Internet of Things</a>
+</li>
+<li class="openable"><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1647/C-Cplusplus-MFC">C / C++ / MFC<span class="has-submenu">&gt;</span></a>
+<ul class="openable"><li><a class="fly" href="https://www.codeproject.com/Forums/4486/ATL-WTL-STL">ATL /  WTL / STL</a></li>
+<li><a class="fly" href="https://www.codeproject.com/Forums/3785/Managed-Cplusplus-CLI">Managed C++/CLI</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1649/Csharp">C#</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1627782/Free-Tools">Free Tools</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1827460/Objective-C-and-Swift">Objective-C and Swift</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1725/Database">Database</a>
+</li>
+<li class="openable"><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/186301/Hardware-Devices">Hardware &amp; Devices<span class="has-submenu">&gt;</span></a>
+<ul class="openable"><li><a class="fly" href="https://www.codeproject.com/Forums/1644/System-Admin">System Admin</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1606152/Hosting-and-Servers">Hosting and Servers</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1643/Java">Java</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1942421/Linux-Programming">Linux Programming</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1988311/Python">Python</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1650/NET-Core-and-Framework">.NET (Core and Framework)</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1848626/Android">Android</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1876716/iOS">iOS</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/13695/Mobile">Mobile</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1004257/WPF">WPF</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1646/Visual-Basic">Visual Basic</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1640/Web-Development">Web Development</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/suggestions.aspx">Site Bugs / Suggestions</a>
+</li>
+<li><a class="fly" style="padding-left:30px" href="https://www.codeproject.com/Forums/1652005/Spam-and-Abuse-Watch">Spam and Abuse Watch</a>
+</li>
+
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+<li class="openable"><a id="ctl00_TopNavBar_Features" href="https://www.codeproject.com/Feature/">
+      <span class="desktop-only tablet-only">features</span><span class="mobile-only">features</span>
+</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_Comps" class="fly" href="https://www.codeproject.com/script/Contests/CurrentCompetitions.aspx?cmpTpId=3&amp;amp;awsac=true">Competitions</a></li>
+        
+		<li><a id="ctl00_TopNavBar_News" class="fly" href="https://www.codeproject.com/script/News/List.aspx">News</a></li>
+		<li><a id="ctl00_TopNavBar_Insider" class="fly" href="https://www.codeproject.com/Feature/Insider/">The Insider Newsletter</a></li>
+    	<li><a id="ctl00_TopNavBar_DailyBuild" class="fly" href="https://www.codeproject.com/Feature/DailyBuild">The Daily Build Newsletter</a></li>
+		<li><a id="ctl00_TopNavBar_Newsletters" class="fly" href="https://www.codeproject.com/script/Mailouts/Archive.aspx?mtpid=1">Newsletter archive</a></li>
+		<li><a id="ctl00_TopNavBar_Surveys" class="fly" href="https://www.codeproject.com/script/Surveys/List.aspx">Surveys</a></li>
+		
+        
+		<li><a id="ctl00_TopNavBar_Stuff" class="fly" href="https://www.codeproject.com/Info/Stuff.aspx">CodeProject Stuff</a></li>
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+
+<li  class="openable"><a id="ctl00_TopNavBar_Lounge" href="https://www.codeproject.com/Lounge.aspx">
+            <span class="desktop-only tablet-only">community</span><span class="mobile-only">lounge</span>
+</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_WhosWho" class="fly" href="https://www.codeproject.com/script/Membership/Profiles.aspx">Who's Who</a></li>
+		<li><a id="ctl00_TopNavBar_MVPs" class="fly break" href="https://www.codeproject.com/script/Contests/Winners.aspx?obtid=1&amp;amp;cmpTpId=2&amp;amp;cid=0">Most Valuable Professionals</a></li>
+
+		<li><a id="ctl00_TopNavBar_LoungeLnk" class="fly highlight2" href="https://www.codeproject.com/Lounge.aspx">The Lounge  </a></li>
+		<li><a id="ctl00_TopNavBar_SiteBlog" class="fly break" href="https://www.codeproject.com/Members/CodeProject#_comments">The CodeProject Blog</a></li>
+
+		<li><a id="ctl00_TopNavBar_WhereAmILink" class="fly" href="https://www.codeproject.com/Forums/1939564/Where-I-am-Member-Photos">Where I Am: Member Photos</a></li>
+		<li><a id="ctl00_TopNavBar_InsiderLnk" class="fly" href="https://www.codeproject.com/Insider.aspx">The Insider News</a></li>
+		<li><a id="ctl00_TopNavBar_WeirdWonderful" class="fly" href="https://www.codeproject.com/Feature/WeirdAndWonderful.aspx">The Weird & The Wonderful</a></li>
+
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+
+<li class="openable" style="margin-left:20px"><a id="ctl00_TopNavBar_Help" href="https://www.codeproject.com/KB/FAQs/">
+    <span class="desktop-only tablet-only">help</span><span class="mobile-only">?</span>
+</a>
+
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_HelpWhatIs" class="fly" href="https://www.codeproject.com/info/guide.aspx">What is 'CodeProject'?</a></li>
+		<li><a id="ctl00_TopNavBar_HelpGeneral" class="fly break" href="https://www.codeproject.com/KB/FAQs/">General FAQ</a></li>
+		<li><a id="ctl00_TopNavBar_HelpPostQuestion" class="fly break highlight2" href="https://www.codeproject.com/Questions/ask.aspx">Ask a Question</a></li>
+		<li><a id="ctl00_TopNavBar_HelpBugs" class="fly" href="https://www.codeproject.com/suggestions.aspx">Bugs and Suggestions</a></li>
+		<li><a id="ctl00_TopNavBar_HelpArticles" class="fly" href="https://www.codeproject.com/Forums/1641/Article-Writing">Article Help Forum</a></li>
+		
+		
+		
+		
+		<li><a id="ctl00_TopNavBar_HelpAboutUs" class="fly" href="https://www.codeproject.com/info/about.aspx">About Us</a></li>
+		<li class="last"></li>
+	</ul>
+
+</li>
+
+</ul>
+
+</div>
+		</div>
+		<div class="flex-item-tight align-right">
+			
+
+<div class="searchbar">
+
+<form method="get" action="https://www.codeproject.com/search.aspx?sbo=kw" name="Search" class="tight">
+
+
+<table border="0" cellspacing="0" cellpadding="0" class="search"><tr><td><input TabIndex="2" class="search " id="sb_tb" autocomplete="off" value="" name="q" /></td><td><input type="image" src="https://www.codeproject.com/images/search.gif" /></td></tr></table>
+
+<div class="hover-container">
+	<div id="SearchFilter" class="search-advanced popup small-text align-left">
+	<b>Search within:<br /></b>
+		
+		<input type="radio" id="sb_kw" name="sbo" value="kw" checked="checked"><label for="sb_kw">Articles</label><br>
+<input type="radio" id="sb_qa" name="sbo" value="qa"><label for="sb_qa">Quick Answers</label><br>
+<input type="radio" id="sb_fm" name="sbo" value="fm"><label for="sb_fm">Messages</label><br>
+
+
+		
+		
+
+		
+		
+	</div>
+</div>
+</form>
+
+</div>
+		</div>
+		<div class="sub-headerbar-divider"></div>
+	</div>		
+	
+
+	<div id="A" class="container-content-wrap fixed"> 
+
+	<div class="container-content">
+
+        
+		<div class="clearfix">
+			<div class="container-breadcrumb float-left ">
+				<div>Articles / Programming Languages / C#</div>
+			</div>
+
+            <div class="float-left">
+				
+			</div>
+
+			<div class="edit-links float-right">
+				
+
+
+
+ 
+&nbsp;
+
+
+
+
+
+
+
+
+
+
+			</div>
+
+			<div class="article-nav float-right">
+				
+
+
+<div style="display:inline-block;position:relative;top:-6px;margin-right:20px">
+    
+</div>
+
+
+
+ 
+
+<a id="ctl00_ActionLinks_PrintMd" data-tooltip="Print" data-enabletooltip="true" data-width="auto" href="https://www.codeproject.com/Articles/594636/Using-Matlab-from-a-Csharp-Application?display=Print">
+   <img src="https://www.codeproject.com/App_Themes/CodeProject/Img/print48.png" 
+	    width="24" height="24" style="border:0">
+</a>
+
+
+
+<span id="ctl00_ActionLinks_R">
+    
+    
+</span>
+			</div>
+		</div>
+
+        
+		<div class="extended article-container-parts">
+
+			
+		    <div id="ctl00_LeftSideBar" class="article-left-sidebar">
+
+                <div id="ctl00_StickyBlock" class="article-left-sidebar-inner sticky">
+
+                    
+    		        
+
+<div class="tabs">
+	<div class=" selected">Technical Blog</div>
+<div class="original"><a href="http://internetexception.com/post/2013/01/20/Using-with-Matlab-from-C-sharp-application.aspx">View Original</a></div><div><a href="https://www.codeproject.com/script/Articles/Statistics.aspx?aid=594636">Stats</a></div>
+<div><a href="https://www.codeproject.com/script/Articles/ListVersions.aspx?aid=594636">Revisions (5)</a></div>
+
+
+    
+</div>
+
+
+
+			        
+
+			        <div>
+                        
+			            
+			        </div>
+
+                    
+
+                    
+                </div>
+		    </div>
+            
+
+			
+			<div id="AT" class="article-container  fixed"> 
+
+				<div class="article">
+
+					<form name="aspnetForm" method="post" action="https://www.codeproject.com/Articles/594636/View.aspx" id="aspnetForm" style="margin:0;padding:0">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="JrZUDXyBPTVyeGoXV0EbGL56KMKVNBPXCSKaX4RlR0soBiOjysYN9SKdPf1wOMpJq5gJ5HjDlk/l8+TsEWC0uM8QK+UB7tzTLoXyOVWMKTlXb3aEnxO8maNZbgk53uVhazEBYnm+zRSKZrXY0XY2C+FtboY8v095FHCyqFjba/w5JwB6cUY5D5iGHNjEwMedM+UBWJfG7dzHgUGlNQotoM/7P+Pmc2QnOxvnlD7KAk/C1NTREkai0f0U3IsaGcnaXq1elXrfe2Dj7yZ6K/nXZa+t1AajrY5n4+3Jat+QWK6IGV/eLtevMvgglQR4ti+nGAjC7QoAwls3yFXN0HNfsjIfIH5MvJA217xpLIrYvXyMKu3hD03f++eat7hZSYIb+iMzp6QZM7b4+SedjhqqTVZE+p2X97Po8J/jpAR6RHah1H1jql6pKnan2IWKJIdmjR+wdVdBqNj0HJ+qCi0r6vF6W4Rk9YmOC/gqbkJ55nJBUsCIuwF1BOiu87IkoZ47SPGnqYWQe89m30fSdEJbo2RJPpDUaWJZCDTsiDqfFmfB/TZLnX35SHqGN0aTW2UFUVwEL+TMBt7QEv3TmxmlGN9JyXHaS6uBxFp4tBjFkk9Xwrc/0DGf5LL2JRQbILvsfO5PfwZDB28KUBDv618hOmBMneJjW+MgObmm4W/tMLePu2xwfQW8A67F3cyQAYl8nGE9MGNSogKbTNcfAOz/L6dI+9U/wN1lUwcfuTxr0pvM+4GU0HZ9DCU0IqTwi0YrZcf3mtV+egPfiBN+7JXFg0TA+CTLT05t9mB3a9TYLAd3C6HmEJ1XXZ0O3MRIU/ul06C4PvfGM2Ch3lcBxAexVm3raeSmrZd1oNzHI9Lr2Z4Oc/PT7tz2piHufxyvg1/x1e+v5LEJ41CEQmULiyULhwWtNcAc5JSIK72ScH9m/8yrM7dCiLF0iIX6iFfkDRziiOLoGbEN2xQM2m2iZyW2QzM8zSjaAqm2c1aUmPx8wLk3oZEo038nFiOT8qHK5WtMo8hdXWus2OxAwtlfb2WSFo3zCTITCH/ub/oorfYBAo2/mt1Yn6/vZuoZ5CQvFqOg2slJpzkLDzKE9ZUfVYEHKkqly60y8TFL+n30aYSpDq8aFl1aGIuOPoTmmU7VPk7BMlrm+qWsZYdCrHb9F99hfxMDbOUMVc8PbGIZY6tVOsMU+MFdMvQYjM8wG8nSAH7VtBRr9xk7QGIHRXQ557aAG/tzam0OmdjJPll0c0vZko5TPvKztHICAFGqwaHGAgNoXXWIj7NBHRp/MPl/2RtAhLH1oLOpsasNwNNoGo8NHm7dqfi9dwVYiBRJgZZ0gerXuN9Cmto5mtnQxIe8XgHbbC41QcBfeVqwnF9MQuPR/kmeXY+mBcwesMW8WrFVjTFBsd3vR04v+xHvU9nDfJZEWCUM2krMoMFPhrRkkWq4fSO57kAqTnx5uuZbP0jKUkche/15hZ+CmPSiLZGqaE+Hb3NLCMXZ0mQV4/0v2Vkre5FSVwY+GOA/9U7zDNILkvQqPlBoEhQ3vffNJDqYbFClLlUGV+J/cCI+/TzLYt7e6XmWTE9s7wceZWILAYBrKBbLNycjd9OzVkg0ha6uwVlOLpQu/4UmViO/vKJ1sal924o1nYh3i4RtEEMg6VgeaAPsVjFfikGxiqnh2SvtZlgk9Eock4pwMGpHI80ugNPHAlfSRa4zKS3CV38usXGZFE7518uBV5DGO6oQdgB8wWRu3vFrRawre9CX6zMoK2sP0g2fGYzRoITeVCa8JuEbIg04Yp5EBoLashdR361ox6t5qynEEFI/RUKvn8O6zLGg9V1Vsf0epgGctvszjVE4BuEF69JBk2g8qVy/hKwoJgfNFlmXD0yaWXs22Lzo3duGD5eUXxZJQRRfV85tyOeLbH2lqZ6YaNDLB4FdvBE5PfMBb7SG7eZ4B8V3DFrlGnuIHKwk8qO/ijaX6Us9jT8l+V8lXZ7rRB32PqJHVKbLMtHb+J5UHaldNIO/UzR4ldPhGVoTk9OdNtRGTuYerGd+Tmzrlniap6S74sQYgOk/RUNgSBYNkcfAG6EaED3r/vNejG6wbe16VFz0UgKkqbwilmlN4tb37vRSEAjYOFYMsTcy5ZVGMZ1KKwisQ5fPASLAMmasDG5PGzokzj0pvT2fqO8AfpR7S0R3G01B7C0EXkmkaYxqxre5OlfFbabRclsK7u73BwKBIo/0zryy0R/SeBstD/ldcjtWlW+Q8RFySLoP6SvPm4IDaqtk1ywwcighuLb7Sw+J" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="10C1FD69" />
+</div>
+
+					
+					 
+					<div class="header">
+					    <a name="Main"></a>
+					    <a name="_articleTop" id="_articleTop"></a>
+
+					    
+						<div>
+							<span id="ctl00_TagListHorz_TagWrp" class="tags horizontal">
+
+	
+	
+
+	
+	<span id="ctl00_TagListHorz_VisibleTags"><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/Csharp" data-id="81">C#</a></div><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/MatLab" data-id="922">MatLab</a></div></span> 
+
+	
+	
+</span>
+
+
+						</div>
+					    <div class="title">
+					        <h1 id="ctl00_ArticleTitle">Using Matlab from a C# Application</h1>
+					    </div>
+
+                        <div>
+					        
+					        <div class="entry flex-container">
+
+								<div id="ctl00_avatarWrap" class="avatar-wrap align-center">
+									<img src="https://www.codeproject.com/Uploads/Membership/ProfileImages/{7d8d3ca4-4f44-4084-b095-e84e7fac45ef}.jpg" id="ctl00_avatar" class="avatar" />
+								</div>
+
+                                <div class="flex-item" style="flex:1 1 auto">
+                                    <div class="flex-container" style="justify-content:space-between;flex-wrap:wrap-reverse">
+                                       <span id="ctl00_Authors" class="author flex-item"><a href="https://www.codeproject.com/script/Membership/View.aspx?mid=7394731" rel="author">n.podbielski</a></span> 
+
+                                        <div class="flex-item" style="margin-top:-4px;">
+                                            <div id="ctl00_RateArticle_RatingTable" class="small-text" data-objectref="2_594636_5">
+
+	<meta itemprop="upvoteCount" content="13">
+
+
+	<div id="ctl00_RateArticle_RatingRow" class="flex-container rating-container large-stars">
+
+					
+		<div id="ctl00_RateArticle_Prompt" class="rating-prompt nowrap">Rate me:</div>
+
+		
+		<div class="nowrap tooltip">
+
+			
+			
+			
+
+			
+			<div id="ctl00_RateArticle_RatingHistWrap" class="tooltip">
+
+				
+				<div id="ctl00_RateArticle_ResultWithHist" class="rating-result"><div class="flex-container rating-stars large-stars"><div><img src='https://www.codeproject.com/script/Ratings/Images/star-fill-lg.png' style='width:24px;height:24px'></div><div><img src='https://www.codeproject.com/script/Ratings/Images/star-fill-lg.png' style='width:24px;height:24px'></div><div><img src='https://www.codeproject.com/script/Ratings/Images/star-fill-lg.png' style='width:24px;height:24px'></div><div><img src='https://www.codeproject.com/script/Ratings/Images/star-fill-lg.png' style='width:24px;height:24px'></div><div><img src='https://www.codeproject.com/script/Ratings/Images/star-fill-lg.png' style='width:24px;height:24px'></div></div></div>
+				
+
+				<div class="speech-bubble-container-up-right" style="width:170px">
+					<div class="speech-bubble-up-right">
+						<div class="histogram"></div>
+					</div>
+					<div class="speech-bubble-pointer-up-right">
+						<div class="speech-bubble-pointer-up-right-inner"></div>
+					</div>
+				</div>
+			</div>
+
+			
+            
+
+			
+            <span id="ctl00_RateArticle_RatingSignin" class="speech-bubble-container-down">
+		        <div class="speech-bubble-down">
+                    Please <a id="ctl00_RateArticle_SignUp" href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f594636%2fUsing-Matlab-from-a-Csharp-Application">Sign up or sign in</a> 
+                    to vote.
+		        </div>
+		        <div class="speech-bubble-pointer-down">
+			        <div class="speech-bubble-pointer-down-inner"></div>
+		        </div>
+	        </span>    
+
+		</div>
+		
+	
+		
+		<div id="ctl00_RateArticle_VoteCountNoHist" class="rating-votes nowrap">5.00/5  (13 votes)</div>	
+
+		
+
+		
+		<div class="rating-undo" title="Undo vote" style="margin-left:5px;display:none"></div>
+
+		
+		
+	</div>
+
+	
+	
+
+</div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="flex-container" style="color:#666;font-size:smaller">
+                                        <span id="ctl00_LastUpdated" class="date flex-item-tight" title="Date last updated">4 Apr 2017</span><a id="ctl00_LicenseLink" title="The Code Project Open License (CPOL)" class="license flex-item-tight" title="Licence" href="http://www.codeproject.com/info/cpol10.aspx">CPOL</a><span id="ctl00_ReadingTime" class="stats flex-item-tight">7 min read</span><span id="ctl00_HorizontalStats" class="stats flex-item-tight"><span class="stats"><span title='Views'><img src='https://www.codeproject.com/App_Themes/CodeProject/Img/views32.png' style='width:16px'> 109.8K</span> &nbsp; <span title='Bookmarks'><img src='https://www.codeproject.com/App_Themes/CodeProject/Img/bookmarks32.png' style='width:16px'> 32</span> &nbsp; <span title='Comments'><a href='#_comments'><img src='https://www.codeproject.com/App_Themes/CodeProject/Img/message32.png' style='width:16px;border:0'> 11</a></span></span></span>
+                                    </div>
+                                </div>
+					        </div>
+
+                            
+
+                        </div>
+
+                        <div id="ctl00_DescriptionSpot" class="summary">Using Matlab from a C# application</div><span id="ctl00_ThumbnailUrl" class="date" content="https://www.codeproject.com/KB/cs/594636/Thumbnail.png"></span>			
+
+                    </div>
+                    
+					
+					
+
+					
+
+					
+					
+
+					
+					
+
+						
+					
+
+					
+
+						
+						<div id="contentdiv" class="text">
+						
+
+
+
+<html><head></head><body><p>While writing an application for my Masters degree diploma, I wrote a simple application that was using COM Matlab server. I have found it hard to use it mainly due to lack of documentation, which is really basic with only few code examples for C#. I guess writing programs that use Matlab for calculating is not encouraged by MathWorks, you would became competition that way <img alt="Smile" border="0" src="https://internetexception.com/editors/tiny_mce_3_5_7/plugins/emotions/img/smiley-smile.gif" title="Smile" style="max-width: 700px; height: auto">. Nonetheless, I accomplished why I was required to do, so I decided to share this with the rest of the world.</p>
+
+<p><strong>Important</strong>: I was using R2010a version of Matlab. I realize that there is a newer version. But I had only this version at my disposal. Since interface for communicating with Matlab server is dependent on installed Matlab version and registry entries, it may have been different from yours. But I suspect not too much. I also tried with 7.1 and (if I remember correctly) it required only to swap reference in Visual Studio. But again... it was only a test so there might be other problems that I am not aware of.</p>
+
+<p>Let's start with a simple console application. Let's call it <code>MatlabTest</code>. First, we will add DLL reference with COM interface. Click RMB on project and choose [Add Reference] option. In new window, click COM tab. In search text box, write 'Matlab'. Then choose "Matlab Application (Version 7.10) Type Library".</p>
+
+<p>You should get a new reference like below:</p>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="height: 220px; width: 260px" alt="Image 2" data-src="/KB/cs/594636/image.png" class="lazyload"></p>
+
+<p>Great. Now we should test if it is working. In order to use it, we should create our Matlab server from C# application. To do that, we can add code to our main program:</p>
+
+<div class="pre-lang" id="premain118711"><div>C#</div><div class="pre-action-link"><span id="copycode118711" class="copy-code" data-index="118711" style="visibility:hidden"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre118711" style="margin-top:0;" class="lang-csharp" data-language="cs" data-allowshrink="True" data-collapse="False"><span class="code-keyword">var</span> activationContext = Type.GetTypeFromProgID(<span class="code-string">"</span><span class="code-string">matlab.application.single"</span>);
+<span class="code-keyword">var</span> matlab = (MLApp.MLApp)Activator.CreateInstance(activationContext);
+Console.WriteLine(matlab.Execute(<span class="code-string">"</span><span class="code-string">1+2"</span>));
+Console.ReadKey();</pre>
+
+<p>This code will create a single Matlab COM server through <code>Activator</code> class. Program Id "<code>matlab.application.single</code>" means single Matlab COM server for our application. When it will try to create another Matlab, it will just return a reference to the same object. Contrary to that, we could use "<code>matlab.application</code>" which will create another instance of Matlab anytime <code>Activator.CreateIntance</code> method will be executed. In more complex applications or for web applications or other programs which run for a long time, it may create big memory leaks since 1 instance costs around 220 Mb (on 64 bit Windows 7 and Matlab R2010a).</p>
+
+<p>After creating Matlab program, execute a simple sum of 2 integers, just for testing communication - we don't need anything more sophisticated. It should return also a simple <code>string</code> in console:</p>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="height: 251px; width: 301px" alt="Image 3" data-src="/KB/cs/594636/image2.png" class="lazyload"></p>
+
+<p>It's really simple and more importantly, it works! <img alt="Smile" border="0" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" title="Smile" data-src="https://internetexception.com/editors/tiny_mce_3_5_7/plugins/emotions/img/smiley-smile.gif" class="lazyload" style="max-width: 700px; height: auto"></p>
+
+<p>This way, we can send and receive <code>string</code> messages with MATLAB only. It's not very useful. Also, there is one way to find out if our statement had errors. It will have '<code>error</code>' <code>string</code> in response.</p>
+
+<p>Let's try to run something like this: '<code>1*</code>', which will result in error:</p>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="height: 179px; width: 437px" alt="Image 5" data-src="/KB/cs/594636/image3.png" class="lazyload" data-sizes="auto" data-srcset="/KB/cs/594636/image3-r-400.png 400w, /KB/cs/594636/image3.png 437w"></p>
+
+<p>So to check our command had errors, we have to check if output <code>string</code> has "<code>??? Error</code>" in it.</p>
+
+<p>To send some parameters along with our command, we have to use one of '<code>Put</code>*' methods. Best is one called <code>PutWorkspaceData</code>. It takes three parameters. First is the desired name of our new Matlab variable. Two others are much more tricky. To set variable correctly (so you could reference it in command), you must use global workspace. But it is called? This one took much more time than I would want. It is not mentioned in the documentation of this method. If I remember it right, I found it in some code example and it should be only "<code>base</code>". In the end, I created in my application another method that encapsulated <code>PutWorkspaceData</code> and forgot about it <img alt="Smile" border="0" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" title="Smile" data-src="https://internetexception.com/editors/tiny_mce_3_5_7/plugins/emotions/img/smiley-smile.gif" class="lazyload" style="max-width: 700px; height: auto">. The third parameter is the value of our variable. It should be simple. Let's change our code to:</p>
+
+<div class="pre-lang" id="premain523321"><div>C#</div><div class="pre-action-link"><span id="copycode523321" class="copy-code" data-index="523321" style="visibility:hidden"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre523321" style="margin-top:0;" class="lang-csharp" data-language="cs" data-allowshrink="True" data-collapse="False">matlab.PutWorkspaceData(<span class="code-string">"</span><span class="code-string">a"</span>, <span class="code-string">"</span><span class="code-string">base"</span>, <span class="code-digit">2</span>);
+Console.WriteLine(matlab.Execute(<span class="code-string">"</span><span class="code-string">a*a"</span>));</pre>
+
+<p>The result will be as shown below:</p>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="height: 179px; width: 349px" alt="Image 7" data-src="/KB/cs/594636/image4.png" class="lazyload"></p>
+
+<p>But it is just <code>int</code>. What about more complicated structures? How about multiplication of two vectors? Matlab is using .NET type <code>double</code> to send and receive information with our application. Again, I did not find it anywhere in the documentation, but rather reverse engineered this from data returned from Matlab. So let us try to send 2 arrays of doubles. and multiply them in Matlab. First will be named '<code>a</code>' and second '<code>b</code>'. Matlab command will be "<code>a'*b</code>". Transposition will give us a nice matrix instead for a single number.</p>
+
+<div class="pre-lang" id="premain392095"><div>C#</div><div class="pre-action-link"><span id="copycode392095" class="copy-code" data-index="392095" style="visibility:hidden"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre392095" style="margin-top:0;" class="lang-csharp" data-language="cs" data-allowshrink="True" data-collapse="False">matlab.PutWorkspaceData(<span class="code-string">"</span><span class="code-string">a"</span>, <span class="code-string">"</span><span class="code-string">base"</span>, new[]{2d,3d,1d});
+matlab.PutWorkspaceData(<span class="code-string">"</span><span class="code-string">b"</span>, <span class="code-string">"</span><span class="code-string">base"</span>, new[]{4d,3d,2d});
+Console.WriteLine(matlab.Execute(<span class="code-string">"</span><span class="code-string">a'*b"</span>));</pre>
+
+<p>And in return we will get:</p>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="height: 203px; width: 341px" alt="Image 8" data-src="/KB/cs/594636/image5.png" class="lazyload"></p>
+
+<p>Next step will be to return this output to our console app. To do that, we can use <code>GetWorkspaceData</code> that works similar to <code>PutWorkspaceData</code> or... we can use <code>GetVariable</code> method. This one returns <code>dynamic</code> so our application needs to run on .NET 4. It takes two parameters - name of variable we want to return from Matlab and again name of workspace. You really should save this <code>string</code> as <code>const</code> somewhere <img alt="Smile" border="0" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" title="Smile" data-src="https://internetexception.com/editors/tiny_mce_3_5_7/plugins/emotions/img/smiley-smile.gif" class="lazyload" style="max-width: 700px; height: auto">. Change our code to:</p>
+
+<div class="pre-lang" id="premain890172"><div>C#</div><div class="pre-action-link"><span id="copycode890172" class="copy-code" data-index="890172" style="visibility:hidden"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre890172" style="margin-top:0;" class="lang-csharp" data-language="cs" data-allowshrink="True" data-collapse="False">matlab.PutWorkspaceData(<span class="code-string">"</span><span class="code-string">a"</span>, <span class="code-string">"</span><span class="code-string">base"</span>, new[]{2d,3d,1d});
+matlab.PutWorkspaceData(<span class="code-string">"</span><span class="code-string">b"</span>, <span class="code-string">"</span><span class="code-string">base"</span>, new[]{4d,3d,2d});
+Console.WriteLine(matlab.Execute(<span class="code-string">"</span><span class="code-string">c=a'*b"</span>));
+<span class="code-keyword">var</span> c = matlab.GetVariable(<span class="code-string">"</span><span class="code-string">c"</span>, <span class="code-string">"</span><span class="code-string">base"</span>);</pre>
+
+<p>After that, in our console app, we will have variable <code>c</code> and it will be a two dimensional array of <code>double</code>s. To show values of this array in console, we can just iterate it with a simple <code>foreach</code> loop. But instead of that, we will iterate two of the dimensions. This will give us information about values and dimensions of this matrix.</p>
+
+<div class="pre-lang" id="premain769382"><div>C#</div><div class="pre-action-link"><span id="copycode769382" class="copy-code" data-index="769382" style="visibility:hidden"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre769382" style="margin-top:0;" class="lang-csharp" data-language="cs" data-allowshrink="True" data-collapse="False"><span class="code-keyword">for</span> (<span class="code-keyword">var</span> i = <span class="code-digit">0</span>; i &lt; c.GetLength(<span class="code-digit">0</span>); i++)
+{
+   <span class="code-keyword">for</span> (<span class="code-keyword">var</span> j = <span class="code-digit">0</span>; j &lt; c.GetLength(<span class="code-digit">1</span>); j++)
+        Console.Write(c.GetValue(i, j) + <span class="code-string">"</span><span class="code-string"> "</span>);
+   Console.WriteLine();
+}</pre>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="height: 227px; width: 301px" alt="Image 10" data-src="/KB/cs/594636/image6.png" class="lazyload"></p>
+
+<p>Ok.That was matrix. How about vectors? Luckily, vectors are for Matlab just a special case of matrix so it will spit out two dimensional array also. More complex is the case of empty matrix. No, it is not <code>null</code>. It would be too easy. Instead, it is a special type <code>Missing</code>. I guess it has some logic behind. <code>Null</code> would indicate that variable will have no value at all or this is not defined. But we have an empty matrix, so this is not defined nor is this a lack of value. So why not just array with zero values in it? No idea.</p>
+
+<p>Let's try to run code like below to test it:</p>
+
+<div class="pre-lang" id="premain619811"><div>C#</div><div class="pre-action-link"><span id="copycode619811" class="copy-code" data-index="619811" style="visibility:hidden"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre619811" style="margin-top:0;" class="lang-csharp" data-language="cs" data-allowshrink="True" data-collapse="False">Console.WriteLine(matlab.Execute(<span class="code-string">"</span><span class="code-string">c=a'*b"</span>));
+Console.WriteLine(matlab.Execute(<span class="code-string">"</span><span class="code-string">d=[]"</span>));
+<span class="code-keyword">var</span> c = matlab.GetVariable(<span class="code-string">"</span><span class="code-string">c"</span>, <span class="code-string">"</span><span class="code-string">base"</span>);
+<span class="code-keyword">var</span> d = matlab.GetVariable(<span class="code-string">"</span><span class="code-string">d"</span>, <span class="code-string">"</span><span class="code-string">base"</span>);
+<span class="code-keyword">for</span> (<span class="code-keyword">var</span> i = <span class="code-digit">0</span>; i &lt; d.GetLength(<span class="code-digit">0</span>); i++)
+{
+   <span class="code-keyword">for</span> (<span class="code-keyword">var</span> j = <span class="code-digit">0</span>; j &lt; d.GetLength(<span class="code-digit">1</span>); j++)
+      Console.Write(d.GetValue(i, j) + <span class="code-string">"</span><span class="code-string"> "</span>);
+   Console.WriteLine();
+}</pre>
+
+<p>Running those commands in Matlab will work just fine. Instead of that, error will be thrown on first <code>for</code> loop:</p>
+
+<p><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="height: 229px; width: 640px" alt="Image 11" data-src="/KB/cs/594636/image7.png" class="lazyload" data-sizes="auto" data-srcset="/KB/cs/594636/image7-r-400.png 400w, /KB/cs/594636/image7.png 640w"></p>
+
+<p>Not very nice. To prevent this error, the application will have to check if dynamic type returned from matlab is in fact empty (Missing). Not very clean it is better to wrap this in other method that will perform this check for us whenever we want to get our data from Matlab. In my project, I ended up writing few methods for returning vectors, matrices, numbers, strings, etc. Vector one looked like this:</p>
+
+<div class="pre-lang" id="premain416998"><div>C#</div><div class="pre-action-link"><span id="copycode416998" class="copy-code" data-index="416998" style="visibility:hidden"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre416998" style="margin-top:0;" class="lang-csharp" data-language="cs" data-allowshrink="True" data-collapse="False"><span class="code-keyword">public</span> <span class="code-keyword">static</span> Vector GetVector(<span class="code-keyword">this</span> MLApp.MLApp matlabComObject, <span class="code-keyword">string</span> variabla_name)
+{
+    <span class="code-keyword">var</span> dynamicVariable = matlabComObject.GetBaseWorkSpaceVariable(variabla_name);
+    <span class="code-keyword">var</span> dataList = <span class="code-keyword">new</span> Vector();
+
+    <span class="code-keyword">if</span> (TypeChecker.IsVector(dynamicVariable))
+    {
+        dataList = Vector.DynamicToVector(dynamicVariable);
+    }
+    <span class="code-keyword">else</span> <span class="code-keyword">if</span> (TypeChecker.IsNumber(dynamicVariable))
+    {
+        dataList.Add(dynamicVariable);
+    }
+    <span class="code-keyword">else</span> <span class="code-keyword">if</span> (TypeChecker.IsEmptyMatrix(dynamicVariable))
+    {
+        <span class="code-comment">//</span><span class="code-comment">do nothing empty vector or matrix ([0x0] or [1x0])</span>
+    }
+    <span class="code-keyword">else</span> <span class="code-keyword">throw</span> <span class="code-keyword">new</span> Exception(<span class="code-keyword">string</span>.Format(
+      <span class="code-string">"</span><span class="code-string">Type of dynamic variable ({0}) is not supported!"</span>, dynamicVariable.GetType()));
+    <span class="code-keyword">return</span> dataList;
+}</pre>
+
+<p><code>TypeCheker</code> checks for type of <code>dynamic</code>. It's pretty straightforward. For our <code>Missing</code> type, it's just one line:</p>
+
+<div class="pre-lang" id="premain366381"><div>C#</div><div class="pre-action-link"><span id="copycode366381" class="copy-code" data-index="366381" style="visibility:hidden"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre366381" style="margin-top:0;" class="lang-csharp" data-language="cs" data-allowshrink="True" data-collapse="False"><span class="code-keyword">public</span> <span class="code-keyword">static</span> <span class="code-keyword">bool</span> IsEmptyMatrix(<span class="code-keyword">object</span> dynamicVariable)
+{ <span class="code-keyword">return</span> dynamicVariable.GetType() == <span class="code-keyword">typeof</span>(Missing); }</pre>
+
+<p>After checking type of <code>dynamic</code>, we can just cast it to another type to take advantage of <code>static</code> properties of language. Why use <code>dynamic</code> at all? First, I think that <code>ref</code> and <code>out</code> method parameters are messy and second: I prefer:</p>
+
+<div class="pre-lang" id="premain884"><div>C#</div><div class="pre-action-link"><span id="copycode884" class="copy-code" data-index="884" style="visibility:hidden"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre884" style="margin-top:0;" class="lang-csharp" data-language="cs" data-allowshrink="True" data-collapse="False"><span class="code-keyword">var</span> d = matlab.GetVariable(<span class="code-string">"</span><span class="code-string">d"</span>, <span class="code-string">"</span><span class="code-string">base"</span>);</pre>
+
+<p>from:</p>
+
+<div class="pre-lang" id="premain705540"><div>C#</div><div class="pre-action-link"><span id="copycode705540" class="copy-code" data-index="705540" style="visibility:hidden"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre705540" style="margin-top:0;" class="lang-csharp" data-language="cs" data-allowshrink="True" data-collapse="False"><span class="code-keyword">object</span> e;
+matlab.GetWorkspaceData(<span class="code-string">"</span><span class="code-string">d"</span>, <span class="code-string">"</span><span class="code-string">base"</span>, <span class="code-keyword">out</span> e);</pre>
+
+<p>It is only 1 line. And since object you have to create first and then cast it also, don't bother and just use <code>dynamic</code>. But I guess it is just what you will like better.</p>
+
+<p><code>String</code>s are much more friendly and there are just <code>string</code>. Or <code>null</code>. <img alt="Smile" border="0" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" title="Smile" data-src="https://internetexception.com/editors/tiny_mce_3_5_7/plugins/emotions/img/smiley-smile.gif" class="lazyload" style="max-width: 700px; height: auto"></p>
+
+<p>Now we know how to put and get data from Matlab. How to execute commands and check them for errors.</p>
+
+<p>If you executed any of these examples, you probably took notice of a very simple Matlab window which had opened during the life of your console app. If you terminate it by disabling debugging or it will close due to error, Matlab window will remain opened. If not, it will close nicely with console window. But still, it is a huge memory leak risk if not maintained properly. To that, I recommend creating some special class that will create an instance or instances of Matlab. It should track one of the created instances and in case anything bad happens (but dynamic variable cast is probability <img alt="Smile" border="0" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" title="Smile" data-src="https://internetexception.com/editors/tiny_mce_3_5_7/plugins/emotions/img/smiley-smile.gif" class="lazyload" style="max-width: 700px; height: auto">), it will close all instances prior to application exit. Tracking should be employed through <code>WeakReference</code> class, so whenever Garbage Collector would want to destroy Matlab instance, it should not be stopped by our tracking class. To destroy COM instance, we can use method <code>Marshal.FinalReleaseComObject</code>. So with weak reference code for that will look like this:</p>
+
+<div class="pre-lang" id="premain659178"><div>C#</div><div class="pre-action-link"><span id="copycode659178" class="copy-code" data-index="659178" style="visibility:hidden"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre659178" style="margin-top:0;" class="lang-csharp" data-language="cs" data-allowshrink="True" data-collapse="False"><span class="code-keyword">public</span> <span class="code-keyword">static</span> <span class="code-keyword">void</span> Release(WeakReference instance)
+{
+    <span class="code-keyword">if</span> (instance.IsAlive)
+    {
+        Marshal.FinalReleaseComObject(instance.Target);
+    }
+}</pre>
+
+<p>Method <code>Quit</code> of matlab server instance does not close it immediately and the code above will.</p>
+
+<p>If you want to hide that popup Matlab window, you can set this in its instance:</p>
+
+<div class="pre-lang" id="premain640938"><div>C#</div><div class="pre-action-link"><span id="copycode640938" class="copy-code" data-index="640938" style="visibility:hidden"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre640938" style="margin-top:0;" class="lang-csharp" data-language="cs" data-allowshrink="True" data-collapse="False">matlab.Visible = <span class="code-digit">0</span>;</pre>
+
+<p>This way, it will fade away and run as service.</p>
+
+<p>This is the most basic information about Matlab in C#, but it will get you started. So happy coding! <img alt="Smile" border="0" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" title="Smile" data-src="https://internetexception.com/editors/tiny_mce_3_5_7/plugins/emotions/img/smiley-smile.gif" class="lazyload" style="max-width: 700px; height: auto"></p></body>
+<!-- Mirrored from www.codeproject.com/Articles/594636/Using-Matlab-from-a-Csharp-Application by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 08 Sep 2024 21:48:06 GMT -->
+</html>
+
+
+						</div>
+						
+
+						<div id="ctl00_OriginallyPosted">This article was originally posted at <a href="http://internetexception.com/post/2013/01/20/Using-with-Matlab-from-C-sharp-application.aspx">http://internetexception.com/post/2013/01/20/Using-with-Matlab-from-C-sharp-application.aspx</a></div>
+						<h2>License</h2>
+						<div id="LicenseTerms"><p>This article, along with any associated source code and files, is licensed under <a href="http://www.codeproject.com/info/cpol10.aspx" rel="license">The Code Project Open License (CPOL)</a></p></div>
+						
+
+						
+						<br />
+						
+						    
+
+<div class="author-wrapper">
+
+    <div class="desktop-only tablet-only" style="position:absolute; top:-30px;right:20px">
+        <img id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberPhoto" class="profile-pic" src="https://www.codeproject.com/Uploads/Membership/ProfileImages/{7d8d3ca4-4f44-4084-b095-e84e7fac45ef}.jpg" style="border-width:0px;transform:rotate(-1deg);" />
+    </div>
+
+    <div style="padding-right:100px">
+        <div class="subdue" style="margin-bottom:7px">Written By</div>
+
+        <div class="container-member">
+             <b><a id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberProfileLink" class="author" href="https://www.codeproject.com/Members/n-podbielski">n.podbielski</a></b>
+        </div>
+
+        <div class="company text-nowrap">
+            <span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberJobTitle">Software Developer</span>
+	        <span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberCompany"></span>
+        </div>
+
+        <div class="text-nowrap">
+            <span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberLocation"><img src="https://www.codeproject.com/script/Geo/Images/PL.gif" alt="Poland" width="16" height="11" />&nbsp;Poland</span>
+        </div>
+    </div>
+
+</div>
+
+<div class="description" style="padding-top:1rem">
+    This member has not yet provided a Biography. Assume it's interesting and varied, and probably something to do with programming.
+</div>
+
+<div id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_SocialRow" class="follow flex-container flex-extend" style="margin-top:20px">
+    <div class="flex-item">
+        
+    </div>
+    <div class="flex-item-tight" style="margin-right:25px">
+        
+    </div>
+</div>
+
+<br />
+						
+						
+
+						<div class="clearfix"></div>
+
+						<div style="padding-top:8px">
+							
+						</div>
+
+					
+
+				    
+					</form>
+
+				</div>
+
+				
+				<div class="bottom-promo"> 
+				    <div class="msg-728x90" data-format="728x90" data-type="ad" data-publisher="lqm.codeproject.site" data-zone="Programming-LanguagesCsharp"  data-country='US' data-loadOnView='true'  data-tags='C#, MatLab,rating4.5,article-594636,pos_bottom'><noscript><a href="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/Programming-LanguagesCsharp&amp;sz=728x90&amp;c=598452"><img src="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/Programming-LanguagesCsharp&amp;sz=728x90&amp;c=598452"  width="728px" height="90px" target="_blank"/></a></noscript></div>
+				</div>
+				
+                
+                
+
+				
+				
+
+					<h2 class="padded-top">Comments and Discussions</h2>
+
+                    
+			        <div id="ctl00_SharePH" class="share-list float-right desktop-only tablet-only" style="margin-top:-3.5rem">
+				        
+
+    <ul class="rrssb-buttons clearfix">
+
+        <li id="ctl00_SocialLike_Twitter" class="twitter compact">
+            <a href="http://twitter.com/home?status=Using+Matlab+from+a+C%23+Application+-+CodeProject+-+https%3a%2f%2fwww.codeproject.com%2fArticles%2f594636%2fUsing-Matlab-from-a-Csharp-Application" class="popup">
+                <span class="icon">
+                    <svg x="0px" y="0px" width="28px" height="28px" viewBox="0 0 1200 1227" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" fill="white"/>
+                    </svg>
+                </span>
+                
+            </a>
+        </li><li id="ctl00_SocialLike_LinkedIn" class="linkedin compact">
+            <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.codeproject.com%2fArticles%2f594636%2fUsing-Matlab-from-a-Csharp-Application&amp;title=Using+Matlab+from+a+C%23+Application+-+CodeProject&amp;summary=Using+Matlab+from+a+C%23+application&amp;source=codeproject.com" class="popup">
+                <span class="icon">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                        x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+                        <path d="M25.424,15.887v8.447h-4.896v-7.882c0-1.979-0.709-3.331-2.48-3.331c-1.354,0-2.158,0.911-2.514,1.803
+                            c-0.129,0.315-0.162,0.753-0.162,1.194v8.216h-4.899c0,0,0.066-13.349,0-14.731h4.899v2.088c-0.01,0.016-0.023,0.032-0.033,0.048
+                            h0.033V11.69c0.65-1.002,1.812-2.435,4.414-2.435C23.008,9.254,25.424,11.361,25.424,15.887z M5.348,2.501
+                            c-1.676,0-2.772,1.092-2.772,2.539c0,1.421,1.066,2.538,2.717,2.546h0.032c1.709,0,2.771-1.132,2.771-2.546
+                            C8.054,3.593,7.019,2.501,5.343,2.501H5.348z M2.867,24.334h4.897V9.603H2.867V24.334z"></path>
+                    </svg>
+                </span>
+                
+            </a>
+        </li><li id="ctl00_SocialLike_Reddit" class="reddit compact">
+            <a href="http://www.reddit.com/submit?url=https%3a%2f%2fwww.codeproject.com%2fArticles%2f594636%2fUsing-Matlab-from-a-Csharp-Application&amp;title=Using+Matlab+from+a+C%23+Application+-+CodeProject">
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" 
+                        x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" 
+                        enable-background="new 0 0 28 28" xml:space="preserve"><g>
+                    <path d="M11.794 15.316c0-1.029-0.835-1.895-1.866-1.895c-1.03 0-1.893 0.865-1.893 1.895s0.863 1.9 1.9 1.9 C10.958 17.2 11.8 16.3 11.8 15.316z"></path>
+                    <path d="M18.1 13.422c-1.029 0-1.895 0.864-1.895 1.895c0 1 0.9 1.9 1.9 1.865c1.031 0 1.869-0.836 1.869-1.865 C19.969 14.3 19.1 13.4 18.1 13.422z"></path>
+                    <path d="M17.527 19.791c-0.678 0.678-1.826 1.006-3.514 1.006c-0.004 0-0.009 0-0.014 0c-0.004 0-0.01 0-0.015 0 
+                    c-1.686 0-2.834-0.328-3.51-1.005c-0.264-0.265-0.693-0.265-0.958 0c-0.264 0.265-0.264 0.7 0 1 c0.943 0.9 2.4 1.4 
+                    4.5 1.402c0.005 0 0 0 0 0c0.005 0 0 0 0 0c2.066 0 3.527-0.459 4.47-1.402 c0.265-0.264 0.265-0.693 0.002-0.958C18.221 
+                    19.5 17.8 19.5 17.5 19.791z"></path><path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237c-0.793 0-1.518 0.287-2.082 
+                    0.761c-2.039-1.295-4.646-2.069-7.438-2.219 l1.483-4.691l4.062 0.956c0.071 1.4 1.3 2.6 2.7 2.555c1.488 0 2.695-1.208 
+                    2.695-2.695C25.881 3.2 24.7 2 23.2 2 c-1.059 0-1.979 0.616-2.42 1.508l-4.633-1.091c-0.344-0.081-0.693 0.118-0.803 
+                    0.455l-1.793 5.7 C10.548 8.6 7.7 9.4 5.6 10.75C5.006 10.3 4.3 10 3.5 10.029c-1.785 0-3.237 1.452-3.237 3.2 c0 1.1 0.6 
+                    2.1 1.4 2.69c-0.04 0.272-0.061 0.551-0.061 0.831c0 2.3 1.3 4.4 3.7 5.9 c2.299 1.5 5.3 2.3 8.6 2.325c3.228 0 6.271-0.825 
+                    8.571-2.325c2.387-1.56 3.7-3.66 3.7-5.917 c0-0.26-0.016-0.514-0.051-0.768C27.088 15.5 27.7 14.4 27.7 13.267z M23.186 
+                    3.355c0.74 0 1.3 0.6 1.3 1.3 c0 0.738-0.6 1.34-1.34 1.34s-1.342-0.602-1.342-1.34C21.844 4 22.4 3.4 23.2 3.355z M1.648 
+                    13.3 c0-1.038 0.844-1.882 1.882-1.882c0.31 0 0.6 0.1 0.9 0.209c-1.049 0.868-1.813 1.861-2.26 2.9 C1.832 14.2 1.6 13.8 1.6 
+                    13.267z M21.773 21.57c-2.082 1.357-4.863 2.105-7.831 2.105c-2.967 0-5.747-0.748-7.828-2.105 
+                    c-1.991-1.301-3.088-3-3.088-4.782c0-1.784 1.097-3.484 3.088-4.784c2.081-1.358 4.861-2.106 7.828-2.106 c2.967 0 5.7 
+                    0.7 7.8 2.106c1.99 1.3 3.1 3 3.1 4.784C24.859 18.6 23.8 20.3 21.8 21.57z M25.787 14.6 
+                    c-0.432-1.084-1.191-2.095-2.244-2.977c0.273-0.156 0.59-0.245 0.928-0.245c1.035 0 1.9 0.8 1.9 1.9 
+                    C26.354 13.8 26.1 14.3 25.8 14.605z"></path></g></svg>
+                </span>
+                
+            </a>
+        </li><li id="ctl00_SocialLike_Facebook" class="facebook compact">
+            
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.codeproject.com%2fArticles%2f594636%2fUsing-Matlab-from-a-Csharp-Application" class="popup">
+                <span class="icon">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                        x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+                        <path d="M27.825,4.783c0-2.427-2.182-4.608-4.608-4.608H4.783c-2.422,0-4.608,2.182-4.608,4.608v18.434
+                            c0,2.427,2.181,4.608,4.608,4.608H14V17.379h-3.379v-4.608H14v-1.795c0-3.089,2.335-5.885,5.192-5.885h3.718v4.608h-3.726
+                            c-0.408,0-0.884,0.492-0.884,1.236v1.836h4.609v4.608h-4.609v10.446h4.916c2.422,0,4.608-2.188,4.608-4.608V4.783z"></path>
+                    </svg>
+                </span>
+                
+            </a>
+        </li><li id="ctl00_SocialLike_Pinterest" class="pinterest compact">
+            <a href="http://pinterest.com/pin/create/bookmarklet/?is_video=false&amp;url=https%3a%2f%2fwww.codeproject.com%2fArticles%2f594636%2fUsing-Matlab-from-a-Csharp-Application&amp;description=Using+Matlab+from+a+C%23+Application+-+CodeProject">
+                <span class="icon">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                        x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+                    <path d="M14.021,1.57C6.96,1.57,1.236,7.293,1.236,14.355c0,7.062,5.724,12.785,12.785,12.785c7.061,0,12.785-5.725,12.785-12.785
+                        C26.807,7.294,21.082,1.57,14.021,1.57z M15.261,18.655c-1.161-0.09-1.649-0.666-2.559-1.219c-0.501,2.626-1.113,5.145-2.925,6.458
+                        c-0.559-3.971,0.822-6.951,1.462-10.116c-1.093-1.84,0.132-5.545,2.438-4.632c2.837,1.123-2.458,6.842,1.099,7.557
+                        c3.711,0.744,5.227-6.439,2.925-8.775c-3.325-3.374-9.678-0.077-8.897,4.754c0.19,1.178,1.408,1.538,0.489,3.168
+                        C7.165,15.378,6.53,13.7,6.611,11.462c0.131-3.662,3.291-6.227,6.46-6.582c4.007-0.448,7.771,1.474,8.29,5.239
+                        c0.579,4.255-1.816,8.865-6.102,8.533L15.261,18.655z"></path>
+                    </svg>
+                </span>
+                
+            </a>
+        </li>
+        <!--
+        
+        -->
+        <li id="ctl00_SocialLike_Email" class="email compact">
+            <a href="mailto:?subject=Using%20Matlab%20from%20a%20C%23%20Application%20-%20CodeProject&amp;body=Here%27s%20an%20interesting%20article%20on%20for%20you%20on%20codeproject.com%0a%0aUsing%20Matlab%20from%20a%20C%23%20application%0a%0ahttps%3a%2f%2fwww.codeproject.com%2fArticles%2f594636%2fUsing-Matlab-from-a-Csharp-Application%0a">
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                        version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" 
+                        enable-background="new 0 0 28 28" xml:space="preserve">
+                        <g>
+                            <path d="M20.111 26.147c-2.336 1.051-4.361 1.401-7.125 1.401c-6.462 0-12.146-4.633-12.146-12.265 
+                                c0-7.94 5.762-14.833 14.561-14.833c6.853 0 11.8 4.7 11.8 11.252c0 5.684-3.194 9.265-7.399 
+                                9.3 c-1.829 0-3.153-0.934-3.347-2.997h-0.077c-1.208 1.986-2.96 2.997-5.023 2.997c-2.532 
+                                0-4.361-1.868-4.361-5.062 c0-4.749 3.504-9.071 9.111-9.071c1.713 0 3.7 0.4 4.6 0.973l-1.169 
+                                7.203c-0.388 2.298-0.116 3.3 1 3.4 c1.673 0 3.773-2.102 3.773-6.58c0-5.061-3.27-8.994-9.303-8.994c-5.957 
+                                0-11.175 4.673-11.175 12.1 c0 6.5 4.2 10.2 10 10.201c1.986 0 4.089-0.43 5.646-1.245L20.111 
+                                26.147z M16.646 10.1 c-0.311-0.078-0.701-0.155-1.207-0.155c-2.571 0-4.595 2.53-4.595 5.529c0 
+                                1.5 0.7 2.4 1.9 2.4 c1.441 0 2.959-1.828 3.311-4.087L16.646 10.068z"></path>
+                        </g>
+                    </svg>
+                </span>
+                
+            </a>
+        </li>
+    </ul>
+
+
+
+			        </div><a class="float-left" name="_comments" id="_comments">&nbsp;</a><div id="_MessageBoardctl00_MessageBoard" onclick="return forumCtrl_ctl00_MessageBoard.SwitchMessage(event, null)">
+<table id="ForumTable" class="forum relaxed" cellpadding="0" cellspacing="0">
+<tr>
+<td><a name="xx0xx"></a><table border="0" cellpadding="2px" cellspacing="0" width="100%">
+<tr class="navbar">
+<td></td><td style="text-align:right;width:50%;"></td><td style="text-align:right;white-space:nowrap;"><span class="nav-link disabled">First</span> <span class="nav-link disabled">Prev</span> <span class="nav-link disabled">Next</span></td>
+</tr>
+</table></td>
+</tr><tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%" class="fixed-layout blank-background msg-list">
+<tr id="F5381936_h0" class="header hover-row root">
+<td class="subject-line normal " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td width="20px" class="indent"><a name="xx5381936xx"></a><img height="16px" width="16px" align="top" src="https://www.codeproject.com/script/Forums/Images/msg_question.gif" alt="Question" title="Question" /></td><td class="subject hover-container"><a class="message-link" name="5381936" parent="0" thread="5381936" href="https://www.codeproject.com/Messages/5381936/good-sample">good sample</a> <a onclick="return forumCtrl_ctl00_MessageBoard.Pin(this);" rel="nofollow" href="#" title="Click to pin message"><img src="https://www.codeproject.com/script/Forums/Images/pin.png" border="0" align="top" alt="Pin" width="13px" height="13px" /></a><div class="mobile-only">
+	<span class="author">maxoptimus</span><span class="date">5-Apr-17  23:57</span>
+</div></td><td class="icon"><img style='border:0;width:16px;height:16px' src='https://www.codeproject.com/App_Themes/CodeProject/Img/icn-member-16.gif' title='Member' /></td><td class="author"><span><a href="https://www.codeproject.com/script/Membership/View.aspx?mid=4761479">maxoptimus</a></span></td><td class="date"><span>5-Apr-17  23:57&nbsp;</span></td>
+</tr>
+</table></td>
+</tr><tr id="F5381936_h1" class="content root selected" style="display:none;">
+<td class="normal" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr valign="top">
+<td class="indent align-right" style="width:20px;"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2">good sample<br /></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr><tr id="F5381022_h0" class="header hover-row root">
+<td class="subject-line normal " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td width="20px" class="indent"><a name="xx5381022xx"></a><img height="16px" width="16px" align="top" src="https://www.codeproject.com/script/Forums/Images/msg_question.gif" alt="Question" title="Question" /></td><td class="subject hover-container"><a class="message-link" name="5381022" parent="0" thread="5381022" href="https://www.codeproject.com/Messages/5381022/Passing-variables-from-Csharp-back-to-Matlab">Passing variables from C# back to Matlab</a> <a onclick="return forumCtrl_ctl00_MessageBoard.Pin(this);" rel="nofollow" href="#" title="Click to pin message"><img src="https://www.codeproject.com/script/Forums/Images/pin.png" border="0" align="top" alt="Pin" width="13px" height="13px" /></a><div class="mobile-only">
+	<span class="author">Member 13065592</span><span class="date">4-Apr-17  5:24</span>
+</div></td><td class="icon"><img style='border:0;width:16px;height:16px' src='https://www.codeproject.com/App_Themes/CodeProject/Img/icn-member-16.gif' title='Member' /></td><td class="author"><span><a href="https://www.codeproject.com/script/Membership/View.aspx?mid=13065592">Member 13065592</a></span></td><td class="date"><span>4-Apr-17  5:24&nbsp;</span></td>
+</tr>
+</table></td>
+</tr><tr id="F5381022_h1" class="content root selected" style="display:none;">
+<td class="normal" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr valign="top">
+<td class="indent align-right" style="width:20px;"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2">Hey! Is there an easy way to pass variable from C# to Matlab? This one: <div class='pre-lang' id='premain996879'><div></div><div class='pre-action-link'><span id='copycode996879' class='copy-code' data-index='996879' style='visibility:hidden'><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve">
+<g>
+<path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272
+    c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729
+    c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path>
+<path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272
+    c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068
+    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001
+    C291.206,428.715,289.92,430,288.341,430z"></path>	
+</g>
+</svg></span></div></div>
+<pre id='pre996879' style='margin-top:0;' data-allowShrink='True' data-collapse='False'>
+matlab.PutFullMatrix(<span class="code-string">"</span><span class="code-string">a"</span>, <span class="code-string">"</span><span class="code-string">base"</span>, pr, pi);</pre><br />
+doesn't work in my case. What should I put in the imaginary array argument (pi)? Thanks for any suggestions <img src="https://codeproject.freetls.fastly.net/script/Forums/Images/smiley_smile.gif" align="top" alt="Smile | :)" /><br /></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr><tr id="F5381374_h0" class="header hover-row">
+<td class="subject-line normal " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td width="38px" class="indent"><a name="xx5381374xx"></a><img height="16px" width="16px" align="top" src="https://www.codeproject.com/script/Forums/Images/msg_answer.gif" alt="Answer" title="Answer" /></td><td class="subject hover-container"><a class="message-link" name="5381374" parent="5381022" thread="5381022" href="https://www.codeproject.com/Messages/5381374/Re-Passing-variables-from-Csharp-back-to-Matlab">Re: Passing variables from C# back to Matlab</a> <a onclick="return forumCtrl_ctl00_MessageBoard.Pin(this);" rel="nofollow" href="#" title="Click to pin message"><img src="https://www.codeproject.com/script/Forums/Images/pin.png" border="0" align="top" alt="Pin" width="13px" height="13px" /></a><div class="mobile-only">
+	<span class="author">n.podbielski</span><span class="date">4-Apr-17  21:07</span>
+</div></td><td class="icon"><img style='border:0;width:16px;height:16px' src='https://www.codeproject.com/App_Themes/CodeProject/Img/icn-member-16.gif' title='Member' /></td><td class="author"><span><a href="https://www.codeproject.com/script/Membership/View.aspx?mid=7394731">n.podbielski</a></span></td><td class="date"><span>4-Apr-17  21:07&nbsp;</span></td>
+</tr>
+</table></td>
+</tr><tr id="F5381374_h1" class="content selected" style="display:none;">
+<td class="normal" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr valign="top">
+<td class="indent align-right" style="width:38px;"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2"><div class="parent"><a rel="nofollow" onclick="return forumCtrl_ctl00_MessageBoard.SwitchMessage(null,5381022);" href="https://www.codeproject.com/Messages/5381022/Passing-variables-from-Csharp-back-to-Matlab"><img src="https://www.codeproject.com/App_Themes/CodeProject/Img/arrow-up24.png" title="Go to Parent"  style="width:16px;height:16px;border:0" /></a></div>I do not have access to Matlab anymore, but if I have to guess, from what I saw, it is either one dimensional array or 2D array.<br />
+There should be some kind of error that should guide you toward correct solution. Unfortunately 5 years ago there was not really any documentation for this API and I doubt it changed much since then. It mostly was learned trial-by-error.<br />
+<div class="signature">No more Mister Nice Guy... &gt;: |</div><br /></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr><tr id="F5306407_h0" class="header hover-row root">
+<td class="subject-line normal " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td width="20px" class="indent"><a name="xx5306407xx"></a><img height="16px" width="16px" align="top" src="https://www.codeproject.com/script/Forums/Images/msg_question.gif" alt="Question" title="Question" /></td><td class="subject hover-container"><a class="message-link" name="5306407" parent="0" thread="5306407" href="https://www.codeproject.com/Messages/5306407/Newer-version">Newer version</a> <a onclick="return forumCtrl_ctl00_MessageBoard.Pin(this);" rel="nofollow" href="#" title="Click to pin message"><img src="https://www.codeproject.com/script/Forums/Images/pin.png" border="0" align="top" alt="Pin" width="13px" height="13px" /></a><div class="mobile-only">
+	<span class="author">n.podbielski</span><span class="date">28-Sep-16  7:01</span>
+</div></td><td class="icon"><img style='border:0;width:16px;height:16px' src='https://www.codeproject.com/App_Themes/CodeProject/Img/icn-member-16.gif' title='Member' /></td><td class="author"><span><a href="https://www.codeproject.com/script/Membership/View.aspx?mid=7394731">n.podbielski</a></span></td><td class="date"><span>28-Sep-16  7:01&nbsp;</span></td>
+</tr>
+</table></td>
+</tr><tr id="F5306407_h1" class="content root selected" style="display:none;">
+<td class="normal" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr valign="top">
+<td class="indent align-right" style="width:20px;"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2"><a href="http://www.codeproject.com/Articles/1058407/Using-Matlab-from-Csharp-Application"></a><a href="#"></a>[<a href="http://www.codeproject.com/Articles/1058407/Using-Matlab-from-Csharp-Application" target="_blank" title="New Window">^</a>]<br />
+<div class="signature">No more Mister Nice Guy... &gt;: |</div><br /></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr><tr id="F5192727_h0" class="header hover-row root">
+<td class="subject-line normal " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td width="20px" class="indent"><a name="xx5192727xx"></a><img height="16px" width="16px" align="top" src="https://www.codeproject.com/script/Forums/Images/msg_general.gif" alt="General" title="General" /></td><td class="subject hover-container"><a class="message-link" name="5192727" parent="0" thread="5192727" href="https://www.codeproject.com/Messages/5192727/My-vote-of-5">My vote of 5</a> <a onclick="return forumCtrl_ctl00_MessageBoard.Pin(this);" rel="nofollow" href="#" title="Click to pin message"><img src="https://www.codeproject.com/script/Forums/Images/pin.png" border="0" align="top" alt="Pin" width="13px" height="13px" /></a><div class="mobile-only">
+	<span class="author">Member 12289209</span><span class="date">26-Jan-16  14:53</span>
+</div></td><td class="icon"><img style='border:0;width:16px;height:16px' src='https://www.codeproject.com/App_Themes/CodeProject/Img/icn-member-16.gif' title='Member' /></td><td class="author"><span><a href="https://www.codeproject.com/script/Membership/View.aspx?mid=12289209">Member 12289209</a></span></td><td class="date"><span>26-Jan-16  14:53&nbsp;</span></td>
+</tr>
+</table></td>
+</tr><tr id="F5192727_h1" class="content root selected" style="display:none;">
+<td class="normal" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr valign="top">
+<td class="indent align-right" style="width:20px;"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2">THAAAAAANX <br />
+"In search text box write 'Matlab'. Then choose "Matlab Application (Version 7.10) Type Library"<br />
+THAT'S WHAT I WAS SEARCHING FOR ... THAAAANX<br /></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr><tr id="F5169896_h0" class="header hover-row root">
+<td class="subject-line normal " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td width="20px" class="indent"><a name="xx5169896xx"></a><img height="16px" width="16px" align="top" src="https://www.codeproject.com/script/Forums/Images/msg_question.gif" alt="Question" title="Question" /></td><td class="subject hover-container"><a class="message-link" name="5169896" parent="0" thread="5169896" href="https://www.codeproject.com/Messages/5169896/Thanks">Thanks</a> <a onclick="return forumCtrl_ctl00_MessageBoard.Pin(this);" rel="nofollow" href="#" title="Click to pin message"><img src="https://www.codeproject.com/script/Forums/Images/pin.png" border="0" align="top" alt="Pin" width="13px" height="13px" /></a><div class="mobile-only">
+	<span class="author">Member 11887959</span><span class="date">4-Dec-15  2:41</span>
+</div></td><td class="icon"><img style='border:0;width:16px;height:16px' src='https://www.codeproject.com/App_Themes/CodeProject/Img/icn-member-16.gif' title='Member' /></td><td class="author"><span><a href="https://www.codeproject.com/script/Membership/View.aspx?mid=11887959">Member 11887959</a></span></td><td class="date"><span>4-Dec-15  2:41&nbsp;</span></td>
+</tr>
+</table></td>
+</tr><tr id="F5169896_h1" class="content root selected" style="display:none;">
+<td class="normal" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr valign="top">
+<td class="indent align-right" style="width:20px;"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2">Thank you very much , it was really very helpful article for me.<br /></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr><tr id="F5030960_h0" class="header hover-row root">
+<td class="subject-line normal " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td width="20px" class="indent"><a name="xx5030960xx"></a><img height="16px" width="16px" align="top" src="https://www.codeproject.com/script/Forums/Images/msg_question.gif" alt="Question" title="Question" /></td><td class="subject hover-container"><a class="message-link" name="5030960" parent="0" thread="5030960" href="https://www.codeproject.com/Messages/5030960/there-is-no-matlab-in-my-COM">there is no matlab in my COM</a> <a onclick="return forumCtrl_ctl00_MessageBoard.Pin(this);" rel="nofollow" href="#" title="Click to pin message"><img src="https://www.codeproject.com/script/Forums/Images/pin.png" border="0" align="top" alt="Pin" width="13px" height="13px" /></a><div class="mobile-only">
+	<span class="author">elibushehri</span><span class="date">30-Mar-15  1:30</span>
+</div></td><td class="icon"><img style='border:0;width:16px;height:16px' src='https://www.codeproject.com/App_Themes/CodeProject/Img/icn-member-16.gif' title='Member' /></td><td class="author"><span><a href="https://www.codeproject.com/script/Membership/View.aspx?mid=10753375">elibushehri</a></span></td><td class="date"><span>30-Mar-15  1:30&nbsp;</span></td>
+</tr>
+</table></td>
+</tr><tr id="F5030960_h1" class="content root selected" style="display:none;">
+<td class="normal" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr valign="top">
+<td class="indent align-right" style="width:20px;"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2">hi <br />
+I have this problem at the beginning that I can't even add matlab to may program.<br />
+thank you so much<br /></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr><tr id="F4898604_h0" class="header hover-row root">
+<td class="subject-line normal " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td width="20px" class="indent"><a name="xx4898604xx"></a><img height="16px" width="16px" align="top" src="https://www.codeproject.com/script/Forums/Images/msg_idea.gif" alt="Suggestion" title="Suggestion" /></td><td class="subject hover-container"><a class="message-link" name="4898604" parent="0" thread="4898604" href="https://www.codeproject.com/Messages/4898604/avoiding-opening-additional-instances-of">avoiding opening additional instances of</a> <a onclick="return forumCtrl_ctl00_MessageBoard.Pin(this);" rel="nofollow" href="#" title="Click to pin message"><img src="https://www.codeproject.com/script/Forums/Images/pin.png" border="0" align="top" alt="Pin" width="13px" height="13px" /></a><div class="mobile-only">
+	<span class="author">Member 11067291</span><span class="date">8-Sep-14  7:58</span>
+</div></td><td class="icon"><img style='border:0;width:16px;height:16px' src='https://www.codeproject.com/App_Themes/CodeProject/Img/icn-member-16.gif' title='Member' /></td><td class="author"><span><a href="https://www.codeproject.com/script/Membership/View.aspx?mid=11067291">Member 11067291</a></span></td><td class="date"><span>8-Sep-14  7:58&nbsp;</span></td>
+</tr>
+</table></td>
+</tr><tr id="F4898604_h1" class="content root selected" style="display:none;">
+<td class="normal" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr valign="top">
+<td class="indent align-right" style="width:20px;"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2">Thanks for a great desciption of how to call matlab functions from c#.<br />
+<br />
+This example is significantly more throught than what i found on mathworks owne documentation, so again thanks alot!<br />
+<br />
+I have a small comment concerning the repetetive calling of matlab functions, which the article also adresses. However I found that the ".single" argument did't prevent matlab from being open in new instances. What did help was to declare it a static variable:<br />
+public static Type activationContenxt = Type.GetTypeFromProgID("matlab.application.single");<br />
+public static MLApp.MLApp matlab = (MLApp.MLApp)Activator.CreateInstance(activationContext);<br />
+<br />
+Use it if it work <img src="https://codeproject.freetls.fastly.net/script/Forums/Images/smiley_smile.gif" align="top" alt="Smile | :)" /> <br />
+Kind regards<br /></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr><tr id="F4899585_h0" class="header hover-row">
+<td class="subject-line normal vote-hi " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td width="38px" class="indent"><a name="xx4899585xx"></a><img height="16px" width="16px" align="top" src="https://www.codeproject.com/script/Forums/Images/msg_general.gif" alt="General" title="General" /></td><td class="subject hover-container"><a class="message-link" name="4899585" parent="4898604" thread="4898604" href="https://www.codeproject.com/Messages/4899585/Re-avoiding-opening-additional-instances-of">Re: avoiding opening additional instances of</a> <a onclick="return forumCtrl_ctl00_MessageBoard.Pin(this);" rel="nofollow" href="#" title="Click to pin message"><img src="https://www.codeproject.com/script/Forums/Images/pin.png" border="0" align="top" alt="Pin" width="13px" height="13px" /></a><div class="mobile-only">
+	<span class="author">n.podbielski</span><span class="date">9-Sep-14  12:08</span>
+</div></td><td class="icon"><img style='border:0;width:16px;height:16px' src='https://www.codeproject.com/App_Themes/CodeProject/Img/icn-member-16.gif' title='Member' /></td><td class="author"><span><a href="https://www.codeproject.com/script/Membership/View.aspx?mid=7394731">n.podbielski</a></span></td><td class="date"><span>9-Sep-14  12:08&nbsp;</span></td>
+</tr>
+</table></td>
+</tr><tr id="F4899585_h1" class="content selected" style="display:none;">
+<td class="normal" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr valign="top">
+<td class="indent align-right" style="width:38px;"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2"><div class="parent"><a rel="nofollow" onclick="return forumCtrl_ctl00_MessageBoard.SwitchMessage(null,4898604);" href="https://www.codeproject.com/Messages/4898604/avoiding-opening-additional-instances-of"><img src="https://www.codeproject.com/App_Themes/CodeProject/Img/arrow-up24.png" title="Go to Parent"  style="width:16px;height:16px;border:0" /></a></div><blockquote class="quote"><div class="op">Member 11067291 wrote:</div>However I found that the ".single" argument did't prevent matlab from being open in new instances.</blockquote><br />
+In tests it worked, Ok. But this was designed to work as server part of Web application, which would work as Web API for Matlab. So every user would have to have each own instance. Maybe this is why you found that there is possibility to create more than one instance.<br />
+But this was just academic proof of concept so they may be some bugs <img src="https://codeproject.freetls.fastly.net/script/Forums/Images/smiley_smile.gif" align="top" alt="Smile | :)" /> <br />
+<br />
+<blockquote class="quote"><div class="op">Member 11067291 wrote:</div>What did help was to declare it a static variable:</blockquote><br />
+Yes, of course static instance would be only one. But for multiple users to share calculations results... not this would be bad. Thus '.single' solution.<br />
+But if this works for you then great! <img src="https://codeproject.freetls.fastly.net/script/Forums/Images/smiley_smile.gif" align="top" alt="Smile | :)" /> <br />
+<div class="signature">No more Mister Nice Guy... &gt;: |</div><br /></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr><tr id="F4864428_h0" class="header hover-row root">
+<td class="subject-line normal " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td width="20px" class="indent"><a name="xx4864428xx"></a><img height="16px" width="16px" align="top" src="https://www.codeproject.com/script/Forums/Images/msg_question.gif" alt="Question" title="Question" /></td><td class="subject hover-container"><a class="message-link" name="4864428" parent="0" thread="4864428" href="https://www.codeproject.com/Messages/4864428/matlab-function-from-csharp">matlab function from c#</a> <a onclick="return forumCtrl_ctl00_MessageBoard.Pin(this);" rel="nofollow" href="#" title="Click to pin message"><img src="https://www.codeproject.com/script/Forums/Images/pin.png" border="0" align="top" alt="Pin" width="13px" height="13px" /></a><div class="mobile-only">
+	<span class="author">Member 10954461</span><span class="date">18-Jul-14  11:51</span>
+</div></td><td class="icon"><img style='border:0;width:16px;height:16px' src='https://www.codeproject.com/App_Themes/CodeProject/Img/icn-member-16.gif' title='Member' /></td><td class="author"><span><a href="https://www.codeproject.com/script/Membership/View.aspx?mid=10954461">Member 10954461</a></span></td><td class="date"><span>18-Jul-14  11:51&nbsp;</span></td>
+</tr>
+</table></td>
+</tr><tr id="F4864428_h1" class="content root selected" style="display:none;">
+<td class="normal" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr valign="top">
+<td class="indent align-right" style="width:20px;"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2">hi,i interested in your code i also call matlab function that processed images from c# but there is unknown problem when i click the button1 there is nothing, and this is my code if you can help me<br />
+using System;<br />
+using System.Collections.Generic;<br />
+using System.ComponentModel;<br />
+using System.Data;<br />
+using System.Drawing;<br />
+using System.Text;<br />
+using System.Windows.Forms;<br />
+using MathWorks.MATLAB.NET.Arrays;<br />
+using packet;<br />
+<br />
+namespace WindowsApplication1<br />
+{<br />
+    public partial class Form1 : Form<br />
+    {<br />
+        public Form1()<br />
+        {<br />
+            InitializeComponent();<br />
+        }<br />
+<br />
+        private void button1_Click_1(object sender, EventArgs e)<br />
+        {<br />
+            int i, j;<br />
+           <br />
+            Bitmap image = (Bitmap)pictureBox1.Image;<br />
+            int width = image.Width;<br />
+            int height = image.Height;<br />
+            Bitmap processed_image = new Bitmap(width, height);<br />
+            byte[, ,] rgb = new byte[3, height, width];<br />
+            for (i = 0; i &lt; height; i++)<br />
+            {<br />
+                for (j = 0; j &lt; width; j++)<br />
+                {<br />
+                    rgb[0, i, j] = image.GetPixel(j, i).R;<br />
+                    rgb[1, i, j] = image.GetPixel(j, i).G;<br />
+                    rgb[2, i, j] = image.GetPixel(j, i).B;<br />
+                }<br />
+            }<br />
+            MWNumericArray narr = rgb;<br />
+            Class1 obj = new Class1();<br />
+            MWArray u =(MWNumericArray) obj.packet((MWArray)narr);<br />
+            for (i = 0; i &lt; height; i++)<br />
+            {<br />
+                for (j = 0; j &lt; width; j++)<br />
+                {<br />
+                    processed_image.SetPixel(j, i, Color.FromArgb(Convert.ToInt32(u[i + 1, j + 1, 1].ToString()),<br />
+                        Convert.ToInt32(u[i + 1, j + 1, 2].ToString()), <br />
+                        Convert.ToInt32(u[i + 1, j + 1, 3].ToString())));<br />
+                }<br />
+            }<br />
+            pictureBox2.Image = processed_image;<br />
+<br />
+<br />
+        }<br />
+<br />
+        private void button2_Click(object sender, EventArgs e)<br />
+        {<br />
+            openFileDialog1.Filter = "images files |*.tif; *.bmp; *.png";<br />
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)<br />
+            {<br />
+                pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);<br />
+            }<br />
+        }<br />
+<br />
+           }<br />
+}<br /></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr><tr id="F4872525_h0" class="header hover-row">
+<td class="subject-line normal " width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td width="38px" class="indent"><a name="xx4872525xx"></a><img height="16px" width="16px" align="top" src="https://www.codeproject.com/script/Forums/Images/msg_answer.gif" alt="Answer" title="Answer" /></td><td class="subject hover-container"><a class="message-link" name="4872525" parent="4864428" thread="4864428" href="https://www.codeproject.com/Messages/4872525/Re-matlab-function-from-csharp">Re: matlab function from c#</a> <a onclick="return forumCtrl_ctl00_MessageBoard.Pin(this);" rel="nofollow" href="#" title="Click to pin message"><img src="https://www.codeproject.com/script/Forums/Images/pin.png" border="0" align="top" alt="Pin" width="13px" height="13px" /></a><div class="mobile-only">
+	<span class="author">n.podbielski</span><span class="date">30-Jul-14  4:03</span>
+</div></td><td class="icon"><img style='border:0;width:16px;height:16px' src='https://www.codeproject.com/App_Themes/CodeProject/Img/icn-member-16.gif' title='Member' /></td><td class="author"><span><a href="https://www.codeproject.com/script/Membership/View.aspx?mid=7394731">n.podbielski</a></span></td><td class="date"><span>30-Jul-14  4:03&nbsp;</span></td>
+</tr>
+</table></td>
+</tr><tr id="F4872525_h1" class="content selected" style="display:none;">
+<td class="normal" width="100%"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr valign="top">
+<td class="indent align-right" style="width:38px;"></td><td class="text"><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+<tr>
+<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td colspan="2"><div class="parent"><a rel="nofollow" onclick="return forumCtrl_ctl00_MessageBoard.SwitchMessage(null,4864428);" href="https://www.codeproject.com/Messages/4864428/matlab-function-from-csharp"><img src="https://www.codeproject.com/App_Themes/CodeProject/Img/arrow-up24.png" title="Go to Parent"  style="width:16px;height:16px;border:0" /></a></div>I am sorry but I no longer have access to Matlab, so I cannot help you with code that uses this application. <br />
+My best guess is to check if your code updates your image correctly, i.e. if you write pixel that is different from transparent or if you write correct pixel to bitmap (because bitmap can have for instance precalculated alpha or not).<br />
+<div class="signature">No more Mister Nice Guy... &gt;: |</div><br /></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr><tr>
+<td><table width="100%" cellpadding="2px" cellspacing="0">
+<tr class="footer">
+<td><span class="last-visit desktop-only tablet-only">Last Visit: 31-Dec-99  18:00 &nbsp; &nbsp; Last Update: 8-Sep-24  11:48</span></td><td><a rel="nofollow" href="https://www.codeproject.com/Articles/594636/Using-Matlab-from-a-Csharp-Application?fid=1833247&amp;df=90&amp;mpp=25&amp;sort=Position&amp;view=Normal&amp;spc=Relaxed&amp;prof=True">Refresh</a></td><td style="text-align:right;white-space:nowrap;"><input id="_mbnUrl" type="hidden" value="/Articles/594636/Using-Matlab-from-a-Csharp-Application?fid=1833247&amp;df=90&amp;mpp=25&amp;sort=Position&amp;view=Normal&amp;spc=Relaxed&amp;prof=True&amp;fr=12" /><span class="nav-link selected">1</span></td>
+</tr>
+</table></td>
+</tr>
+</table>
+</div><p class="small-text"><img align="top" src="https://www.codeproject.com/script/Forums/Images/msg_general.gif" width="16px" height="16px" alt="General" /> General &nbsp;&nbsp; <img align="top" src="https://www.codeproject.com/script/Forums/Images/msg_news.gif" width="16px" height="16px" alt="News" /> News &nbsp;&nbsp; <img align="top" src="https://www.codeproject.com/script/Forums/Images/msg_idea.gif" width="16px" height="16px" alt="Suggestion" /> Suggestion &nbsp;&nbsp; <img align="top" src="https://www.codeproject.com/script/Forums/Images/msg_question.gif" width="16px" height="16px" alt="Question" /> Question &nbsp;&nbsp; <img align="top" src="https://www.codeproject.com/script/Forums/Images/msg_bug.gif" width="16px" height="16px" alt="Bug" /> Bug &nbsp;&nbsp; <img align="top" src="https://www.codeproject.com/script/Forums/Images/msg_answer.gif" width="16px" height="16px" alt="Answer" /> Answer &nbsp;&nbsp; <img align="top" src="https://www.codeproject.com/script/Forums/Images/msg_joke.gif" width="16px" height="16px" alt="Joke" /> Joke &nbsp;&nbsp; <img align="top" src="https://www.codeproject.com/script/Forums/Images/msg_kudos.gif" width="16px" height="16px" alt="Praise" /> Praise &nbsp;&nbsp; <img align="top" src="https://www.codeproject.com/script/Forums/Images/msg_rant.gif" width="16px" height="16px" alt="Rant" /> Rant &nbsp;&nbsp; <img align="top" src="https://www.codeproject.com/script/Forums/Images/msg_admin.gif" width="16px" height="16px" alt="Admin" /> Admin &nbsp;&nbsp; </p><p class="small-text">Use Ctrl+Left/Right to switch messages, Ctrl+Up/Down to switch threads, Ctrl+Shift+Left/Right to switch pages.</p>
+				
+
+			</div>
+			
+
+            
+            <div id="ctl00_RightSideBar" class="article-right-sidebar">
+
+				
+				
+
+				
+
+                <div id="ctl00_RHSticky" class="container-article-info-sticky sticky">
+
+        		    
+
+<div class="article-summary">
+
+    
+    
+
+</div>
+
+					<div class="padded-top" style="height:250px;width:300px">
+						
+						<div class="msg-300x250" data-format="300x250" data-type="ad" data-publisher="lqm.codeproject.site" data-zone="Programming-LanguagesCsharp"  data-country='US' data-loadOnView='true'  data-tags='C#, MatLab,rating4.5,article-594636'><noscript><a href="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/Programming-LanguagesCsharp&amp;sz=300x250&amp;c=598452"><img src="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/Programming-LanguagesCsharp&amp;sz=300x250&amp;c=598452"  width="300px" height="250px" target="_blank"/></a></noscript></div>
+
+					</div>
+
+					<div style="margin:auto;width:160px;margin-top:10px;border: 1px solid #eee">
+						<div class="msg-160x600" data-format="160x600" data-type="ad" data-publisher="lqm.codeproject.site" data-zone="Programming-LanguagesCsharp"  data-country='US' data-tags='C#, MatLab,rating4.5,article-594636'><noscript><a href="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/Programming-LanguagesCsharp&amp;sz=160x600&amp;c=598452"><img src="https://pubads.g.doubleclick.net/gampad/jump?iu=/6839/lqm.codeproject.site/Programming-LanguagesCsharp&amp;sz=160x600&amp;c=598452"  width="160px" height="600px" target="_blank"/></a></noscript></div>
+					</div>
+
+				    
+
+                    
+
+				    
+
+				    
+
+					
+                    <div class="anchorLink gototop" id="gototop">
+                        <a id="ctl00_GoToTop" href="Using-Matlab-from-a-Csharp-Application.html#_articleTop">Go to top</a>
+                    </div>
+
+			    </div>
+            </div>
+            
+
+        </div>
+        
+
+		
+		<div class="site-footer">
+			<div class="align-left">
+				<a id="ctl00_PermaLink" href="Using-Matlab-from-a-Csharp-Application.html">Permalink</a><br>
+				<a id="ctl00_AdvertiseLink" href="http://developermedia.com/">Advertise </a><br>
+				<a id="ctl00_PrivacyLink" href="https://www.codeproject.com/info/privacy.aspx">Privacy</a><br>
+    			<a id="ctl00_CookiePolicyLink" href="https://www.codeproject.com/info/cookie.aspx">Cookies</a><br>
+                <a id="ctl00_TermsOfUseLink" href="https://www.codeproject.com/info/TermsOfUse.aspx">Terms of Use</a><br>
+			</div>
+
+            <div class="align-center">
+				
+
+
+<div class="page-width">
+    Layout: <a id="ctl00_PageWidth_FixedT" title="Fixed width layout" rel="nofollow" class=" active" href="https://www.codeproject.com/Articles/594636/Using-Matlab-from-a-Csharp-Application?PageFlow=FixedWidth">fixed</a>
+    |
+    <a id="ctl00_PageWidth_FluidT" title="Fluid layout" rel="nofollow" href="https://www.codeproject.com/Articles/594636/Using-Matlab-from-a-Csharp-Application?PageFlow=Fluid">fluid</a>
+</div>
+
+
+				
+
+				
+
+	            
+
+<div class="tabs">
+	<br><div>Posted 17 May 2013</div>
+
+
+    
+</div>
+
+
+
+                <br>
+			</div>
+                
+			<div class="align-right">
+				Article Copyright 2013 by n.podbielski<br />Everything else
+				Copyright &copy; <a href="mailto:webmaster@codeproject.com">CodeProject</a>, 1999-2024 <br />
+                <br>
+				Web01 
+				2.8:2024-07-22:1<br>
+			</div>
+		</div>
+		
+
+		<br clear="all" />
+		
+			
+
+	</div> 
+	</div> 
+</div>
+
+
+
+<img id="ctl00_Audience" src="https://pubads.g.doubleclick.net/activity;dc_iu=/6839/DFPAudiencePixel;ord='638614144833442631';dc_seg=33704410?" style="border-width:0px;height:1px;width:1px;" />
+
+
+
+<script type="text/javascript"> // IMMEDIATE script
+
+function Join() {
+    document.location.href = 'https://www.codeproject.com/script/Membership/Modify.aspx';
+    return false;
+}
+
+var eiobdvkmex = function(n){var t=!1;n=n||{};var r=n.RetrievalServiceUrl||"/script/content/webservices/RetrieveContent.aspx/GetContent",u=n.RetrievalServiceRetries||3,f=n.RetrievalServiceTimeout||5e3,e=function(){t||(t=!0,$(window).on("resize scroll",i),i())},i=function(){if(typeof DMAds=="undefined"){var n=$('[data-type="ad"]');n.each(function(){var n=$(this),u=n.attr("data-format")||"",f=n.attr("data-publisher")||"",e=n.attr("data-zone")||"",t=n.attr("data-loadonview"),i=n.attr("data-noadx"),h=n.attr("data-tags")||"",c=n.find("iframe").length!==0||n.find("img").length!==0,r=n.attr("data-processed");t=typeof t=="string"&&t.toLowerCase()==="true";i=typeof i=="string"&&i.toLowerCase()==="true";r=typeof r=="string"&&r.toLowerCase()==="true";r||c||t&&!s(this)||(o(n,u,f,e,i,h),n.attr("data-processed","true"))})}},o=function(n,t,i,e,o,s){var h=new $.Deferred,c=JSON.stringify({format:t,publisherCode:i,zone:e,noAdX:o,keywords:s});$.ajax({url:r,cache:!1,type:"POST",data:c,contentType:"application/json; charset=utf-8",dataType:"json",tryCount:0,retryLimit:u,timeout:f}).done(function(t){var i=t?t.d:null;h.resolve(i); i && i.html && n.html(i.html)}).fail(function(n,t){h.reject(t)})},s=function(n){var t,f,e,o;if(!h(n))return!1;var u=!1,i=0,r=0;try{t=n.getBoundingClientRect();typeof innerWidth=="number"?(i=window.innerWidth,r=window.innerHeight):document.documentElement&&(document.documentElement.clientWidth||document.documentElement.clientHeight)?(i=document.documentElement.clientWidth,r=document.documentElement.clientHeight):document.body&&(document.body.clientWidth||document.body.clientHeight)&&(i=document.body.clientWidth,r=document.body.clientHeight);f=-200;t.top===t.bottom&&(f+=n.height*-1);e=t.top>=0&&t.top-200<=r||t.top<=0&&t.top>=f;o=i>t.left&&t.right>=0;u=e&&o}catch(s){u=!0}return u},h=function(n){var t=!1,i;return n&&n.style.position!=="fixed"&&n.offsetParent?t=!0:n&&n.style.position==="fixed"&&(i=window.getComputedStyle(n),t=i&&i.display!=="none"),t&&c()},c=function(){var t=!0,n="";return typeof document.hidden!="undefined"?n="hidden":typeof document.mozHidden!="undefined"?n="mozHidden":typeof document.msHidden!="undefined"?n="msHidden":typeof document.webkitHidden!="undefined"&&(n="webkitHidden"),n!==null&&document[n]&&(t=!1),t};return{init:e}};
+document.addEventListener('DOMContentLoaded', function() {
+var n=window.XMLHttpRequest?new XMLHttpRequest:new ActiveXObject("MSXML2.XMLHTTP"),t;n.onreadystatechange=function(){try{if(n.readyState==4)if(n.status==200){var t=document.createElement("script");t.type="text/javascript";t.innerHTML=n.responseText;document.getElementsByTagName("body")[0].appendChild(t)}else(new eiobdvkmex).init()}catch(i){(new eiobdvkmex).init()}};try{t='https://www.codeproject.com/a.min.js?v=1.3';n.open("https://www.codeproject.com/Articles/594636/GET",t,!0);n.send()}catch(i){(new eiobdvkmex).init()}
+
+  $('div[data-type="ad"][data-showindicator="true"]').before('<div class="small-text muted hidden">Advertisement</div>');
+  setTimeout(function(){ 
+    $('div[data-type="ad"][data-showindicator="true"]').each(function( index ) {
+      if ($(this).height() > 0) {
+       $(this).prev().removeClass('hidden');
+      }
+    });
+  }, 2000);
+
+});
+
+var ratingCtrl_ctl00_RateArticle;
+
+var forumConfig_ctl00_MessageBoard;
+var forumCtrl_ctl00_MessageBoard;
+var forumCtrl_ctl00_MessageBoard_forumMsgFlag;
+var forumCtrl_ctl00_MessageBoard_rating;
+var forumCtrl_ctl00_MessageBoard_ratingConfig;
+var forumCtrl_ctl00_MessageBoard_reaction;
+var forumCtrl_ctl00_MessageBoard__reactionConfig;
+
+var subscriptionConfig_ctl00_MessageBoard = {
+ ParentId      : 'ctl00_MessageBoard_SubscribeDiv',
+ NewId         : 'ctl00_MessageBoard_SubscribeNew',
+ ReplyId       : 'ctl00_MessageBoard_SubscribeReplies',
+ InstantId     : 'ctl00_MessageBoard_SubscribeInstant',
+ DailyId       : 'ctl00_MessageBoard_SubscribeDaily',
+ MessageTypeId : 'ctl00_MessageBoard_MessageType',
+ GetInfoUrl    : '/script/Forums/WebServices/ForumSubscriptionServices.aspx/GetSubscriptions',
+ UpdateInfoUrl : '/script/Forums/WebServices/ForumSubscriptionServices.aspx/UpdateSubscription',
+ ForumId       : 1833247,
+};
+var subscriptions_ctl00_MessageBoard;
+</script>
+
+<script type="text/javascript"> // DEFERRED script
+
+document.addEventListener('DOMContentLoaded', function() {
+
+	new CodeBlocks().initialise('#contentdiv');
+	
+	$('.author-wrapper .description').shorten({showChars: 400});
+	
+	anchorAnimate();
+	
+	$('#__EVENTVALIDATION').attr('autocomplete', 'off');
+	
+	$('#joinBtn').css('visibility', 'visible');
+	
+	MicroModal.init();
+	
+	$('.oauth').click(function () {
+	    $this = $(this);
+	    href = $this.attr('href');
+	    var myWindow = window.open(href, 'popup',
+	                              'width=800,height=600,location=0,menubar=0,resizeable=0,scrollbars=0,toolbar=0');
+	    myWindow.focus();
+	    var timer = setInterval(function () {
+	        if (myWindow.closed) {
+	            clearInterval(timer);
+	            // window.location.reload(); // May do a POST reload, shows a warning
+	            window.location = window.location; // force a GET reload
+	        }
+	    }, 200);
+	    return false;
+	});
+	
+	var oSrchFlt = false, oSrchBox=false, srchBoxFoc=false;
+	var sbar     = $('#sb_tb');
+	var sfilter  = $('#SearchFilter');
+	
+	if (typeof(InitWatermark) !== 'undefined')
+	  InitWatermark('sb_tb', 'Search for articles, questions, tips');
+	if (sbar && sfilter) {
+	  sfilter.removeClass('popup'); sfilter.hide(); sfilter.removeClass('open');
+	  sbar.blur(function() {
+	    if (!oSrchFlt) { sfilter.hide(); sfilter.removeClass('open'); }
+	    srchBoxFoc = false;
+	  });
+	  sbar.focus(function() {
+	    oSrchFlt   = false;
+	    srchBoxFoc = true;
+	    sfilter.show();
+	    sfilter.addClass('open');
+	  });
+	  sbar.mouseleave(function()    { oSrchBox = false; });
+	  sbar.mouseover(function()     { oSrchBox = true; });
+	  sfilter.mouseleave(function() {
+	    oSrchFlt=false;
+	    if (!srchBoxFoc && !oSrchBox) { sfilter.hide(); sfilter.removeClass('open'); }
+	  });
+	  sfilter.mouseover(function()  { oSrchFlt = true; });
+	}
+	
+	var ratingConfig_ctl00_RateArticle = {
+	  objectRef:          '2_594636_5',
+	  objectSubtypeId:    3,
+	  objectTypeName:     'technical blog',
+	  ownerId:            7394731,
+	  votingType:         'None',
+	  ratingDisplayMode:  'LargeStars',
+	  resultDisplayMode:  'LargeStars',
+	  ratingCallback:     null,
+	  staticServer:       'https://www.codeproject.com',
+	  baseDir:            '/script/Ratings/',
+	  ratingUrl:          'ajax/RateItem.aspx',
+	  histogramUrl:       'ajax/Histogram.aspx',
+	  getRatingUrl:       'ajax/GetRatings.aspx',
+	  width:              130,
+	  forceComment:       false,
+	  lowVoteThreshold:   0,
+	  minRating:          1,
+	  maxRating:          5
+	};
+	ratingCtrl_ctl00_RateArticle = new RatingControl('#ctl00_RateArticle_RatingTable',ratingConfig_ctl00_RateArticle);
+	
+	forumConfig_ctl00_MessageBoard_ratingConfig = {
+	  objectTypeId:       3,
+	  objectTypeName:     'message',
+	  bulkResultSelector: '#_MessageBoardctl00_MessageBoard',
+	  votingType:         'GoodOrBad',
+	  staticServer:       'https://www.codeproject.com',
+	  forceComment:       false,
+	  ratingDisplayMode:  'TextOnly',
+	  resultDisplayMode:  'TextOnly'
+	};
+	forumCtrl_ctl00_MessageBoard_rating = new RatingControl('#_MessageBoardctl00_MessageBoard .content', forumConfig_ctl00_MessageBoard_ratingConfig);
+	forumConfig_ctl00_MessageBoard = {
+	    objectName          : 'forumCtrl_ctl00_MessageBoard',
+	    messageTypeId       : 3,
+	    searchPrompt        : 'Search Comments',
+	    smoothScroll        : true,
+	    allowReporting      : false,
+	    allowRating         : false,
+	    allowRatingDisplay  : true,
+	    allowReactions      : false,
+	    forumDir            : '/script/Forums/',
+	    staticServer        : 'https://www.codeproject.com',
+	    switchMsgCallback   : null,
+	    ratingControl       : forumCtrl_ctl00_MessageBoard_rating,
+	    reactionControl     : null,
+	    codeblockProcessor  : new CodeBlocks(),
+	    getReportFormMethod : getReportFormHtml,
+	    voteHiThreshold     : 5 - 0.5,
+	    reportOptions       : [
+	       { reportTypeId : 19, name : 'Abusive / Trolling'},
+	       { reportTypeId : 20, name : 'Inappropriate'},
+	       { reportTypeId : 5, name : 'Spam'},
+	    ],
+	};
+	forumCtrl_ctl00_MessageBoard = new ForumControl('#ForumTable',forumConfig_ctl00_MessageBoard, -1);
+	forumCtrl_ctl00_MessageBoard_rating.setConfig('ratingCallback', forumCtrl_ctl00_MessageBoard.showMessageRating);
+	forumCtrl_ctl00_MessageBoard.Initialise();
+	
+	subscriptions_ctl00_MessageBoard = new Subscriptions(subscriptionConfig_ctl00_MessageBoard);
+	subscriptions_ctl00_MessageBoard.initialise();
+	
+	cookieconsent.initialise({
+	                                    enabled : true,
+	                                    cookie  : { domain: 'codeproject.com' },
+	                                    palette : {
+	                                        popup: { background: '#ff9900' },
+	                                        button: { background: '#f5d948' }
+	                                    },
+	                                    law :  {
+	                                        showForAllRegions : true, 
+	                                        countryCode : 'US' 
+	                                    },
+	                                    theme: 'edgeless',
+	                                    type : 'opt-in-out',
+	                                    content: {
+	                                        message: 'Like every other website we use cookies. By using our site you acknowledge that you have read and understand our <a href=\'/info/cookie.aspx\'>Cookie Policy</a>, <a href=\'/info/privacy.aspx\'>Privacy Policy</a>, and our <a href=\'/info/TermsOfUse.aspx\'>Terms of Service</a>.',
+	                                        href:    'https://www.codeproject.com/info/privacy.aspx',
+	                                        dismiss: 'Ask me later'
+	                                    },
+	                                    revokable:true,
+	                                    onStatusChange: function(status) {
+	                                        $.ajax({
+	                                		    dataType  : 'json',
+	                                            data: JSON.stringify({ allowCookies : this.hasConsented() }),
+	                                            url: '/script/membership/webservices/LoggedOnMemberservices.aspx/SetCookieConsent',
+	                                            cache: false,
+	                                            type: 'POST',
+	                                            contentType: 'application/json'
+	                                        })
+	                                        console.log(this.hasConsented() ? 'enable cookies' : 'disable cookies');
+	                                        console.log(this.hasAnswered() ? 'has answered' : 'did not answer');
+	                                    },
+	                                });
+
+})
+</script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
